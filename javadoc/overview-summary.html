@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+Overview
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Overview";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Overview</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <FONT CLASS="NavBarFont1">Package</FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <FONT CLASS="NavBarFont1">Class</FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="overview-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="index.html?overview-summary.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="overview-summary.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+Easily provide repository data to a Google Search Appliance (GSA).
+<P>
+<B>See:</B>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#overview_description"><B>Description</B></A>
+<P>
+
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Packages</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="20%"><B><A HREF="com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A></B></TD>
+<TD>Adaptor interfaces and implementation.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="20%"><B><A HREF="com/google/enterprise/adaptor/examples/package-summary.html">com.google.enterprise.adaptor.examples</A></B></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="20%"><B><A HREF="com/google/enterprise/adaptor/prebuilt/package-summary.html">com.google.enterprise.adaptor.prebuilt</A></B></TD>
+<TD>&nbsp;</TD>
+</TR>
+</TABLE>
+
+<P>
+&nbsp;<A NAME="overview_description"><!-- --></A>
+<P>
+<p>Easily provide repository data to a Google Search Appliance (GSA).
+
+  <p> If you'd like to use a language other than Java or if you have command
+  line programs that can provide repository access, see if <A HREF="com/google/enterprise/adaptor/prebuilt/CommandLineAdaptor.html" title="class in com.google.enterprise.adaptor.prebuilt"><CODE>CommandLineAdaptor</CODE></A> fits your needs.
+  </p>
+
+  <h3>Basic GSA Setup</h3>
+  <ol>
+    <li>Add the IP address of the computer that hosts the adaptor to the <b>List
+      of Trusted IP Addresses</b> on the GSA.
+      <p>In the GSA's Admin Console, go to <b>Crawl and Index &gt; Feeds</b>,
+      and scroll down to <b>List of Trusted IP Addresses</b>. Add the IP address
+      for the adaptor to the list.</p>
+    <li>Add the URLs provided by the adaptor to the <b>Follow and Crawl Only
+      URLs with the Following Patterns</b> on the GSA.
+      <p>In the Admin console, go to <b>Crawl And Index &gt; Crawl URLs</b>, and
+      scroll down to <b>Follow and Crawl Only URLs with the Following
+      Patterns</b>. Add an entry like <code>hostname:port/</code> where <code>hostname</code> is the hostname of the machine that hosts the adaptor and <code>port</code> defaults to 5678 (read on to change port number).</p>
+  </ol>
+
+  <h3>Running the Adaptor Template, as an initial test</h3>
+  <ol>
+    <li>You should have already installed JDK 6 or higher and gotten a plexi
+      release. Specifically, you will need <code>adaptor.jar</code> and <code>adaptor-examples.jar</code>.   If instead of working from a release you are
+      working from source code you can build the required jars by running:
+      <pre>ant dist
+cd dist</pre>
+      The needed <code>adaptor.jar</code> and <code>adaptor-examples.jar</code> will be
+      within the current directory.
+    <li>Create an <code>adaptor-config.properties</code> text file in the
+      current directory that looks like:
+      <pre>gsa.hostname=mygsahostname</pre>
+      <p>You should replace <code>mygsahostname</code> with the hostname or IP
+      of your GSA. This file allows you to do other configuration of the adaptor
+      library like changing the server port and feed name:
+      <pre>gsa.hostname=mygsahostname
+server.port=6677
+feed.name=mydocfeedtogsa</pre>
+      <p>Later, if you have trouble with the adaptor library incorrectly
+      auto-detecting your computer's hostname, then you may need to add a line
+      like:
+      <pre>server.hostname=yourcomputershostname</pre>
+    <li>Start the Adaptor Template. For Windows:
+      <pre>java -cp adaptor.jar;adaptor-examples.jar com.google.enterprise.adaptor.examples.AdaptorTemplate</pre>
+      For all other OSes:
+      <pre>java -cp adaptor.jar:adaptor-examples.jar com.google.enterprise.adaptor.examples.AdaptorTemplate</pre>
+    <li> Ensure crawling is enabled on your GSA.
+      <p>
+      Go to <b>Status and Reports</b> and click <b>Resume Crawl</b>  if
+      crawling system is currently paused.
+      
+    <li> Confirm things ran successfully.
+      <p>
+      In the GSA, go to <b>Crawl and Index &gt; Feeds</b>.
+      In the <b>Current Feeds</b> section, you should see an entry for a
+      "adaptor_HOSTNAME_PORT" (which can be changed by setting the
+      <code>feed.name</code> configuration variable).
+      <p>
+      In the adaptor log look to see document ids being pushed and
+      requests for document contents being served.
+  </ol>
+
+  <h3>Creating your own Adaptor</h3>
+  <ol>
+    <li>Review JavaDoc for <A HREF="com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor"><CODE>Adaptor</CODE></A>
+      and <A HREF="com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor"><CODE>AbstractAdaptor</CODE></A>.
+    <li>From <code>adaptor-src.zip</code>, make a copy of <code>src/com/google/enterprise/adaptor/examples/AdaptorTemplate.java</code>
+      to your own package and name. You will need to modify the contents
+      appropriately for the new package and name.
+    <li>Compile, run, and verify the copied adaptor using your favorite IDE. You
+      will only need <code>adaptor.jar</code> in your classpath.
+    <li>Modify it further for your own repository.
+    <li>Declare success for getting content from your custom repository to the
+      GSA.
+  </ol>
+
+  <h3>Advanced</h3>
+  <p>You can set configuration variables on the command line instead of in
+    <code>adaptor-config.properties</code>. You are allowed multiple arguments
+    of the form "-Dconfigkey=configvalue". When providing a value on the command
+    line, it overrides the default value and the value (if any) in the
+    configuration file. For example:
+    <pre>java -cp adaptor.jar:adaptor-examples.jar com.google.enterprise.adaptor.examples.AdaptorTemplate -Dgsa.hostname=mygsahostname -Dserver.port=6677</pre>
+
+  <h3>Enabling Security</h3>
+  <p>Security is not enabled by default because it requires a reasonable amount
+    of setup, on both the GSA and adaptor. The GSA needs a valid certificate for
+    the hostname you are accessing it with (<code>gsa.hostname</code>). Thus,
+    the default one it ships with cannot be valid and you need to generate a new
+    one. Setting up security is required before users can access non-public
+    documents directly from the adaptor.
+
+  <h4>Creating Self-Signed Certificates</h4>
+  <p>In the GSA's Admin Console, go to <b>Administration &gt; SSL Settings</b>.
+    Under the <b>Create a New SSL Certificate</b> heading change <b>Host
+    Name</b> to the hostname to access the GSA with.  Then click <b>Create
+    Self-Signed Certificate</b> and wait for the operation to complete.
+    Then click <b>Install SSL Certificate</b> and wait for that operation
+    to complete (about 1 minute).
+    You now have a valid self-signed certificate, but it is not available to be
+    trusted by the adaptor.
+
+  <p>You need to get the GSA's freshly-created certificate to add it as a
+    trusted host for the adaptor:
+  <ul>
+    <li><b>Using Firefox:</b> Navigate to the GSA's secure search:
+      https://gsahostname/. You should see a warning page that says, "This
+      Connection is Untrusted." This message is because the certificate is
+      self-signed and not signed by a trusted Certificate Authority. Click, "I
+      Understand the Risks" and "Add Exception." Wait until the "View..."
+      button is clickable, then click it. Change to the "Details" tab and
+      click "Export...". Save the certificate in your adaptor's directory with
+      the name "gsa.crt". You can then hit "Close" and "Cancel" to close the
+      dialog windows.
+    <li><b>Using Chrome:</b> Navigate to the GSA's secure search:
+      https://gsahostname/. You should see a warning page that says, "The
+      site's security certificate is not trusted!" In the location bar, there
+      should be a pad lock with a red 'x' on it. Click the pad lock and then
+      click "Certificate Information." Change to the "Details" tab and click
+      "Export...". Save the certificate in your adaptor's directory with the
+      name "gsa.crt". You can then hit "Close" and "Cancel" to close the
+      dialog windows.
+    <li><b>Using OpenSSL:</b> Execute:
+      <pre>openssl s_client -connect gsahostname:443 &lt; /dev/null</pre>
+      Copy the section that begins with <code>-----BEGIN CERTIFICATE-----</code>
+      and ends with <code>-----END CERTIFICATE-----</code> (including the BEGIN
+      and END CERTIFICATE portions) into a new file. Save the file in your
+      adaptor's directory with the name "gsa.crt".
+  </ul>
+
+  <p>Now you should generate a self-signed certificate for the adaptor and
+    export the newly created certificate. Within the adaptor's directory, you
+    should run:
+  <pre>keytool -alias adaptor -keystore keys.jks -genkeypair -keyalg RSA -validity 365</pre>
+  <p>Use "changeit" for the keystore password. For "What is your first and last
+    name?", you should enter the hostname of your computer. You are free to
+    answer the other questions however you wish (including not answering them).
+    When you are happy with your answers, answer "yes" to "Is
+    CN=yourcomputershostname, OU=... correct?" <br> 
+  <p> Then, still in adaptor's directory, you should run:
+  <pre>keytool -alias adaptor -keystore keys.jks -exportcert -rfc -file adaptor.crt</pre>
+  <p> Press enter for the key password (to use the same password
+    as the keystore).
+
+  <h4>Exchanging Certificates</h4>
+  <p>To allow the adaptor to trust the GSA, execute:
+  <pre>keytool -keystore cacerts.jks -importcert -file gsa.crt</pre>
+  <p>Use "changeit" for the keystore password. Answer "yes" to "Trust this
+    certificate?"
+
+  <p>To allow the GSA to trust the adaptor, within the GSA's Admin Console, go
+    to <b>Administration &gt; Certificate Authorities</b>. Click the <b>Choose
+    File</b> button (this button could be called "Browse...") under the 
+    <b>Add more Cerificate Authorities</b> heading.
+    Choose "adaptor.crt" in the adaptor's directory and click <b>Save
+    Settings</b>.
+
+  <h4>Flipping the Switch</h4>
+  <p>Now that everything is prepared, you can flip the security switch with the
+    adaptor by adding a line to your <code>adaptor-config.properties</code>:
+  <pre>server.secure=true</pre>
+  <p>The adaptor can now use the GSA's authentication configuration and will use
+    HTTPS for all communication.</p>
+
+  <h4>Enable Stricter Security (optional)</h4>
+  <p>There are additional security options you can control on the GSA.
+    You may want to try running an adaptor with server.secure set before
+    enabling these stricter features.
+    Within the GSA's Admin Console, go to <b>Administration &gt; SSL
+    Settings</b>.  There you can:<ul>
+    <li> uncheck <b>Enable HTTP (non-SSL) access for Feedergate</b>.  With this
+      field unchecked only HTTPS communications will be accepted by feedergate.
+      Adaptors send document ids to feedergate.
+    <li> check <b>Enable Client Certificate Authentication for Feedergate</b>.
+    <li> check <b>Enable Server Certificate Authentication</b>. Note: Does not
+      work at this time (Oct 4 2011).
+    </ul>
+    <p>
+    Click <b>Save Setup</b> to save your changes.
+    <p>
+    Note: By using these settings you improve security, but also require
+    all adaptors to be configured for security and have 
+    <code>server.secure=true</code> in their configuration.
+<P>
+
+<P>
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Overview</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <FONT CLASS="NavBarFont1">Package</FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <FONT CLASS="NavBarFont1">Class</FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="overview-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="index.html?overview-summary.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="overview-summary.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>
