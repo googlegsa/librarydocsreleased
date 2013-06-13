@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-GsaCommunicationHandler
+Daemon
 </TITLE>
 
 
@@ -13,7 +13,7 @@ GsaCommunicationHandler
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="GsaCommunicationHandler";
+        parent.document.title="Daemon";
     }
 }
 </SCRIPT>
@@ -52,11 +52,11 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/GroupPrincipal.html" title="class in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/HttpExchanges.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/CustomFormatter.html" title="class in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/DefaultGetDocIdsErrorHandler.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?com/google/enterprise/adaptor/GsaCommunicationHandler.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="GsaCommunicationHandler.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../index.html?com/google/enterprise/adaptor/Daemon.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Daemon.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {
@@ -87,18 +87,26 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <FONT SIZE="-1">
 com.google.enterprise.adaptor</FONT>
 <BR>
-Class GsaCommunicationHandler</H2>
+Class Daemon</H2>
 <PRE>
 <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
-  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>com.google.enterprise.adaptor.GsaCommunicationHandler</B>
+  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>com.google.enterprise.adaptor.Daemon</B>
 </PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>org.apache.commons.daemon.Daemon</DD>
+</DL>
 <HR>
 <DL>
-<DT><PRE>public final class <B>GsaCommunicationHandler</B><DT>extends <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+<DT><PRE>public class <B>Daemon</B><DT>extends <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements org.apache.commons.daemon.Daemon</DL>
 </PRE>
 
 <P>
-This class handles the communications with GSA.
+Allows running an adaptor as a daemon when used in conjunction with procrun
+ or jsvc.
+
+ <p>Example execution with jsvc:
+ <pre>jsvc -pidfile adaptor.pid -cp someadaptor-withlib.jar \
+    com.google.enterprise.adaptor.Daemon package.SomeAdaptor</pre>
 <P>
 
 <P>
@@ -115,8 +123,7 @@ This class handles the communications with GSA.
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#GsaCommunicationHandler(com.google.enterprise.adaptor.Adaptor, com.google.enterprise.adaptor.Config)">GsaCommunicationHandler</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A>&nbsp;adaptor,
-                        <A HREF="../../../../com/google/enterprise/adaptor/Config.html" title="class in com.google.enterprise.adaptor">Config</A>&nbsp;config)</CODE>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Daemon.html#Daemon()">Daemon</A></B>()</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -133,46 +140,35 @@ This class handles the communications with GSA.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#checkAndScheduleImmediatePushOfDocIds()">checkAndScheduleImmediatePushOfDocIds</A></B>()</CODE>
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Daemon.html#destroy()">destroy</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ensure there is a push running right now.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#checkAndScheduleIncrementalPushOfDocIds()">checkAndScheduleIncrementalPushOfDocIds</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perform an push of incremental changes.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#getAdaptor()">getAdaptor</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The adaptor instance being used.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#start(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer)">start</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;server,
-      <A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;dashboardServer)</CODE>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Daemon.html#init(org.apache.commons.daemon.DaemonContext)">init</A></B>(org.apache.commons.daemon.DaemonContext&nbsp;context)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Starts listening for communications from GSA.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#stop(long, java.util.concurrent.TimeUnit)">stop</A></B>(long&nbsp;time,
-     <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</A>&nbsp;unit)</CODE>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Daemon.html#start()">start</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stop the current services, allowing up to <code>maxDelay</code> seconds for
- things to shutdown.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Daemon.html#stop()">stop</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -197,11 +193,10 @@ This class handles the communications with GSA.
 </TR>
 </TABLE>
 
-<A NAME="GsaCommunicationHandler(com.google.enterprise.adaptor.Adaptor, com.google.enterprise.adaptor.Config)"><!-- --></A><H3>
-GsaCommunicationHandler</H3>
+<A NAME="Daemon()"><!-- --></A><H3>
+Daemon</H3>
 <PRE>
-public <B>GsaCommunicationHandler</B>(<A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A>&nbsp;adaptor,
-                               <A HREF="../../../../com/google/enterprise/adaptor/Config.html" title="class in com.google.enterprise.adaptor">Config</A>&nbsp;config)</PRE>
+public <B>Daemon</B>()</PRE>
 <DL>
 </DL>
 
@@ -215,78 +210,67 @@ public <B>GsaCommunicationHandler</B>(<A HREF="../../../../com/google/enterprise
 </TR>
 </TABLE>
 
-<A NAME="start(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer)"><!-- --></A><H3>
-start</H3>
+<A NAME="init(org.apache.commons.daemon.DaemonContext)"><!-- --></A><H3>
+init</H3>
 <PRE>
-public void <B>start</B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;server,
-                  <A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;dashboardServer)
-           throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
-                  <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></PRE>
+public void <B>init</B>(org.apache.commons.daemon.DaemonContext&nbsp;context)
+          throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
 <DL>
-<DD>Starts listening for communications from GSA.
-<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>init</CODE> in interface <CODE>org.apache.commons.daemon.Daemon</CODE></DL>
+</DD>
 <DD><DL>
 
 <DT><B>Throws:</B>
-<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
-<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></CODE></DL>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
 </DD>
 </DL>
 <HR>
 
-<A NAME="stop(long, java.util.concurrent.TimeUnit)"><!-- --></A><H3>
+<A NAME="destroy()"><!-- --></A><H3>
+destroy</H3>
+<PRE>
+public void <B>destroy</B>()</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>destroy</CODE> in interface <CODE>org.apache.commons.daemon.Daemon</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="start()"><!-- --></A><H3>
+start</H3>
+<PRE>
+public void <B>start</B>()
+           throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>start</CODE> in interface <CODE>org.apache.commons.daemon.Daemon</CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="stop()"><!-- --></A><H3>
 stop</H3>
 <PRE>
-public void <B>stop</B>(long&nbsp;time,
-                 <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</A>&nbsp;unit)</PRE>
+public void <B>stop</B>()
+          throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
 <DL>
-<DD>Stop the current services, allowing up to <code>maxDelay</code> seconds for
- things to shutdown.
-<P>
 <DD><DL>
-</DL>
+<DT><B>Specified by:</B><DD><CODE>stop</CODE> in interface <CODE>org.apache.commons.daemon.Daemon</CODE></DL>
 </DD>
-</DL>
-<HR>
-
-<A NAME="checkAndScheduleImmediatePushOfDocIds()"><!-- --></A><H3>
-checkAndScheduleImmediatePushOfDocIds</H3>
-<PRE>
-public boolean <B>checkAndScheduleImmediatePushOfDocIds</B>()</PRE>
-<DL>
-<DD>Ensure there is a push running right now. This schedules a new push if one
- is not already running. Returns <code>true</code> if it starts a new push, and
- <code>false</code> otherwise.
-<P>
 <DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
 
-<A NAME="checkAndScheduleIncrementalPushOfDocIds()"><!-- --></A><H3>
-checkAndScheduleIncrementalPushOfDocIds</H3>
-<PRE>
-public boolean <B>checkAndScheduleIncrementalPushOfDocIds</B>()</PRE>
-<DL>
-<DD>Perform an push of incremental changes. This works only for adaptors that
- support incremental polling (implements <A HREF="../../../../com/google/enterprise/adaptor/PollingIncrementalAdaptor.html" title="interface in com.google.enterprise.adaptor"><CODE>PollingIncrementalAdaptor</CODE></A>.
-<P>
-<DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getAdaptor()"><!-- --></A><H3>
-getAdaptor</H3>
-<PRE>
-public <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A> <B>getAdaptor</B>()</PRE>
-<DL>
-<DD>The adaptor instance being used.
-<P>
-<DD><DL>
-</DL>
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -319,11 +303,11 @@ public <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html" title="i
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/GroupPrincipal.html" title="class in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/HttpExchanges.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/CustomFormatter.html" title="class in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/DefaultGetDocIdsErrorHandler.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?com/google/enterprise/adaptor/GsaCommunicationHandler.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="GsaCommunicationHandler.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../index.html?com/google/enterprise/adaptor/Daemon.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Daemon.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {

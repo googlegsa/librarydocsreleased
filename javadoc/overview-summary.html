@@ -97,6 +97,10 @@ Easily provide repository data to a Google Search Appliance (GSA).
 <TD>&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="20%"><B><A HREF="com/google/enterprise/adaptor/experimental/package-summary.html">com.google.enterprise.adaptor.experimental</A></B></TD>
+<TD>&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="20%"><B><A HREF="com/google/enterprise/adaptor/prebuilt/package-summary.html">com.google.enterprise.adaptor.prebuilt</A></B></TD>
 <TD>&nbsp;</TD>
 </TR>
@@ -182,6 +186,15 @@ feed.name=mydocfeedtogsa</pre>
     <li>Declare success for getting content from your custom repository to the
       GSA.
   </ol>
+
+  <h3>Testing Tip</h3>
+  <p>An adaptor, by default, will deny all document accesses, except from the
+    GSA. To allow debugging and testing an adaptor without a GSA, you can add a
+    hostname to the <code>server.fullAccessHosts</code> config key to allow that
+    computer full access to all adaptor content. In addition, this setting
+    allows that computer to see metadata and other GSA-specific information as
+    HTTP headers. This can be very useful when combined with Firebug or the Web
+    Inspector in your browser to observe an Adaptor's behavior.
 
   <h3>Advanced</h3>
   <p>You can set configuration variables on the command line instead of in

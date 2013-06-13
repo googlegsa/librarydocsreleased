@@ -464,7 +464,7 @@ public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?
  <p>If you experience a fatal error, feel free to throw an <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io"><CODE>IOException</CODE></A> or <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang"><CODE>RuntimeException</CODE></A>. In the case of an error, the
  users will be denied access to the resources.
 
- <p>This implementation provides <A HREF="../../../../../com/google/enterprise/adaptor/AuthzStatus.html#PERMIT"><CODE>AuthzStatus.PERMIT</CODE></A> for all <code>DocId</code>s in an unmodifiable map.
+ <p>This implementation provides <A HREF="../../../../../com/google/enterprise/adaptor/AuthzStatus.html#DENY"><CODE>AuthzStatus.DENY</CODE></A> for all <code>DocId</code>s in an unmodifiable map.
 
  <p>This implementation provides access permissions for the <code>DocId</code>s in an \
  unmodifiable map based upon data returned by a command line authorizer.

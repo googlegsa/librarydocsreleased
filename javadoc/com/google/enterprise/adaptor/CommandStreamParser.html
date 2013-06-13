@@ -187,11 +187,43 @@ Parses the adaptor data format into individual commands with associated data.
  "mime-type=" -- specifies the document's mime-type. If unspecified then the GSA will
  automatically assign a type to the document. <p>
 
+ "meta-name=" -- specifies a metadata key, to be followed by a metadata-value<p>
+
  "meta-value=" -- specifies a metadata value associated with
  immediately preceding metadata-name<p>
 
  "content" -- signals the beginning of binary content which
  continues to the end of the file or stream<p>
+
+ "last-modified=" -- specifies the last time the document or its metadata has changed.
+ The argument is a number representing the number of seconds since the standard base
+ time known as the epoch", namely January 1, 1970, 00:00:00 GMT.<p>
+
+ "secure=" -- specifies whether the document is non-public. The argument is either 'true' or
+ 'false'.<p>
+
+ "anchor-uri=" -- specifies an anchor URI, to be followed by anchor-text.<p>
+
+ "anchor-text=" -- specifies the text associated with an anchor-uri.<p>
+
+ "no-index=" -- specifies whether the document should be indexed by the GSA. The argument is
+ either 'true' or 'false'.<p>
+
+ "no-follow=" -- specifies whether the document's links should be followed by the GSA. The
+ argument is either 'true' or 'false'.<p>
+
+ "no-archive=" -- specifies whether GSA document will allow the user to see a cached version of
+ the document. The argument is either 'true' or 'false'.<p>
+
+ "display-url=" -- specifies an alternative link to be displayed in the search results.
+ This must be a properly formed URL.<p>
+
+ "crawl-once=" -- specifies that the document will be crawled by the
+ GSA one time but then never re-crawled. The argument should be 'true' or 'false'.<p>
+
+ "lock=" -- Causes the document to remain in the index unless explicitly removed.
+ If every document in the GSA is locked then locked document may be forced out when maximum
+ capacity is reached.<p>
 
  <h1>Authorizer Commands:</h1>
 

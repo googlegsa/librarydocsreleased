@@ -296,7 +296,7 @@ public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?
  <p>If you experience a fatal error, feel free to throw an <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io"><CODE>IOException</CODE></A> or <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang"><CODE>RuntimeException</CODE></A>. In the case of an error, the
  users will be denied access to the resources.
 
- <p>This implementation provides <A HREF="../../../../../com/google/enterprise/adaptor/AuthzStatus.html#PERMIT"><CODE>AuthzStatus.PERMIT</CODE></A> for all <code>DocId</code>s in an unmodifiable map.
+ <p>This implementation provides <A HREF="../../../../../com/google/enterprise/adaptor/AuthzStatus.html#DENY"><CODE>AuthzStatus.DENY</CODE></A> for all <code>DocId</code>s in an unmodifiable map.
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)">isUserAuthorized</A></CODE> in interface <CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></CODE><DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)">isUserAuthorized</A></CODE> in class <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A></CODE></DL>
