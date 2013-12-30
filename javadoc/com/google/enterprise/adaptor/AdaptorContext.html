@@ -155,19 +155,19 @@ Methods for an Adaptor to communicate with the adaptor library.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor">GetDocIdsErrorHandler</A></CODE></FONT></TD>
+<CODE>&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor">ExceptionHandler</A></CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html#getGetDocIdsFullErrorHandler()">getGetDocIdsFullErrorHandler</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retrieve the current <A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>GetDocIdsErrorHandler</CODE></A> for full push.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retrieve the current <A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>ExceptionHandler</CODE></A> for full push.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor">GetDocIdsErrorHandler</A></CODE></FONT></TD>
+<CODE>&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor">ExceptionHandler</A></CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html#getGetDocIdsIncrementalErrorHandler()">getGetDocIdsIncrementalErrorHandler</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retrieve the current <A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>GetDocIdsErrorHandler</CODE></A> for incremental push.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retrieve the current <A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>ExceptionHandler</CODE></A> for incremental push.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -189,26 +189,45 @@ Methods for an Adaptor to communicate with the adaptor library.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html#removeStatusSource(com.google.enterprise.adaptor.StatusSource)">removeStatusSource</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/StatusSource.html" title="interface in com.google.enterprise.adaptor">StatusSource</A>&nbsp;source)</CODE>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html#setAuthnAuthority(com.google.enterprise.adaptor.AuthnAuthority)">setAuthnAuthority</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.html" title="interface in com.google.enterprise.adaptor">AuthnAuthority</A>&nbsp;authnAuthority)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove a previously added status source to the dashboard.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register an authentication provider, so it can authenticate users for the
+ GSA.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html#setGetDocIdsFullErrorHandler(com.google.enterprise.adaptor.GetDocIdsErrorHandler)">setGetDocIdsFullErrorHandler</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor">GetDocIdsErrorHandler</A>&nbsp;handler)</CODE>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html#setAuthzAuthority(com.google.enterprise.adaptor.AuthzAuthority)">setAuthzAuthority</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/AuthzAuthority.html" title="interface in com.google.enterprise.adaptor">AuthzAuthority</A>&nbsp;authzAuthority)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Override the default <A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>GetDocIdsErrorHandler</CODE></A> for full push.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register an authorization provider, so it can check authorization of users
+ for the GSA.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html#setGetDocIdsIncrementalErrorHandler(com.google.enterprise.adaptor.GetDocIdsErrorHandler)">setGetDocIdsIncrementalErrorHandler</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor">GetDocIdsErrorHandler</A>&nbsp;handler)</CODE>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html#setGetDocIdsFullErrorHandler(com.google.enterprise.adaptor.ExceptionHandler)">setGetDocIdsFullErrorHandler</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor">ExceptionHandler</A>&nbsp;handler)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Override the default <A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>GetDocIdsErrorHandler</CODE></A> for incremental push.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Override the default <A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>ExceptionHandler</CODE></A> for full push.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html#setGetDocIdsIncrementalErrorHandler(com.google.enterprise.adaptor.ExceptionHandler)">setGetDocIdsIncrementalErrorHandler</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor">ExceptionHandler</A>&nbsp;handler)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Override the default <A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>ExceptionHandler</CODE></A> for incremental push.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html#setPollingIncrementalLister(com.google.enterprise.adaptor.PollingIncrementalLister)">setPollingIncrementalLister</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/PollingIncrementalLister.html" title="interface in com.google.enterprise.adaptor">PollingIncrementalLister</A>&nbsp;lister)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register a polling incremental lister, so that it can be called when
+ appropriate.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -269,7 +288,9 @@ addStatusSource</H3>
 <PRE>
 void <B>addStatusSource</B>(<A HREF="../../../../com/google/enterprise/adaptor/StatusSource.html" title="interface in com.google.enterprise.adaptor">StatusSource</A>&nbsp;source)</PRE>
 <DL>
-<DD>Add a status source to the dashboard.
+<DD>Add a status source to the dashboard. The source will automatically be
+ removed just before <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#destroy()"><CODE>Adaptor.destroy()</CODE></A>. Source registration should
+ occur during <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)"><CODE>Adaptor.init(com.google.enterprise.adaptor.AdaptorContext)</CODE></A>.
 <P>
 <DD><DL>
 </DL>
@@ -277,25 +298,12 @@ void <B>addStatusSource</B>(<A HREF="../../../../com/google/enterprise/adaptor/S
 </DL>
 <HR>
 
-<A NAME="removeStatusSource(com.google.enterprise.adaptor.StatusSource)"><!-- --></A><H3>
-removeStatusSource</H3>
-<PRE>
-void <B>removeStatusSource</B>(<A HREF="../../../../com/google/enterprise/adaptor/StatusSource.html" title="interface in com.google.enterprise.adaptor">StatusSource</A>&nbsp;source)</PRE>
-<DL>
-<DD>Remove a previously added status source to the dashboard.
-<P>
-<DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="setGetDocIdsFullErrorHandler(com.google.enterprise.adaptor.GetDocIdsErrorHandler)"><!-- --></A><H3>
+<A NAME="setGetDocIdsFullErrorHandler(com.google.enterprise.adaptor.ExceptionHandler)"><!-- --></A><H3>
 setGetDocIdsFullErrorHandler</H3>
 <PRE>
-void <B>setGetDocIdsFullErrorHandler</B>(<A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor">GetDocIdsErrorHandler</A>&nbsp;handler)</PRE>
+void <B>setGetDocIdsFullErrorHandler</B>(<A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor">ExceptionHandler</A>&nbsp;handler)</PRE>
 <DL>
-<DD>Override the default <A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>GetDocIdsErrorHandler</CODE></A> for full push.
+<DD>Override the default <A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>ExceptionHandler</CODE></A> for full push.
 <P>
 <DD><DL>
 </DL>
@@ -306,9 +314,9 @@ void <B>setGetDocIdsFullErrorHandler</B>(<A HREF="../../../../com/google/enterpr
 <A NAME="getGetDocIdsFullErrorHandler()"><!-- --></A><H3>
 getGetDocIdsFullErrorHandler</H3>
 <PRE>
-<A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor">GetDocIdsErrorHandler</A> <B>getGetDocIdsFullErrorHandler</B>()</PRE>
+<A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor">ExceptionHandler</A> <B>getGetDocIdsFullErrorHandler</B>()</PRE>
 <DL>
-<DD>Retrieve the current <A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>GetDocIdsErrorHandler</CODE></A> for full push.
+<DD>Retrieve the current <A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>ExceptionHandler</CODE></A> for full push.
 <P>
 <DD><DL>
 </DL>
@@ -316,12 +324,12 @@ getGetDocIdsFullErrorHandler</H3>
 </DL>
 <HR>
 
-<A NAME="setGetDocIdsIncrementalErrorHandler(com.google.enterprise.adaptor.GetDocIdsErrorHandler)"><!-- --></A><H3>
+<A NAME="setGetDocIdsIncrementalErrorHandler(com.google.enterprise.adaptor.ExceptionHandler)"><!-- --></A><H3>
 setGetDocIdsIncrementalErrorHandler</H3>
 <PRE>
-void <B>setGetDocIdsIncrementalErrorHandler</B>(<A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor">GetDocIdsErrorHandler</A>&nbsp;handler)</PRE>
+void <B>setGetDocIdsIncrementalErrorHandler</B>(<A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor">ExceptionHandler</A>&nbsp;handler)</PRE>
 <DL>
-<DD>Override the default <A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>GetDocIdsErrorHandler</CODE></A> for incremental push.
+<DD>Override the default <A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>ExceptionHandler</CODE></A> for incremental push.
 <P>
 <DD><DL>
 </DL>
@@ -332,9 +340,9 @@ void <B>setGetDocIdsIncrementalErrorHandler</B>(<A HREF="../../../../com/google/
 <A NAME="getGetDocIdsIncrementalErrorHandler()"><!-- --></A><H3>
 getGetDocIdsIncrementalErrorHandler</H3>
 <PRE>
-<A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor">GetDocIdsErrorHandler</A> <B>getGetDocIdsIncrementalErrorHandler</B>()</PRE>
+<A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor">ExceptionHandler</A> <B>getGetDocIdsIncrementalErrorHandler</B>()</PRE>
 <DL>
-<DD>Retrieve the current <A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>GetDocIdsErrorHandler</CODE></A> for incremental push.
+<DD>Retrieve the current <A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>ExceptionHandler</CODE></A> for incremental push.
 <P>
 <DD><DL>
 </DL>
@@ -395,6 +403,48 @@ getUserSession</H3>
      already exist for this user
 <DT><B>Returns:</B><DD>user's session, or <code>null</code> if session did not already exist
      and <code>create = false</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setPollingIncrementalLister(com.google.enterprise.adaptor.PollingIncrementalLister)"><!-- --></A><H3>
+setPollingIncrementalLister</H3>
+<PRE>
+void <B>setPollingIncrementalLister</B>(<A HREF="../../../../com/google/enterprise/adaptor/PollingIncrementalLister.html" title="interface in com.google.enterprise.adaptor">PollingIncrementalLister</A>&nbsp;lister)</PRE>
+<DL>
+<DD>Register a polling incremental lister, so that it can be called when
+ appropriate. Registration may not occur after <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)"><CODE>Adaptor.init(com.google.enterprise.adaptor.AdaptorContext)</CODE></A>.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setAuthnAuthority(com.google.enterprise.adaptor.AuthnAuthority)"><!-- --></A><H3>
+setAuthnAuthority</H3>
+<PRE>
+void <B>setAuthnAuthority</B>(<A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.html" title="interface in com.google.enterprise.adaptor">AuthnAuthority</A>&nbsp;authnAuthority)</PRE>
+<DL>
+<DD>Register an authentication provider, so it can authenticate users for the
+ GSA. Registration may not occur after <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)"><CODE>Adaptor.init(com.google.enterprise.adaptor.AdaptorContext)</CODE></A>.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setAuthzAuthority(com.google.enterprise.adaptor.AuthzAuthority)"><!-- --></A><H3>
+setAuthzAuthority</H3>
+<PRE>
+void <B>setAuthzAuthority</B>(<A HREF="../../../../com/google/enterprise/adaptor/AuthzAuthority.html" title="interface in com.google.enterprise.adaptor">AuthzAuthority</A>&nbsp;authzAuthority)</PRE>
+<DL>
+<DD>Register an authorization provider, so it can check authorization of users
+ for the GSA. Registration may not occur after <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)"><CODE>Adaptor.init(com.google.enterprise.adaptor.AdaptorContext)</CODE></A>.
+<P>
+<DD><DL>
+</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

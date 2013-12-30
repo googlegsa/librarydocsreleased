@@ -53,7 +53,7 @@ function windowTitle()
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/AdaptorTemplate.html" title="class in com.google.enterprise.adaptor.examples"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/CalaisNERTransform.html" title="class in com.google.enterprise.adaptor.examples"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/DbAdaptorTemplate.html" title="class in com.google.enterprise.adaptor.examples"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../../index.html?com/google/enterprise/adaptor/examples/AdaptorWithCrawlTimeMetadataTemplate.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="AdaptorWithCrawlTimeMetadataTemplate.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -94,11 +94,11 @@ Class AdaptorWithCrawlTimeMetadataTemplate</H2>
       <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.enterprise.adaptor.examples.AdaptorWithCrawlTimeMetadataTemplate</B>
 </PRE>
 <DL>
-<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></DD>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AuthzAuthority.html" title="interface in com.google.enterprise.adaptor">AuthzAuthority</A></DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public class <B>AdaptorWithCrawlTimeMetadataTemplate</B><DT>extends <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A></DL>
+<DT><PRE>public class <B>AdaptorWithCrawlTimeMetadataTemplate</B><DT>extends <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A><DT>implements <A HREF="../../../../../com/google/enterprise/adaptor/AuthzAuthority.html" title="interface in com.google.enterprise.adaptor">AuthzAuthority</A></DL>
 </PRE>
 
 <P>
@@ -158,6 +158,14 @@ Demonstrates what code is necessary for putting restricted
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/AdaptorWithCrawlTimeMetadataTemplate.html#init(com.google.enterprise.adaptor.AdaptorContext)">init</A></B>(<A HREF="../../../../../com/google/enterprise/adaptor/AdaptorContext.html" title="interface in com.google.enterprise.adaptor">AdaptorContext</A>&nbsp;context)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initialize adaptor with the current context.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="../../../../../com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor">DocId</A>,<A HREF="../../../../../com/google/enterprise/adaptor/AuthzStatus.html" title="enum in com.google.enterprise.adaptor">AuthzStatus</A>&gt;</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/AdaptorWithCrawlTimeMetadataTemplate.html#isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)">isUserAuthorized</A></B>(<A HREF="../../../../../com/google/enterprise/adaptor/AuthnIdentity.html" title="interface in com.google.enterprise.adaptor">AuthnIdentity</A>&nbsp;userIdentity,
                  <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="../../../../../com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor">DocId</A>&gt;&nbsp;ids)</CODE>
@@ -180,7 +188,7 @@ Demonstrates what code is necessary for putting restricted
 <TH ALIGN="left"><B>Methods inherited from class com.google.enterprise.adaptor.<A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#destroy()">destroy</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)">init</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#initConfig(com.google.enterprise.adaptor.Config)">initConfig</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#main(com.google.enterprise.adaptor.Adaptor, java.lang.String[])">main</A></CODE></TD>
+<TD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#destroy()">destroy</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#initConfig(com.google.enterprise.adaptor.Config)">initConfig</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#main(com.google.enterprise.adaptor.Adaptor, java.lang.String[])">main</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -222,6 +230,35 @@ public <B>AdaptorWithCrawlTimeMetadataTemplate</B>()</PRE>
 </TR>
 </TABLE>
 
+<A NAME="init(com.google.enterprise.adaptor.AdaptorContext)"><!-- --></A><H3>
+init</H3>
+<PRE>
+public void <B>init</B>(<A HREF="../../../../../com/google/enterprise/adaptor/AdaptorContext.html" title="interface in com.google.enterprise.adaptor">AdaptorContext</A>&nbsp;context)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)">AbstractAdaptor</A></CODE></B></DD>
+<DD>Initialize adaptor with the current context. This is the ideal time to
+ start any threads to do extra behind-the-scenes work. The <code>context</code>
+ points to other useful objects that can be used at any time. For example,
+ methods on <A HREF="../../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor"><CODE>DocIdPusher</CODE></A> provided via <A HREF="../../../../../com/google/enterprise/adaptor/AdaptorContext.html#getDocIdPusher()"><CODE>AdaptorContext.getDocIdPusher()</CODE></A> are allowed to be called whenever the
+ Adaptor wishes. This allows doing event-based incremental pushes at any
+ time.
+
+ <p>The method is called at the end of <A HREF="../../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#start(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer)"><CODE>GsaCommunicationHandler.start(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer)</CODE></A>.
+
+ <p>If you experience a fatal error during initialization, feel free to
+ throw an <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang"><CODE>Exception</CODE></A> to cancel the startup process.
+
+ <p>This implementation does nothing.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)">init</A></CODE> in interface <CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></CODE><DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)">init</A></CODE> in class <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
 <A NAME="getDocIds(com.google.enterprise.adaptor.DocIdPusher)"><!-- --></A><H3>
 getDocIds</H3>
 <PRE>
@@ -230,6 +267,9 @@ public void <B>getDocIds</B>(<A HREF="../../../../../com/google/enterprise/adapt
 <DL>
 <DD>Gives list of document ids that you'd like on the GSA.
 <P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#getDocIds(com.google.enterprise.adaptor.DocIdPusher)">getDocIds</A></CODE> in interface <CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></CODE></DL>
+</DD>
 <DD><DL>
 
 <DT><B>Throws:</B>
@@ -248,6 +288,9 @@ public void <B>getDocContent</B>(<A HREF="../../../../../com/google/enterprise/a
 <DD>Gives the bytes of a document referenced with id.
 <P>
 <DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#getDocContent(com.google.enterprise.adaptor.Request, com.google.enterprise.adaptor.Response)">getDocContent</A></CODE> in interface <CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></CODE></DL>
+</DD>
+<DD><DL>
 
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
@@ -265,6 +308,9 @@ public static void <B>main</B>(<A HREF="http://download.oracle.com/javase/6/docs
 <DD><DL>
 </DL>
 </DD>
+<DD><DL>
+</DL>
+</DD>
 </DL>
 <HR>
 
@@ -275,7 +321,7 @@ public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?
                                                <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="../../../../../com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor">DocId</A>&gt;&nbsp;ids)
                                         throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
 <DL>
-<DD><B>Description copied from class: <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)">AbstractAdaptor</A></CODE></B></DD>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AuthzAuthority.html#isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)">AuthzAuthority</A></CODE></B></DD>
 <DD>Determines whether the user identified is allowed to access the <code>DocId</code>s. The user is either anonymous or assumed to be previously
  authenticated. If an anonymous user is denied access to a document, then
  the caller may prompt the user to go through an authentication process and
@@ -295,11 +341,9 @@ public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?
 
  <p>If you experience a fatal error, feel free to throw an <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io"><CODE>IOException</CODE></A> or <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang"><CODE>RuntimeException</CODE></A>. In the case of an error, the
  users will be denied access to the resources.
-
- <p>This implementation provides <A HREF="../../../../../com/google/enterprise/adaptor/AuthzStatus.html#DENY"><CODE>AuthzStatus.DENY</CODE></A> for all <code>DocId</code>s in an unmodifiable map.
 <P>
 <DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)">isUserAuthorized</A></CODE> in interface <CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></CODE><DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)">isUserAuthorized</A></CODE> in class <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A></CODE></DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AuthzAuthority.html#isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)">isUserAuthorized</A></CODE> in interface <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AuthzAuthority.html" title="interface in com.google.enterprise.adaptor">AuthzAuthority</A></CODE></DL>
 </DD>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>userIdentity</CODE> - user to authorize, or <code>null</code> for anonymous
@@ -340,7 +384,7 @@ public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/AdaptorTemplate.html" title="class in com.google.enterprise.adaptor.examples"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/CalaisNERTransform.html" title="class in com.google.enterprise.adaptor.examples"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/DbAdaptorTemplate.html" title="class in com.google.enterprise.adaptor.examples"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../../index.html?com/google/enterprise/adaptor/examples/AdaptorWithCrawlTimeMetadataTemplate.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="AdaptorWithCrawlTimeMetadataTemplate.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;

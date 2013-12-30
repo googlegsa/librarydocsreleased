@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-StreamingCommand.StreamOutputSink
+Command.Result
 </TITLE>
 
 
@@ -13,7 +13,7 @@ StreamingCommand.StreamOutputSink
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="StreamingCommand.StreamOutputSink";
+        parent.document.title="Command.Result";
     }
 }
 </SCRIPT>
@@ -52,11 +52,11 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.StreamInputSource.html" title="class in com.google.enterprise.adaptor.prebuilt"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;NEXT CLASS</FONT></TD>
+&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.html" title="class in com.google.enterprise.adaptor.prebuilt"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineAdaptor.html" title="class in com.google.enterprise.adaptor.prebuilt"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../../index.html?com/google/enterprise/adaptor/prebuilt/StreamingCommand.StreamOutputSink.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="StreamingCommand.StreamOutputSink.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../../index.html?com/google/enterprise/adaptor/prebuilt/Command.Result.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Command.Result.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {
@@ -87,24 +87,21 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <FONT SIZE="-1">
 com.google.enterprise.adaptor.prebuilt</FONT>
 <BR>
-Class StreamingCommand.StreamOutputSink</H2>
+Class Command.Result</H2>
 <PRE>
 <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
-  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.enterprise.adaptor.prebuilt.StreamingCommand.StreamOutputSink</B>
+  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.enterprise.adaptor.prebuilt.Command.Result</B>
 </PRE>
 <DL>
-<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.OutputSink</A></DD>
-</DL>
-<DL>
-<DT><B>Enclosing class:</B><DD><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.html" title="class in com.google.enterprise.adaptor.prebuilt">StreamingCommand</A></DD>
+<DT><B>Enclosing class:</B><DD><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.html" title="class in com.google.enterprise.adaptor.prebuilt">Command</A></DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public static class <B>StreamingCommand.StreamOutputSink</B><DT>extends <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.OutputSink</A></DL>
+<DT><PRE>public static class <B>Command.Result</B><DT>extends <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
 </PRE>
 
 <P>
-<A HREF="http://download.oracle.com/javase/6/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io"><CODE>OutputStream</CODE></A> to <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html" title="interface in com.google.enterprise.adaptor.prebuilt"><CODE>StreamingCommand.OutputSink</CODE></A> adaptor.
+Result data from an invocation
 <P>
 
 <P>
@@ -121,10 +118,12 @@ Class StreamingCommand.StreamOutputSink</H2>
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.StreamOutputSink.html#StreamingCommand.StreamOutputSink(java.io.OutputStream)">StreamingCommand.StreamOutputSink</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</A>&nbsp;out)</CODE>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.Result.html#Command.Result(int, byte[], byte[])">Command.Result</A></B>(int&nbsp;returnCode,
+               byte[]&nbsp;stdout,
+               byte[]&nbsp;stderr)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct a result.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -138,11 +137,27 @@ Class StreamingCommand.StreamOutputSink</H2>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.StreamOutputSink.html#sink(java.io.InputStream)">sink</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;in)</CODE>
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.Result.html#getReturnCode()">getReturnCode</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consume content from <code>in</code>.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;byte[]</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.Result.html#getStderr()">getStderr</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns internal byte array without copying.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;byte[]</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.Result.html#getStdout()">getStdout</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns internal byte array without copying.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -167,11 +182,16 @@ Class StreamingCommand.StreamOutputSink</H2>
 </TR>
 </TABLE>
 
-<A NAME="StreamingCommand.StreamOutputSink(java.io.OutputStream)"><!-- --></A><H3>
-StreamingCommand.StreamOutputSink</H3>
+<A NAME="Command.Result(int, byte[], byte[])"><!-- --></A><H3>
+Command.Result</H3>
 <PRE>
-public <B>StreamingCommand.StreamOutputSink</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</A>&nbsp;out)</PRE>
+public <B>Command.Result</B>(int&nbsp;returnCode,
+                      byte[]&nbsp;stdout,
+                      byte[]&nbsp;stderr)</PRE>
 <DL>
+<DD>Construct a result. In normal usage, this is unnecessary, but it can be
+ helpful in the tests of classes that use <code>Command</code>.
+<P>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -184,22 +204,39 @@ public <B>StreamingCommand.StreamOutputSink</B>(<A HREF="http://download.oracle.
 </TR>
 </TABLE>
 
-<A NAME="sink(java.io.InputStream)"><!-- --></A><H3>
-sink</H3>
+<A NAME="getReturnCode()"><!-- --></A><H3>
+getReturnCode</H3>
 <PRE>
-public void <B>sink</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;in)
-          throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
+public int <B>getReturnCode</B>()</PRE>
 <DL>
-<DD><B>Description copied from interface: <CODE><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html#sink(java.io.InputStream)">StreamingCommand.OutputSink</A></CODE></B></DD>
-<DD>Consume content from <code>in</code>.
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getStdout()"><!-- --></A><H3>
+getStdout</H3>
+<PRE>
+public byte[] <B>getStdout</B>()</PRE>
+<DL>
+<DD>Returns internal byte array without copying.
 <P>
 <DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html#sink(java.io.InputStream)">sink</A></CODE> in interface <CODE><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.OutputSink</A></CODE></DL>
+</DL>
 </DD>
-<DD><DL>
+</DL>
+<HR>
 
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
+<A NAME="getStderr()"><!-- --></A><H3>
+getStderr</H3>
+<PRE>
+public byte[] <B>getStderr</B>()</PRE>
+<DL>
+<DD>Returns internal byte array without copying.
+<P>
+<DD><DL>
+</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -232,11 +269,11 @@ public void <B>sink</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/ja
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.StreamInputSource.html" title="class in com.google.enterprise.adaptor.prebuilt"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;NEXT CLASS</FONT></TD>
+&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.html" title="class in com.google.enterprise.adaptor.prebuilt"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineAdaptor.html" title="class in com.google.enterprise.adaptor.prebuilt"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../../index.html?com/google/enterprise/adaptor/prebuilt/StreamingCommand.StreamOutputSink.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="StreamingCommand.StreamOutputSink.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../../index.html?com/google/enterprise/adaptor/prebuilt/Command.Result.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Command.Result.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {

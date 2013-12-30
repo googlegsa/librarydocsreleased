@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-GetDocIdsErrorHandler
+AuthnAuthority.Callback
 </TITLE>
 
 
@@ -13,7 +13,7 @@ GetDocIdsErrorHandler
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="GetDocIdsErrorHandler";
+        parent.document.title="AuthnAuthority.Callback";
     }
 }
 </SCRIPT>
@@ -52,11 +52,11 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/DocumentTransform.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/GroupPrincipal.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthnIdentity.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="GetDocIdsErrorHandler.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../index.html?com/google/enterprise/adaptor/AuthnAuthority.Callback.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="AuthnAuthority.Callback.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {
@@ -87,17 +87,17 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHO
 <FONT SIZE="-1">
 com.google.enterprise.adaptor</FONT>
 <BR>
-Interface GetDocIdsErrorHandler</H2>
+Interface AuthnAuthority.Callback</H2>
 <DL>
-<DT><B>All Known Implementing Classes:</B> <DD><A HREF="../../../../com/google/enterprise/adaptor/DefaultGetDocIdsErrorHandler.html" title="class in com.google.enterprise.adaptor">DefaultGetDocIdsErrorHandler</A></DD>
+<DT><B>Enclosing interface:</B><DD><A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.html" title="interface in com.google.enterprise.adaptor">AuthnAuthority</A></DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public interface <B>GetDocIdsErrorHandler</B></DL>
+<DT><PRE>public static interface <B>AuthnAuthority.Callback</B></DL>
 </PRE>
 
 <P>
-Interface for handling errors encountered during scheduled pushing of <code>DocId</code>s.
+Interface for replying to <A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.html#authenticateUser(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnAuthority.Callback)"><CODE>AuthnAdaptor.authenticateUser(HttpExchange, Callback)</CODE></A>.
 <P>
 
 <P>
@@ -115,12 +115,12 @@ Interface for handling errors encountered during scheduled pushing of <code>DocI
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html#handleFailedToGetDocIds(java.lang.Exception, int)">handleFailedToGetDocIds</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A>&nbsp;ex,
-                        int&nbsp;ntries)</CODE>
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.Callback.html#userAuthenticated(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnIdentity)">userAuthenticated</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpExchange.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpExchange</A>&nbsp;ex,
+                  <A HREF="../../../../com/google/enterprise/adaptor/AuthnIdentity.html" title="interface in com.google.enterprise.adaptor">AuthnIdentity</A>&nbsp;identity)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There was a failure running <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#getDocIds(com.google.enterprise.adaptor.DocIdPusher)"><CODE>Adaptor.getDocIds(com.google.enterprise.adaptor.DocIdPusher)</CODE></A>.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Respond with authentication information discovered during <A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.html#authenticateUser(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnAuthority.Callback)"><CODE>AuthnAdaptor.authenticateUser(HttpExchange, Callback)</CODE></A>.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -136,23 +136,28 @@ Interface for handling errors encountered during scheduled pushing of <code>DocI
 </TR>
 </TABLE>
 
-<A NAME="handleFailedToGetDocIds(java.lang.Exception, int)"><!-- --></A><H3>
-handleFailedToGetDocIds</H3>
+<A NAME="userAuthenticated(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnIdentity)"><!-- --></A><H3>
+userAuthenticated</H3>
 <PRE>
-boolean <B>handleFailedToGetDocIds</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A>&nbsp;ex,
-                                int&nbsp;ntries)
-                                throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></PRE>
+void <B>userAuthenticated</B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpExchange.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpExchange</A>&nbsp;ex,
+                       <A HREF="../../../../com/google/enterprise/adaptor/AuthnIdentity.html" title="interface in com.google.enterprise.adaptor">AuthnIdentity</A>&nbsp;identity)
+                       throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
 <DL>
-<DD>There was a failure running <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#getDocIds(com.google.enterprise.adaptor.DocIdPusher)"><CODE>Adaptor.getDocIds(com.google.enterprise.adaptor.DocIdPusher)</CODE></A>. The thrown exception
- is provided as well as the number of times the call has been attempted. It
- is fine to call <code>Thread.sleep()</code> before returning.
+<DD>Respond with authentication information discovered during <A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.html#authenticateUser(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnAuthority.Callback)"><CODE>AuthnAdaptor.authenticateUser(HttpExchange, Callback)</CODE></A>.
+ The exchange <code>ex</code> does not need to be the same instance provided to
+ <code>authenticateUser()</code>, but it does need to be a connection to the
+ same client. This method provides a response to the client using <code>ex</code>, so the exchange should not have had its headers sent and should be
+ considered completed after the method returns.
+
+ <p>If authentication failed, then identity should be <code>null</code>. If an
+ <code>identity</code> is provided, its username must not be <code>null</code> or
+ empty.
 <P>
 <DD><DL>
-
-<DT><B>Returns:</B><DD><code>true</code> for immediate retry, <code>false</code> to abort this
-   scheduled execution
+<DT><B>Parameters:</B><DD><CODE>ex</CODE> - exchange whose request body has been processed, but whose
+     response body and headers have not been sent<DD><CODE>identity</CODE> - authenticated user identity information, or <code>null</code>
 <DT><B>Throws:</B>
-<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></CODE></DL>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -185,11 +190,11 @@ boolean <B>handleFailedToGetDocIds</B>(<A HREF="http://download.oracle.com/javas
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/DocumentTransform.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/GroupPrincipal.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthnIdentity.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="GetDocIdsErrorHandler.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../index.html?com/google/enterprise/adaptor/AuthnAuthority.Callback.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="AuthnAuthority.Callback.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {

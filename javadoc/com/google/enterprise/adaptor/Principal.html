@@ -52,8 +52,8 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/PollingIncrementalAdaptor.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/PushErrorHandler.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/PollingIncrementalLister.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Request.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?com/google/enterprise/adaptor/Principal.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="Principal.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -100,7 +100,7 @@ Class Principal</H2>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public class <B>Principal</B><DT>extends <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</A>&lt;<A HREF="../../../../com/google/enterprise/adaptor/Principal.html" title="class in com.google.enterprise.adaptor">Principal</A>&gt;</DL>
+<DT><PRE>public abstract class <B>Principal</B><DT>extends <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</A>&lt;<A HREF="../../../../com/google/enterprise/adaptor/Principal.html" title="class in com.google.enterprise.adaptor">Principal</A>&gt;</DL>
 </PRE>
 
 <P>
@@ -179,7 +179,7 @@ Represents either a user or a group.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;boolean</CODE></FONT></TD>
+<CODE>abstract &nbsp;boolean</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Principal.html#isGroup()">isGroup</A></B>()</CODE>
 
 <BR>
@@ -187,7 +187,7 @@ Represents either a user or a group.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;boolean</CODE></FONT></TD>
+<CODE>abstract &nbsp;boolean</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Principal.html#isUser()">isUser</A></B>()</CODE>
 
 <BR>
@@ -274,7 +274,7 @@ public <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.ht
 <A NAME="isUser()"><!-- --></A><H3>
 isUser</H3>
 <PRE>
-public boolean <B>isUser</B>()</PRE>
+public abstract boolean <B>isUser</B>()</PRE>
 <DL>
 <DD><DL>
 </DL>
@@ -288,7 +288,7 @@ public boolean <B>isUser</B>()</PRE>
 <A NAME="isGroup()"><!-- --></A><H3>
 isGroup</H3>
 <PRE>
-public boolean <B>isGroup</B>()</PRE>
+public abstract boolean <B>isGroup</B>()</PRE>
 <DL>
 <DD><DL>
 </DL>
@@ -385,8 +385,8 @@ public int <B>compareTo</B>(<A HREF="../../../../com/google/enterprise/adaptor/P
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/PollingIncrementalAdaptor.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/PushErrorHandler.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/PollingIncrementalLister.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Request.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?com/google/enterprise/adaptor/Principal.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="Principal.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;

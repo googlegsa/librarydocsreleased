@@ -52,7 +52,7 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.html" title="class in com.google.enterprise.adaptor.prebuilt"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.Result.html" title="class in com.google.enterprise.adaptor.prebuilt"><B>PREV CLASS</B></A>&nbsp;
 &nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineTransform.html" title="class in com.google.enterprise.adaptor.prebuilt"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../../index.html?com/google/enterprise/adaptor/prebuilt/CommandLineAdaptor.html" target="_top"><B>FRAMES</B></A>  &nbsp;
@@ -94,11 +94,11 @@ Class CommandLineAdaptor</H2>
       <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.enterprise.adaptor.prebuilt.CommandLineAdaptor</B>
 </PRE>
 <DL>
-<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></DD>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AuthzAuthority.html" title="interface in com.google.enterprise.adaptor">AuthzAuthority</A></DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public class <B>CommandLineAdaptor</B><DT>extends <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A></DL>
+<DT><PRE>public class <B>CommandLineAdaptor</B><DT>extends <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A><DT>implements <A HREF="../../../../../com/google/enterprise/adaptor/AuthzAuthority.html" title="interface in com.google.enterprise.adaptor">AuthzAuthority</A></DL>
 </PRE>
 
 <P>
@@ -133,6 +133,37 @@ Command Line Adaptor
 <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
 <TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
 <B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.Result.html" title="class in com.google.enterprise.adaptor.prebuilt">Command.Result</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineAdaptor.html#executeAuthorizer(java.lang.String[], byte[])">executeAuthorizer</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[]&nbsp;commandLine,
+                  byte[]&nbsp;stdin)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineAdaptor.html#executeLister(java.lang.String[], com.google.enterprise.adaptor.prebuilt.StreamingCommand.InputSource, com.google.enterprise.adaptor.prebuilt.StreamingCommand.OutputSink, com.google.enterprise.adaptor.prebuilt.StreamingCommand.OutputSink)">executeLister</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[]&nbsp;commandLine,
+              <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.InputSource.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.InputSource</A>&nbsp;stdin,
+              <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.OutputSink</A>&nbsp;stdout,
+              <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.OutputSink</A>&nbsp;stderr)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineAdaptor.html#executeRetriever(java.lang.String[], com.google.enterprise.adaptor.prebuilt.StreamingCommand.InputSource, com.google.enterprise.adaptor.prebuilt.StreamingCommand.OutputSink, com.google.enterprise.adaptor.prebuilt.StreamingCommand.OutputSink)">executeRetriever</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[]&nbsp;commandLine,
+                 <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.InputSource.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.InputSource</A>&nbsp;stdin,
+                 <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.OutputSink</A>&nbsp;stdout,
+                 <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.OutputSink</A>&nbsp;stderr)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -200,30 +231,6 @@ Command Line Adaptor
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call default main for adaptors.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.html" title="class in com.google.enterprise.adaptor.prebuilt">Command</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineAdaptor.html#newAuthorizerCommand()">newAuthorizerCommand</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.html" title="class in com.google.enterprise.adaptor.prebuilt">StreamingCommand</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineAdaptor.html#newListerCommand()">newListerCommand</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.html" title="class in com.google.enterprise.adaptor.prebuilt">StreamingCommand</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineAdaptor.html#newRetrieverCommand()">newRetrieverCommand</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -353,6 +360,9 @@ public void <B>setListerCommand</B>(<A HREF="http://download.oracle.com/javase/6
 <DD><DL>
 </DL>
 </DD>
+<DD><DL>
+</DL>
+</DD>
 </DL>
 <HR>
 
@@ -361,6 +371,9 @@ getListerCommand</H3>
 <PRE>
 public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getListerCommand</B>()</PRE>
 <DL>
+<DD><DL>
+</DL>
+</DD>
 <DD><DL>
 </DL>
 </DD>
@@ -375,6 +388,9 @@ public void <B>setRetrieverCommand</B>(<A HREF="http://download.oracle.com/javas
 <DD><DL>
 </DL>
 </DD>
+<DD><DL>
+</DL>
+</DD>
 </DL>
 <HR>
 
@@ -383,6 +399,9 @@ getRetrieverCommand</H3>
 <PRE>
 public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getRetrieverCommand</B>()</PRE>
 <DL>
+<DD><DL>
+</DL>
+</DD>
 <DD><DL>
 </DL>
 </DD>
@@ -408,9 +427,12 @@ public void <B>getDocIds</B>(<A HREF="../../../../../com/google/enterprise/adapt
  reduce load.
 
  <p>If you experience a fatal error, feel free to throw an <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io"><CODE>IOException</CODE></A> or <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang"><CODE>RuntimeException</CODE></A>. In the case of an error, the
- <A HREF="../../../../../com/google/enterprise/adaptor/GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>GetDocIdsErrorHandler</CODE></A> in use in <A HREF="../../../../../com/google/enterprise/adaptor/AdaptorContext.html" title="interface in com.google.enterprise.adaptor"><CODE>AdaptorContext</CODE></A> will
+ <A HREF="../../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>ExceptionHandler</CODE></A> in use in <A HREF="../../../../../com/google/enterprise/adaptor/AdaptorContext.html" title="interface in com.google.enterprise.adaptor"><CODE>AdaptorContext</CODE></A> will
  determine if and when to retry.
 <P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#getDocIds(com.google.enterprise.adaptor.DocIdPusher)">getDocIds</A></CODE> in interface <CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></CODE></DL>
+</DD>
 <DD><DL>
 
 <DT><B>Throws:</B>
@@ -429,6 +451,9 @@ public void <B>getDocContent</B>(<A HREF="../../../../../com/google/enterprise/a
 <DL>
 <DD>Gives the bytes of a document referenced with id.
 <P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#getDocContent(com.google.enterprise.adaptor.Request, com.google.enterprise.adaptor.Response)">getDocContent</A></CODE> in interface <CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></CODE></DL>
+</DD>
 <DD><DL>
 
 <DT><B>Throws:</B>
@@ -464,8 +489,6 @@ public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?
  <p>If you experience a fatal error, feel free to throw an <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io"><CODE>IOException</CODE></A> or <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang"><CODE>RuntimeException</CODE></A>. In the case of an error, the
  users will be denied access to the resources.
 
- <p>This implementation provides <A HREF="../../../../../com/google/enterprise/adaptor/AuthzStatus.html#DENY"><CODE>AuthzStatus.DENY</CODE></A> for all <code>DocId</code>s in an unmodifiable map.
-
  <p>This implementation provides access permissions for the <code>DocId</code>s in an \
  unmodifiable map based upon data returned by a command line authorizer.
  Permissions can have one of three values:
@@ -476,7 +499,7 @@ public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?
  is used.
 <P>
 <DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)">isUserAuthorized</A></CODE> in interface <CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></CODE><DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)">isUserAuthorized</A></CODE> in class <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A></CODE></DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AuthzAuthority.html#isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)">isUserAuthorized</A></CODE> in interface <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AuthzAuthority.html" title="interface in com.google.enterprise.adaptor">AuthzAuthority</A></CODE></DL>
 </DD>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>userIdentity</CODE> - user to authorize, or <code>null</code> for anonymous
@@ -488,35 +511,66 @@ public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?
 </DL>
 <HR>
 
-<A NAME="newListerCommand()"><!-- --></A><H3>
-newListerCommand</H3>
+<A NAME="executeLister(java.lang.String[], com.google.enterprise.adaptor.prebuilt.StreamingCommand.InputSource, com.google.enterprise.adaptor.prebuilt.StreamingCommand.OutputSink, com.google.enterprise.adaptor.prebuilt.StreamingCommand.OutputSink)"><!-- --></A><H3>
+executeLister</H3>
 <PRE>
-protected <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.html" title="class in com.google.enterprise.adaptor.prebuilt">StreamingCommand</A> <B>newListerCommand</B>()</PRE>
+protected int <B>executeLister</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[]&nbsp;commandLine,
+                            <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.InputSource.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.InputSource</A>&nbsp;stdin,
+                            <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.OutputSink</A>&nbsp;stdout,
+                            <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.OutputSink</A>&nbsp;stderr)
+                     throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
+                            <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></PRE>
 <DL>
 <DD><DL>
 </DL>
 </DD>
-</DL>
-<HR>
-
-<A NAME="newRetrieverCommand()"><!-- --></A><H3>
-newRetrieverCommand</H3>
-<PRE>
-protected <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.html" title="class in com.google.enterprise.adaptor.prebuilt">StreamingCommand</A> <B>newRetrieverCommand</B>()</PRE>
-<DL>
 <DD><DL>
-</DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></CODE></DL>
 </DD>
 </DL>
 <HR>
 
-<A NAME="newAuthorizerCommand()"><!-- --></A><H3>
-newAuthorizerCommand</H3>
+<A NAME="executeRetriever(java.lang.String[], com.google.enterprise.adaptor.prebuilt.StreamingCommand.InputSource, com.google.enterprise.adaptor.prebuilt.StreamingCommand.OutputSink, com.google.enterprise.adaptor.prebuilt.StreamingCommand.OutputSink)"><!-- --></A><H3>
+executeRetriever</H3>
 <PRE>
-protected <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.html" title="class in com.google.enterprise.adaptor.prebuilt">Command</A> <B>newAuthorizerCommand</B>()</PRE>
+protected int <B>executeRetriever</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[]&nbsp;commandLine,
+                               <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.InputSource.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.InputSource</A>&nbsp;stdin,
+                               <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.OutputSink</A>&nbsp;stdout,
+                               <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html" title="interface in com.google.enterprise.adaptor.prebuilt">StreamingCommand.OutputSink</A>&nbsp;stderr)
+                        throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
+                               <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></PRE>
 <DL>
 <DD><DL>
 </DL>
+</DD>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="executeAuthorizer(java.lang.String[], byte[])"><!-- --></A><H3>
+executeAuthorizer</H3>
+<PRE>
+protected <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.Result.html" title="class in com.google.enterprise.adaptor.prebuilt">Command.Result</A> <B>executeAuthorizer</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[]&nbsp;commandLine,
+                                           byte[]&nbsp;stdin)
+                                    throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
+                                           <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></CODE></DL>
 </DD>
 </DL>
 <HR>
@@ -528,6 +582,9 @@ public static void <B>main</B>(<A HREF="http://download.oracle.com/javase/6/docs
 <DL>
 <DD>Call default main for adaptors.
 <P>
+<DD><DL>
+</DL>
+</DD>
 <DD><DL>
 </DL>
 </DD>
@@ -562,7 +619,7 @@ public static void <B>main</B>(<A HREF="http://download.oracle.com/javase/6/docs
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.html" title="class in com.google.enterprise.adaptor.prebuilt"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/Command.Result.html" title="class in com.google.enterprise.adaptor.prebuilt"><B>PREV CLASS</B></A>&nbsp;
 &nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineTransform.html" title="class in com.google.enterprise.adaptor.prebuilt"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../../index.html?com/google/enterprise/adaptor/prebuilt/CommandLineAdaptor.html" target="_top"><B>FRAMES</B></A>  &nbsp;

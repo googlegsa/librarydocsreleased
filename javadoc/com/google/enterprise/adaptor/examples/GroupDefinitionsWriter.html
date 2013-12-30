@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-MetaTaggerTransform
+GroupDefinitionsWriter
 </TITLE>
 
 
@@ -13,7 +13,7 @@ MetaTaggerTransform
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="MetaTaggerTransform";
+        parent.document.title="GroupDefinitionsWriter";
     }
 }
 </SCRIPT>
@@ -53,10 +53,10 @@ function windowTitle()
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/FileSystemAdaptor.html" title="class in com.google.enterprise.adaptor.examples"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/TableGeneratorTransform.html" title="class in com.google.enterprise.adaptor.examples"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/MetadataTransformExample.html" title="class in com.google.enterprise.adaptor.examples"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../../index.html?com/google/enterprise/adaptor/examples/MetaTaggerTransform.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="MetaTaggerTransform.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../../index.html?com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="GroupDefinitionsWriter.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {
@@ -87,24 +87,22 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <FONT SIZE="-1">
 com.google.enterprise.adaptor.examples</FONT>
 <BR>
-Class MetaTaggerTransform</H2>
+Class GroupDefinitionsWriter</H2>
 <PRE>
 <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
-  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html" title="class in com.google.enterprise.adaptor">com.google.enterprise.adaptor.AbstractDocumentTransform</A>
-      <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.enterprise.adaptor.examples.MetaTaggerTransform</B>
+  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">com.google.enterprise.adaptor.AbstractAdaptor</A>
+      <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.enterprise.adaptor.examples.GroupDefinitionsWriter</B>
 </PRE>
 <DL>
-<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../../com/google/enterprise/adaptor/DocumentTransform.html" title="interface in com.google.enterprise.adaptor">DocumentTransform</A></DD>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public class <B>MetaTaggerTransform</B><DT>extends <A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html" title="class in com.google.enterprise.adaptor">AbstractDocumentTransform</A></DL>
+<DT><PRE>public class <B>GroupDefinitionsWriter</B><DT>extends <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A></DL>
 </PRE>
 
 <P>
-The transform examines the document for regex patterns. If a pattern is found,
- the associated metadata is inserted at the end of the HEAD section of the
- HTML. If no HEAD section exists, nothing gets inserted.
+Demonstrates sending group definitions to GSA.
 <P>
 
 <P>
@@ -121,13 +119,7 @@ The transform examines the document for regex patterns. If a pattern is found,
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/MetaTaggerTransform.html#MetaTaggerTransform()">MetaTaggerTransform</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/MetaTaggerTransform.html#MetaTaggerTransform(java.lang.String)">MetaTaggerTransform</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;patternFile)</CODE>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html#GroupDefinitionsWriter()">GroupDefinitionsWriter</A></B>()</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -144,31 +136,37 @@ The transform examines the document for regex patterns. If a pattern is found,
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/MetaTaggerTransform.html" title="class in com.google.enterprise.adaptor.examples">MetaTaggerTransform</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/MetaTaggerTransform.html#create(java.util.Map)">create</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;config)</CODE>
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html#getDocContent(com.google.enterprise.adaptor.Request, com.google.enterprise.adaptor.Response)">getDocContent</A></B>(<A HREF="../../../../../com/google/enterprise/adaptor/Request.html" title="interface in com.google.enterprise.adaptor">Request</A>&nbsp;req,
+              <A HREF="../../../../../com/google/enterprise/adaptor/Response.html" title="interface in com.google.enterprise.adaptor">Response</A>&nbsp;res)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides contents and metadata of particular document.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/MetaTaggerTransform.html#transform(java.io.ByteArrayOutputStream, java.io.OutputStream, com.google.enterprise.adaptor.Metadata, java.util.Map)">transform</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/io/ByteArrayOutputStream.html?is-external=true" title="class or interface in java.io">ByteArrayOutputStream</A>&nbsp;contentIn,
-          <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</A>&nbsp;contentOut,
-          <A HREF="../../../../../com/google/enterprise/adaptor/Metadata.html" title="class in com.google.enterprise.adaptor">Metadata</A>&nbsp;metadata,
-          <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;params)</CODE>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html#getDocIds(com.google.enterprise.adaptor.DocIdPusher)">getDocIds</A></B>(<A HREF="../../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor">DocIdPusher</A>&nbsp;pusher)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Read data from <code>contentIn</code>, transform it, and write it to <code>contentOut</code>.</TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_com.google.enterprise.adaptor.AbstractDocumentTransform"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from class com.google.enterprise.adaptor.<A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html" title="class in com.google.enterprise.adaptor">AbstractDocumentTransform</A></B></TH>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pushes all the <code>DocId</code>s that are suppose to be indexed by the GSA.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html#configure(java.util.Map)">configure</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html#getName()">getName</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html#isRequired()">isRequired</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html#setName(java.lang.String)">setName</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html#setRequired(boolean)">setRequired</A></CODE></TD>
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html#main(java.lang.String[])">main</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[]&nbsp;args)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.google.enterprise.adaptor.AbstractAdaptor"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.google.enterprise.adaptor.<A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#destroy()">destroy</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)">init</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#initConfig(com.google.enterprise.adaptor.Config)">initConfig</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#main(com.google.enterprise.adaptor.Adaptor, java.lang.String[])">main</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -193,24 +191,11 @@ The transform examines the document for regex patterns. If a pattern is found,
 </TR>
 </TABLE>
 
-<A NAME="MetaTaggerTransform()"><!-- --></A><H3>
-MetaTaggerTransform</H3>
+<A NAME="GroupDefinitionsWriter()"><!-- --></A><H3>
+GroupDefinitionsWriter</H3>
 <PRE>
-public <B>MetaTaggerTransform</B>()</PRE>
+public <B>GroupDefinitionsWriter</B>()</PRE>
 <DL>
-</DL>
-<HR>
-
-<A NAME="MetaTaggerTransform(java.lang.String)"><!-- --></A><H3>
-MetaTaggerTransform</H3>
-<PRE>
-public <B>MetaTaggerTransform</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;patternFile)
-                    throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
-<DL>
-<DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -223,39 +208,67 @@ public <B>MetaTaggerTransform</B>(<A HREF="http://download.oracle.com/javase/6/d
 </TR>
 </TABLE>
 
-<A NAME="transform(java.io.ByteArrayOutputStream, java.io.OutputStream, com.google.enterprise.adaptor.Metadata, java.util.Map)"><!-- --></A><H3>
-transform</H3>
+<A NAME="getDocIds(com.google.enterprise.adaptor.DocIdPusher)"><!-- --></A><H3>
+getDocIds</H3>
 <PRE>
-public void <B>transform</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/io/ByteArrayOutputStream.html?is-external=true" title="class or interface in java.io">ByteArrayOutputStream</A>&nbsp;contentIn,
-                      <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</A>&nbsp;contentOut,
-                      <A HREF="../../../../../com/google/enterprise/adaptor/Metadata.html" title="class in com.google.enterprise.adaptor">Metadata</A>&nbsp;metadata,
-                      <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;params)
-               throws <A HREF="../../../../../com/google/enterprise/adaptor/TransformException.html" title="class in com.google.enterprise.adaptor">TransformException</A>,
-                      <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
+public void <B>getDocIds</B>(<A HREF="../../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor">DocIdPusher</A>&nbsp;pusher)
+               throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></PRE>
 <DL>
-<DD><B>Description copied from interface: <CODE><A HREF="../../../../../com/google/enterprise/adaptor/DocumentTransform.html#transform(java.io.ByteArrayOutputStream, java.io.OutputStream, com.google.enterprise.adaptor.Metadata, java.util.Map)">DocumentTransform</A></CODE></B></DD>
-<DD>Read data from <code>contentIn</code>, transform it, and write it to <code>contentOut</code>. Any changes to <code>metadata</code> and <code>params</code> will be
- passed on to subsequent transforms. This method must be thread-safe.
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#getDocIds(com.google.enterprise.adaptor.DocIdPusher)">Adaptor</A></CODE></B></DD>
+<DD>Pushes all the <code>DocId</code>s that are suppose to be indexed by the GSA.
+ This will frequently involve re-sending <code>DocId</code>s to the GSA, but this
+ allows healing previous errors and cache inconsistencies. Re-sending <code>DocIds</code> is very fast and should be considered free on the GSA. This method
+ should determine a list of <code>DocId</code>s to push and call <A HREF="../../../../../com/google/enterprise/adaptor/DocIdPusher.html#pushDocIds(java.lang.Iterable)"><CODE>DocIdPusher.pushDocIds(java.lang.Iterable<com.google.enterprise.adaptor.DocId>)</CODE></A> one or more times and <A HREF="../../../../../com/google/enterprise/adaptor/DocIdPusher.html#pushNamedResources(java.util.Map)"><CODE>DocIdPusher.pushNamedResources(java.util.Map<com.google.enterprise.adaptor.DocId, com.google.enterprise.adaptor.Acl>)</CODE></A> if using named resources.
+
+ <p><code>pusher</code> is provided as convenience and is the same object
+ provided to <A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)"><CODE>Adaptor.init(com.google.enterprise.adaptor.AdaptorContext)</CODE></A> previously. This method may take a while and
+ implementations are free to call <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Thread.html?is-external=true#sleep(long)" title="class or interface in java.lang"><CODE>Thread.sleep(long)</CODE></A> occasionally to
+ reduce load.
+
+ <p>If you experience a fatal error, feel free to throw an <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io"><CODE>IOException</CODE></A> or <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang"><CODE>RuntimeException</CODE></A>. In the case of an error, the
+ <A HREF="../../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor"><CODE>ExceptionHandler</CODE></A> in use in <A HREF="../../../../../com/google/enterprise/adaptor/AdaptorContext.html" title="interface in com.google.enterprise.adaptor"><CODE>AdaptorContext</CODE></A> will
+ determine if and when to retry.
 <P>
 <DD><DL>
 
 <DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/TransformException.html" title="class in com.google.enterprise.adaptor">TransformException</A></CODE>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getDocContent(com.google.enterprise.adaptor.Request, com.google.enterprise.adaptor.Response)"><!-- --></A><H3>
+getDocContent</H3>
+<PRE>
+public void <B>getDocContent</B>(<A HREF="../../../../../com/google/enterprise/adaptor/Request.html" title="interface in com.google.enterprise.adaptor">Request</A>&nbsp;req,
+                          <A HREF="../../../../../com/google/enterprise/adaptor/Response.html" title="interface in com.google.enterprise.adaptor">Response</A>&nbsp;res)
+                   throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#getDocContent(com.google.enterprise.adaptor.Request, com.google.enterprise.adaptor.Response)">Adaptor</A></CODE></B></DD>
+<DD>Provides contents and metadata of particular document. This method should
+ be highly parallelizable and support twenty or more concurrent calls. Two
+ to three concurrent calls may be average during initial GSA crawling, but
+ twenty or more concurrent calls is typical when the GSA is recrawling
+ unmodified content.
+
+ <p>If you experience a fatal error, feel free to throw an <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io"><CODE>IOException</CODE></A> or <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang"><CODE>RuntimeException</CODE></A>. In the case of an error, the GSA
+ will determine if and when to retry.
+<P>
+<DD><DL>
+
+<DT><B>Throws:</B>
 <DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
 </DD>
 </DL>
 <HR>
 
-<A NAME="create(java.util.Map)"><!-- --></A><H3>
-create</H3>
+<A NAME="main(java.lang.String[])"><!-- --></A><H3>
+main</H3>
 <PRE>
-public static <A HREF="../../../../../com/google/enterprise/adaptor/examples/MetaTaggerTransform.html" title="class in com.google.enterprise.adaptor.examples">MetaTaggerTransform</A> <B>create</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;config)
-                                  throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
+public static void <B>main</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[]&nbsp;args)</PRE>
 <DL>
 <DD><DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
+</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -289,10 +302,10 @@ public static <A HREF="../../../../../com/google/enterprise/adaptor/examples/Met
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/FileSystemAdaptor.html" title="class in com.google.enterprise.adaptor.examples"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/TableGeneratorTransform.html" title="class in com.google.enterprise.adaptor.examples"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/MetadataTransformExample.html" title="class in com.google.enterprise.adaptor.examples"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../../index.html?com/google/enterprise/adaptor/examples/MetaTaggerTransform.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="MetaTaggerTransform.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../../index.html?com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="GroupDefinitionsWriter.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {

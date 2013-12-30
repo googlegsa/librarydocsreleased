@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-AuthnAdaptor.Callback
+PollingIncrementalLister
 </TITLE>
 
 
@@ -13,7 +13,7 @@ AuthnAdaptor.Callback
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="AuthnAdaptor.Callback";
+        parent.document.title="PollingIncrementalLister";
     }
 }
 </SCRIPT>
@@ -52,11 +52,11 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthnIdentity.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Metadata.html" title="class in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Principal.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?com/google/enterprise/adaptor/AuthnAdaptor.Callback.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="AuthnAdaptor.Callback.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../index.html?com/google/enterprise/adaptor/PollingIncrementalLister.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="PollingIncrementalLister.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {
@@ -87,17 +87,28 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHO
 <FONT SIZE="-1">
 com.google.enterprise.adaptor</FONT>
 <BR>
-Interface AuthnAdaptor.Callback</H2>
-<DL>
-<DT><B>Enclosing interface:</B><DD><A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.html" title="interface in com.google.enterprise.adaptor">AuthnAdaptor</A></DD>
-</DL>
+Interface PollingIncrementalLister</H2>
 <HR>
 <DL>
-<DT><PRE>public static interface <B>AuthnAdaptor.Callback</B></DL>
+<DT><PRE>public interface <B>PollingIncrementalLister</B></DL>
 </PRE>
 
 <P>
-Interface for replying to <A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.html#authenticateUser(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnAdaptor.Callback)"><CODE>AuthnAdaptor.authenticateUser(HttpExchange, Callback)</CODE></A>.
+Interface for library-assisted polling incremental adaptors. This means that
+ the adaptor can provide incremental changes, must poll to notice changes,
+ and wants the adaptor library to help out.
+
+ <p>If the adaptor has no <em>easy</em> way of determining repository changes,
+ then it should not implement this interface and let the GSA naturally find
+ changes. If the adaptor can use an event-based method of discovering changes,
+ it should use that method instead. If an adaptor doesn't want to relinguish
+ control to the frequency of the polling and other such details, then there is
+ no need to use this interface; simply manually using <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Timer.html?is-external=true" title="class or interface in java.util"><CODE>Timer</CODE></A>
+ is appropriate for a adaptor to do if it wishes.
+
+ <p>Implementing this interface does improve the ease of configuring the
+ adaptor for the user. Thus, adaptors are encouraged to implement this
+ interface if it is applicable.
 <P>
 
 <P>
@@ -116,11 +127,10 @@ Interface for replying to <A HREF="../../../../com/google/enterprise/adaptor/Aut
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.Callback.html#userAuthenticated(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnIdentity)">userAuthenticated</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpExchange.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpExchange</A>&nbsp;ex,
-                  <A HREF="../../../../com/google/enterprise/adaptor/AuthnIdentity.html" title="interface in com.google.enterprise.adaptor">AuthnIdentity</A>&nbsp;identity)</CODE>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/PollingIncrementalLister.html#getModifiedDocIds(com.google.enterprise.adaptor.DocIdPusher)">getModifiedDocIds</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor">DocIdPusher</A>&nbsp;pusher)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Respond with authentication information discovered during <A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.html#authenticateUser(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnAdaptor.Callback)"><CODE>AuthnAdaptor.authenticateUser(HttpExchange, Callback)</CODE></A>.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Check for documents modified since the last call to the method.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -136,28 +146,37 @@ Interface for replying to <A HREF="../../../../com/google/enterprise/adaptor/Aut
 </TR>
 </TABLE>
 
-<A NAME="userAuthenticated(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnIdentity)"><!-- --></A><H3>
-userAuthenticated</H3>
+<A NAME="getModifiedDocIds(com.google.enterprise.adaptor.DocIdPusher)"><!-- --></A><H3>
+getModifiedDocIds</H3>
 <PRE>
-void <B>userAuthenticated</B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpExchange.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpExchange</A>&nbsp;ex,
-                       <A HREF="../../../../com/google/enterprise/adaptor/AuthnIdentity.html" title="interface in com.google.enterprise.adaptor">AuthnIdentity</A>&nbsp;identity)
-                       throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
+void <B>getModifiedDocIds</B>(<A HREF="../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor">DocIdPusher</A>&nbsp;pusher)
+                       throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
+                              <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></PRE>
 <DL>
-<DD>Respond with authentication information discovered during <A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.html#authenticateUser(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnAdaptor.Callback)"><CODE>AuthnAdaptor.authenticateUser(HttpExchange, Callback)</CODE></A>.
- The exchange <code>ex</code> does not need to be the same instance provided to
- <code>authenticateUser()</code>, but it does need to be a connection to the
- same client. This method provides a response to the client using <code>ex</code>, so the exchange should not have had its headers sent and should be
- considered completed after the method returns.
+<DD>Check for documents modified since the last call to the method. This method
+ is intended to provide little-effort updates to the GSA about recent
+ modifications. Providing updates here allows greatly decreasing the amount
+ of latency before the GSA notices a document was added/modified/deleted,
+ but nothing more. It does not need to be perfect since the GSA's recrawling
+ will notice modifications and deletions and <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#getDocIds(com.google.enterprise.adaptor.DocIdPusher)"><CODE>Adaptor.getDocIds(com.google.enterprise.adaptor.DocIdPusher)</CODE></A> will
+ provide additions.
 
- <p>If authentication failed, then identity should be <code>null</code>. If an
- <code>identity</code> is provided, its username must not be <code>null</code> or
- empty.
+ <p>For the first invocation, implementations can simply provide a small
+ amount of very recent history (e.g., last five revisions or last hour of
+ modifications) or provide no history and just initialize data structures
+ for future invocations. Adaptors are always encouraged to not persist
+ state; providing recent history during the first invocation allows the
+ adaptor to handle upgrades, computer restarts, and power outages without
+ trouble and still provide low-latency for those time periods. If an hour is
+ too short a period of time, then feel free to send a day's worth of history
+ instead. However, remember that missing modifications here only increases
+ the amount of latency before the GSA notices the modification.
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>ex</CODE> - exchange whose request body has been processed, but whose
-     response body and headers have not been sent<DD><CODE>identity</CODE> - authenticated user identity information, or <code>null</code>
+<DT><B>Parameters:</B><DD><CODE>pusher</CODE> - convenience reference to pusher
 <DT><B>Throws:</B>
-<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></CODE></DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -190,11 +209,11 @@ void <B>userAuthenticated</B>(<A HREF="http://download.oracle.com/javase/6/docs/
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthnIdentity.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Metadata.html" title="class in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Principal.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?com/google/enterprise/adaptor/AuthnAdaptor.Callback.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="AuthnAdaptor.Callback.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../index.html?com/google/enterprise/adaptor/PollingIncrementalLister.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="PollingIncrementalLister.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {

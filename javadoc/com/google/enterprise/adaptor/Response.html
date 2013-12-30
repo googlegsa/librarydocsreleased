@@ -149,6 +149,16 @@ Interface provided to <A HREF="../../../../com/google/enterprise/adaptor/Adaptor
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#putNamedResource(java.lang.String, com.google.enterprise.adaptor.Acl)">putNamedResource</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;fragment,
+                 <A HREF="../../../../com/google/enterprise/adaptor/Acl.html" title="class in com.google.enterprise.adaptor">Acl</A>&nbsp;acl)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provide alternative ACLs for this document, uniquely identified by
+ response document's <code>DocId</code> and <code>fragment</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#respondNotFound()">respondNotFound</A></B>()</CODE>
 
 <BR>
@@ -380,6 +390,21 @@ void <B>setAcl</B>(<A HREF="../../../../com/google/enterprise/adaptor/Acl.html" 
 <DD>Provide the document's ACLs for early-binding security on the GSA. By
  default, the document's ACL will be <code>null</code>, which means the document
  is public if the document isn't marked as secure via <A HREF="../../../../com/google/enterprise/adaptor/Response.html#setSecure(boolean)"><CODE>setSecure(boolean)</CODE></A>.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="putNamedResource(java.lang.String, com.google.enterprise.adaptor.Acl)"><!-- --></A><H3>
+putNamedResource</H3>
+<PRE>
+void <B>putNamedResource</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;fragment,
+                      <A HREF="../../../../com/google/enterprise/adaptor/Acl.html" title="class in com.google.enterprise.adaptor">Acl</A>&nbsp;acl)</PRE>
+<DL>
+<DD>Provide alternative ACLs for this document, uniquely identified by
+ response document's <code>DocId</code> and <code>fragment</code>.
 <P>
 <DD><DL>
 </DL>

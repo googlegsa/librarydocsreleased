@@ -53,7 +53,7 @@ function windowTitle()
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;PREV CLASS&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Acl.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?com/google/enterprise/adaptor/AbstractAdaptor.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="AbstractAdaptor.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -96,7 +96,7 @@ Class AbstractAdaptor</H2>
 <DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></DD>
 </DL>
 <DL>
-<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../com/google/enterprise/adaptor/examples/AdaptorTemplate.html" title="class in com.google.enterprise.adaptor.examples">AdaptorTemplate</A>, <A HREF="../../../../com/google/enterprise/adaptor/examples/AdaptorWithCrawlTimeMetadataTemplate.html" title="class in com.google.enterprise.adaptor.examples">AdaptorWithCrawlTimeMetadataTemplate</A>, <A HREF="../../../../com/google/enterprise/adaptor/prebuilt/CommandLineAdaptor.html" title="class in com.google.enterprise.adaptor.prebuilt">CommandLineAdaptor</A>, <A HREF="../../../../com/google/enterprise/adaptor/examples/DbAdaptorTemplate.html" title="class in com.google.enterprise.adaptor.examples">DbAdaptorTemplate</A>, <A HREF="../../../../com/google/enterprise/adaptor/examples/FileSystemAdaptor.html" title="class in com.google.enterprise.adaptor.examples">FileSystemAdaptor</A>, <A HREF="../../../../com/google/enterprise/adaptor/prebuilt/FileSystemAdaptor.html" title="class in com.google.enterprise.adaptor.prebuilt">FileSystemAdaptor</A></DD>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../com/google/enterprise/adaptor/examples/AdaptorTemplate.html" title="class in com.google.enterprise.adaptor.examples">AdaptorTemplate</A>, <A HREF="../../../../com/google/enterprise/adaptor/examples/AdaptorWithCrawlTimeMetadataTemplate.html" title="class in com.google.enterprise.adaptor.examples">AdaptorWithCrawlTimeMetadataTemplate</A>, <A HREF="../../../../com/google/enterprise/adaptor/prebuilt/CommandLineAdaptor.html" title="class in com.google.enterprise.adaptor.prebuilt">CommandLineAdaptor</A>, <A HREF="../../../../com/google/enterprise/adaptor/examples/DbAdaptorTemplate.html" title="class in com.google.enterprise.adaptor.examples">DbAdaptorTemplate</A>, <A HREF="../../../../com/google/enterprise/adaptor/examples/FileSystemAdaptor.html" title="class in com.google.enterprise.adaptor.examples">FileSystemAdaptor</A>, <A HREF="../../../../com/google/enterprise/adaptor/prebuilt/FileSystemAdaptor.html" title="class in com.google.enterprise.adaptor.prebuilt">FileSystemAdaptor</A>, <A HREF="../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html" title="class in com.google.enterprise.adaptor.examples">GroupDefinitionsWriter</A></DD>
 </DL>
 <HR>
 <DL>
@@ -165,15 +165,6 @@ Provides a reasonable default implementation for most <A HREF="../../../../com/g
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="../../../../com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor">DocId</A>,<A HREF="../../../../com/google/enterprise/adaptor/AuthzStatus.html" title="enum in com.google.enterprise.adaptor">AuthzStatus</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)">isUserAuthorized</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/AuthnIdentity.html" title="interface in com.google.enterprise.adaptor">AuthnIdentity</A>&nbsp;userIdentity,
-                 <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="../../../../com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor">DocId</A>&gt;&nbsp;ids)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Determines whether the user identified is allowed to access the <code>DocId</code>s.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>static&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Application.html" title="class in com.google.enterprise.adaptor">Application</A></CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#main(com.google.enterprise.adaptor.Adaptor, java.lang.String[])">main</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A>&nbsp;adaptor,
      <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[]&nbsp;args)</CODE>
@@ -230,48 +221,6 @@ public <B>AbstractAdaptor</B>()</PRE>
 <B>Method Detail</B></FONT></TH>
 </TR>
 </TABLE>
-
-<A NAME="isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)"><!-- --></A><H3>
-isUserAuthorized</H3>
-<PRE>
-public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="../../../../com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor">DocId</A>,<A HREF="../../../../com/google/enterprise/adaptor/AuthzStatus.html" title="enum in com.google.enterprise.adaptor">AuthzStatus</A>&gt; <B>isUserAuthorized</B>(<A HREF="../../../../com/google/enterprise/adaptor/AuthnIdentity.html" title="interface in com.google.enterprise.adaptor">AuthnIdentity</A>&nbsp;userIdentity,
-                                               <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="../../../../com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor">DocId</A>&gt;&nbsp;ids)
-                                        throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
-<DL>
-<DD>Determines whether the user identified is allowed to access the <code>DocId</code>s. The user is either anonymous or assumed to be previously
- authenticated. If an anonymous user is denied access to a document, then
- the caller may prompt the user to go through an authentication process and
- then try again.
-
- <p>Returns <A HREF="../../../../com/google/enterprise/adaptor/AuthzStatus.html#PERMIT"><CODE>AuthzStatus.PERMIT</CODE></A> for <A HREF="../../../../com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor"><CODE>DocId</CODE></A>s the user is
- allowed to access. Retutrns <A HREF="../../../../com/google/enterprise/adaptor/AuthzStatus.html#DENY"><CODE>AuthzStatus.DENY</CODE></A> for <code>DocId</code>s the
- user is not allowed to access. If the document exists, <A HREF="../../../../com/google/enterprise/adaptor/AuthzStatus.html#INDETERMINATE"><CODE>AuthzStatus.INDETERMINATE</CODE></A> will not be returned for that <code>DocId</code>.
-
- <p>If the document doesn't exist, then there are several possibilities. If
- the repository is fully-public then it will return <code>PERMIT</code>. This
- will allow the caller to provide a cached version of the file to the user
- or call <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#getDocContent(com.google.enterprise.adaptor.Request, com.google.enterprise.adaptor.Response)"><CODE>Adaptor.getDocContent(com.google.enterprise.adaptor.Request, com.google.enterprise.adaptor.Response)</CODE></A> which should call <A HREF="../../../../com/google/enterprise/adaptor/Response.html#respondNotFound()"><CODE>Response.respondNotFound()</CODE></A>. If the adaptor is not sensitive to users knowing
- that certain documents do not exist, then it will return <code>INDETERMINATE</code>. This will be interpreted as the document does not exist; no
- cached copy will be provided to the user but the user may be informed the
- document doesn't exist. Highly sensitive repositories may return <code>DENY</code>.
-
- <p>If you experience a fatal error, feel free to throw an <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io"><CODE>IOException</CODE></A> or <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang"><CODE>RuntimeException</CODE></A>. In the case of an error, the
- users will be denied access to the resources.
-
- <p>This implementation provides <A HREF="../../../../com/google/enterprise/adaptor/AuthzStatus.html#DENY"><CODE>AuthzStatus.DENY</CODE></A> for all <code>DocId</code>s in an unmodifiable map.
-<P>
-<DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)">isUserAuthorized</A></CODE> in interface <CODE><A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></CODE></DL>
-</DD>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>userIdentity</CODE> - user to authorize, or <code>null</code> for anonymous
-        users<DD><CODE>ids</CODE> - Collection of <code>DocId</code>s that need to be checked
-<DT><B>Returns:</B><DD>an <code>AuthzStatus</code> for each <code>DocId</code> provided in <code>ids</code>
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
-</DD>
-</DL>
-<HR>
 
 <A NAME="initConfig(com.google.enterprise.adaptor.Config)"><!-- --></A><H3>
 initConfig</H3>
@@ -395,7 +344,7 @@ public static <A HREF="../../../../com/google/enterprise/adaptor/Application.htm
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;PREV CLASS&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Acl.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?com/google/enterprise/adaptor/AbstractAdaptor.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="AbstractAdaptor.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;

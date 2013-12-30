@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-AuthnAdaptor
+AuthnAuthority
 </TITLE>
 
 
@@ -13,7 +13,7 @@ AuthnAdaptor
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="AuthnAdaptor";
+        parent.document.title="AuthnAuthority";
     }
 }
 </SCRIPT>
@@ -53,10 +53,10 @@ function windowTitle()
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Application.html" title="class in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.Callback.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.Callback.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?com/google/enterprise/adaptor/AuthnAdaptor.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="AuthnAdaptor.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../index.html?com/google/enterprise/adaptor/AuthnAuthority.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="AuthnAuthority.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {
@@ -87,17 +87,16 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHO
 <FONT SIZE="-1">
 com.google.enterprise.adaptor</FONT>
 <BR>
-Interface AuthnAdaptor</H2>
-<DL>
-<DT><B>All Superinterfaces:</B> <DD><A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></DD>
-</DL>
+Interface AuthnAuthority</H2>
 <HR>
 <DL>
-<DT><PRE>public interface <B>AuthnAdaptor</B><DT>extends <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></DL>
+<DT><PRE>public interface <B>AuthnAuthority</B></DL>
 </PRE>
 
 <P>
 Interface for adaptors capable of authenticating users.
+
+ <p>Instances of this interface are typically registered with <A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html#setAuthnAuthority(com.google.enterprise.adaptor.AuthnAuthority)"><CODE>AdaptorContext.setAuthnAuthority(com.google.enterprise.adaptor.AuthnAuthority)</CODE></A>.
 <P>
 
 <P>
@@ -115,10 +114,10 @@ Interface for adaptors capable of authenticating users.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>static&nbsp;interface</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.Callback.html" title="interface in com.google.enterprise.adaptor">AuthnAdaptor.Callback</A></B></CODE>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.Callback.html" title="interface in com.google.enterprise.adaptor">AuthnAuthority.Callback</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interface for replying to <A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.html#authenticateUser(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnAdaptor.Callback)"><CODE>AuthnAdaptor.authenticateUser(HttpExchange, Callback)</CODE></A>.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interface for replying to <A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.html#authenticateUser(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnAuthority.Callback)"><CODE>AuthnAdaptor.authenticateUser(HttpExchange, Callback)</CODE></A>.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -133,20 +132,11 @@ Interface for adaptors capable of authenticating users.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.html#authenticateUser(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnAdaptor.Callback)">authenticateUser</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpExchange.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpExchange</A>&nbsp;ex,
-                 <A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.Callback.html" title="interface in com.google.enterprise.adaptor">AuthnAdaptor.Callback</A>&nbsp;callback)</CODE>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.html#authenticateUser(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnAuthority.Callback)">authenticateUser</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpExchange.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpExchange</A>&nbsp;ex,
+                 <A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.Callback.html" title="interface in com.google.enterprise.adaptor">AuthnAuthority.Callback</A>&nbsp;callback)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Authenticate the user connected via <code>ex</code>.</TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_com.google.enterprise.adaptor.Adaptor"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from interface com.google.enterprise.adaptor.<A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#destroy()">destroy</A>, <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#getDocContent(com.google.enterprise.adaptor.Request, com.google.enterprise.adaptor.Response)">getDocContent</A>, <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#getDocIds(com.google.enterprise.adaptor.DocIdPusher)">getDocIds</A>, <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)">init</A>, <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#initConfig(com.google.enterprise.adaptor.Config)">initConfig</A>, <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#isUserAuthorized(com.google.enterprise.adaptor.AuthnIdentity, java.util.Collection)">isUserAuthorized</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -162,15 +152,15 @@ Interface for adaptors capable of authenticating users.
 </TR>
 </TABLE>
 
-<A NAME="authenticateUser(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnAdaptor.Callback)"><!-- --></A><H3>
+<A NAME="authenticateUser(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnAuthority.Callback)"><!-- --></A><H3>
 authenticateUser</H3>
 <PRE>
 void <B>authenticateUser</B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpExchange.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpExchange</A>&nbsp;ex,
-                      <A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.Callback.html" title="interface in com.google.enterprise.adaptor">AuthnAdaptor.Callback</A>&nbsp;callback)
+                      <A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.Callback.html" title="interface in com.google.enterprise.adaptor">AuthnAuthority.Callback</A>&nbsp;callback)
                       throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
 <DL>
 <DD>Authenticate the user connected via <code>ex</code>. After attempting to
- authenticate the user the implementation should respond by calling <A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.Callback.html#userAuthenticated(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnIdentity)"><CODE>AuthnAdaptor.Callback.userAuthenticated(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnIdentity)</CODE></A>.
+ authenticate the user the implementation should respond by calling <A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.Callback.html#userAuthenticated(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnIdentity)"><CODE>AuthnAuthority.Callback.userAuthenticated(com.sun.net.httpserver.HttpExchange, com.google.enterprise.adaptor.AuthnIdentity)</CODE></A>.
 
  <p>The implementation is expected to provide a response to the user with
  <code>ex</code>. Since authentication commonly requires redirects, forms, and
@@ -181,9 +171,6 @@ void <B>authenticateUser</B>(<A HREF="http://download.oracle.com/javase/6/docs/j
  implementation should also remove the instance when <code>userAuthenticated()</code> is called. This is to release resources as well as
  preventing re-use of the callback.
 <P>
-<DD><DL>
-</DL>
-</DD>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>ex</CODE> - exchange whose request body has been processed, but whose
      response body and headers have not been sent<DD><CODE>callback</CODE> - object to receive and respond with authentication results
@@ -222,10 +209,10 @@ void <B>authenticateUser</B>(<A HREF="http://download.oracle.com/javase/6/docs/j
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Application.html" title="class in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthnAdaptor.Callback.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.Callback.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?com/google/enterprise/adaptor/AuthnAdaptor.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="AuthnAdaptor.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../index.html?com/google/enterprise/adaptor/AuthnAuthority.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="AuthnAuthority.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {

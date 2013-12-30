@@ -105,17 +105,22 @@ Configuration values for this program, like the GSA's hostname. Also several
  <table>
  <tr><td align=center><b>required?</b></td>
      <td><b>name</b></td><td><b>meaning</b></td>
- <tr><td> </td><td>adaptor.sendDocControlsHeader </td><td>use 
+ <tr><td> </td><td>gsa.acceptsDocControlsHeader </td><td>use 
       X-Gsa-Doc-Controls HTTP header with namespaced ACLs.
       Otherwise ACLs are sent without namespace and as metadata.
-      Defaults to false
+      If not set, then an attempt to compute from gsa.version is made.
+      Defaults to true for 7.2.0-0 and later, and false for earlier,
+      as defined by gsa.version.
  <tr><td> </td><td>adaptor.fullListingSchedule </td><td> when to invoke 
      <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#getDocIds(com.google.enterprise.adaptor.DocIdPusher)"><CODE>Adaptor.getDocIds</CODE></A>, in cron format (minute,
      hour,  day of month, month, day of week).  Defaults to 0 3 * * *
  <tr><td> </td><td>adaptor.incrementalPollPeriodSecs </td><td> number
-     of seconds between invocations of <A HREF="../../../../com/google/enterprise/adaptor/PollingIncrementalAdaptor.html#getModifiedDocIds(com.google.enterprise.adaptor.DocIdPusher)"><CODE>PollingIncrementalAdaptor.getModifiedDocIds</CODE></A>.    Defaults to 900
+     of seconds between invocations of <A HREF="../../../../com/google/enterprise/adaptor/PollingIncrementalLister.html#getModifiedDocIds(com.google.enterprise.adaptor.DocIdPusher)"><CODE>PollingIncrementalLister.getModifiedDocIds</CODE></A>.    Defaults to 900
  <tr><td> </td><td>adaptor.docContentTimeoutSecs </td><td> number of seconds
-     before a call to get document content times out and is interrupted.
+     adaptor has to complete sending content before it is interrupted. Timing
+     starts when sending content starts. Defaults to 180
+ <tr><td> </td><td>adaptor.docHeaderTimeoutSecs </td><td> number of seconds
+     adaptor has to start sending content before it is interrupted.
      Defaults to 30
  <tr><td> </td><td>adaptor.pushDocIdsOnStartup </td><td> whether to invoke
      <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#getDocIds(com.google.enterprise.adaptor.DocIdPusher)"><CODE>Adaptor.getDocIds</CODE></A> on process start
@@ -131,6 +136,9 @@ Configuration values for this program, like the GSA's hostname. Also several
      if not provided
  <tr><td> </td><td>feed.noRecrawlBitEnabled </td><td> send bit telling
      GSA to crawl your documents only once.  Defaults to  false
+ <tr><td> </td><td>gsa.version </td><td> version number used to configure
+     expected GSA features.  Defaults to acquiring from GSA.
+     Uses 7.0.14-114 if acquiring fails.
  <tr><td> </td><td>gsa.614FeedWorkaroundEnabled </td><td> enable detour
      around particular feed parsing failure found in GSA version 6.14 .
      Defaults to false
@@ -146,6 +154,9 @@ Configuration values for this program, like the GSA's hostname. Also several
  <tr><td> </td><td>journal.reducedMem </td><td> avoid tracking per URL 
      information in RAM; suggested with over five hundred thousand documents.
      Defaults to true
+ <tr><td> </td><td>gsa.scoringType</td><td> type of relevance algorithm
+      GSA utilizes to rank documents.  Either content or web.  Is sent
+      when adaptor.sendDocControlHeader is true.  Defaults to content
  <tr><td> </td><td>server.dashboardPort </td><td> port on adaptor's
      machine for accessing adaptor's dashboard.   Defaults to  5679
  <tr><td> </td><td>server.docIdPath </td><td> part of URL preceding
@@ -157,7 +168,7 @@ Configuration values for this program, like the GSA's hostname. Also several
  <tr><td> </td><td>server.hostname </td><td>
      hostname of adaptor machine for URL generation. 
      The GSA will use this hostname to crawl the adaptor.
-     Defaults to automatically detected hostname
+     Defaults to lowercase of automatically detected hostname
  <tr><td> </td><td>server.keyAlias </td><td> keystore alias where
      encryption (public and private) keys are stored.
      Defaults to adaptor
@@ -179,12 +190,10 @@ Configuration values for this program, like the GSA's hostname. Also several
      checking. Defaults to false
  <tr><td> </td><td>server.useCompression </td><td> compress retrieval
      responses. Defaults to true
- <tr><td> </td><td>transform.maxDocumentBytes </td><td> max size of
-     document that will get transformed.  Defaults to 1048576
+ <tr><td> </td><td>transform.acl.X </td><td> where X is an integer, match
+     and modify principals as described. Defaults no modifications
  <tr><td> </td><td>transform.pipeline </td><td> sequence of
      transformation steps.  Defaults to no-pipeline
- <tr><td> </td><td>transform.required </td><td> fail retrieval if document is
-     over maxDocumentBytes.  Defaults to false
  </table>
 <P>
 
@@ -241,6 +250,15 @@ Configuration values for this program, like the GSA's hostname. Also several
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Config.html#getListOfConfigs(java.lang.String)">getListOfConfigs</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a list of maps corresponding to each item of the comma-separated
+ value of <code>key</code>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -345,6 +363,51 @@ getAllKeys</H3>
 <PRE>
 public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getAllKeys</B>()</PRE>
 <DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getListOfConfigs(java.lang.String)"><!-- --></A><H3>
+getListOfConfigs</H3>
+<PRE>
+public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&gt; <B>getListOfConfigs</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
+<DL>
+<DD>Returns a list of maps corresponding to each item of the comma-separated
+ value of <code>key</code>. Each map is the configuration entries for that item
+ in the list. The 'name' configuration entry is added in each map based on
+ the name provided by the user.
+
+ <p>As an example, provided the following config:
+ <pre><code>adaptor.servers=server1,fluttershy , rainbowDash
+adaptor.servers.fluttershy.hostname=fluttershy
+adaptor.servers.fluttershy.port=42
+adaptor.servers.server1.hostname=applejack
+adaptor.servers.server1.port=314
+adaptor.servers.rainbowDash.hostname=rainbowdash
+adaptor.servers.rainbowDash.port=159
+adaptor.servers.rainbowDash.name=20% cooler
+adaptor.servers.derpy.hostname=hooves</code></pre>
+
+ <p>And calling:
+ <pre><code>config.getConfigList("adaptor.servers");</code></pre>
+
+ <p>Returns:
+ <pre><code>[{
+  "hostname": "applejack",
+  "port": "42",
+  "name": "server1",
+}, {
+  "hostname": "fluttershy",
+  "port": "314",
+  "name": "fluttershy",
+}, {
+  "hostname": "rainbowdash",
+  "port": "159",
+  "name": "raindowDash",
+}]</code></pre>
+<P>
 <DD><DL>
 </DL>
 </DD>

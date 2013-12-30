@@ -150,6 +150,14 @@ Mutable ACL for creating instances of <A HREF="../../../../com/google/enterprise
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Acl.Builder.html" title="class in com.google.enterprise.adaptor">Acl.Builder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Acl.Builder.html#setDenies(java.util.Collection)">setDenies</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="../../../../com/google/enterprise/adaptor/Principal.html" title="class in com.google.enterprise.adaptor">Principal</A>&gt;&nbsp;denies)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Replace existing deny users and groups.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Acl.Builder.html" title="class in com.google.enterprise.adaptor">Acl.Builder</A></CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Acl.Builder.html#setDenyGroups(java.util.Collection)">setDenyGroups</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="../../../../com/google/enterprise/adaptor/GroupPrincipal.html" title="class in com.google.enterprise.adaptor">GroupPrincipal</A>&gt;&nbsp;denyGroups)</CODE>
 
 <BR>
@@ -203,7 +211,7 @@ Mutable ACL for creating instances of <A HREF="../../../../com/google/enterprise
                <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;fragment)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the parent to inherit ACLs from.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -212,6 +220,14 @@ Mutable ACL for creating instances of <A HREF="../../../../com/google/enterprise
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Replace existing permit groups.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Acl.Builder.html" title="class in com.google.enterprise.adaptor">Acl.Builder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Acl.Builder.html#setPermits(java.util.Collection)">setPermits</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="../../../../com/google/enterprise/adaptor/Principal.html" title="class in com.google.enterprise.adaptor">Principal</A>&gt;&nbsp;permits)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Replace existing permit users and groups.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -362,6 +378,44 @@ public <A HREF="../../../../com/google/enterprise/adaptor/Acl.Builder.html" titl
 </DL>
 <HR>
 
+<A NAME="setPermits(java.util.Collection)"><!-- --></A><H3>
+setPermits</H3>
+<PRE>
+public <A HREF="../../../../com/google/enterprise/adaptor/Acl.Builder.html" title="class in com.google.enterprise.adaptor">Acl.Builder</A> <B>setPermits</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="../../../../com/google/enterprise/adaptor/Principal.html" title="class in com.google.enterprise.adaptor">Principal</A>&gt;&nbsp;permits)</PRE>
+<DL>
+<DD>Replace existing permit users and groups.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the same instance of the builder, for chaining calls
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</A></CODE> - if the collection is <code>null</code> or
+     contains <code>null</code>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the collection contains <code>""</code>
+     or a value that has leading or trailing whitespace</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setDenies(java.util.Collection)"><!-- --></A><H3>
+setDenies</H3>
+<PRE>
+public <A HREF="../../../../com/google/enterprise/adaptor/Acl.Builder.html" title="class in com.google.enterprise.adaptor">Acl.Builder</A> <B>setDenies</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="../../../../com/google/enterprise/adaptor/Principal.html" title="class in com.google.enterprise.adaptor">Principal</A>&gt;&nbsp;denies)</PRE>
+<DL>
+<DD>Replace existing deny users and groups.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the same instance of the builder, for chaining calls
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</A></CODE> - if the collection is <code>null</code> or
+     contains <code>null</code>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if the collection contains <code>""</code>
+     or a value that has leading or trailing whitespace</DL>
+</DD>
+</DL>
+<HR>
+
 <A NAME="setInheritFrom(com.google.enterprise.adaptor.DocId)"><!-- --></A><H3>
 setInheritFrom</H3>
 <PRE>
@@ -384,8 +438,21 @@ setInheritFrom</H3>
 public <A HREF="../../../../com/google/enterprise/adaptor/Acl.Builder.html" title="class in com.google.enterprise.adaptor">Acl.Builder</A> <B>setInheritFrom</B>(<A HREF="../../../../com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor">DocId</A>&nbsp;inheritFrom,
                                   <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;fragment)</PRE>
 <DL>
+<DD>Set the parent to inherit ACLs from. 
+ Note that the parent's <code>InheritanceType</code>
+ determines how to combine results with this ACL.
+ <p>
+ The fragment facilitates a single parent <code>DocId</code>
+ having multiple ACLs to inherit from.  For example
+ a single parent DocId could have ACLs that are to be inherited
+ by sub-folder <code>DocId</code> instances and different
+ ACLs that are to be inherited by children files.
+ The fragment allows specifying which of the parent's ACLs
+ is to be inherited from.
+<P>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>the same instance of the builder, for chaining calls<DT><B>See Also:</B><DD><A HREF="../../../../com/google/enterprise/adaptor/Acl.Builder.html#setInheritanceType(com.google.enterprise.adaptor.Acl.InheritanceType)"><CODE>setInheritanceType(com.google.enterprise.adaptor.Acl.InheritanceType)</CODE></A></DL>
 </DD>
 </DL>
 <HR>

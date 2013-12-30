@@ -27,11 +27,13 @@ Interfaces</FONT>&nbsp;
 <BR>
 <A HREF="AdaptorContext.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>AdaptorContext</I></A>
 <BR>
-<A HREF="AuthnAdaptor.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>AuthnAdaptor</I></A>
+<A HREF="AuthnAuthority.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>AuthnAuthority</I></A>
 <BR>
-<A HREF="AuthnAdaptor.Callback.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>AuthnAdaptor.Callback</I></A>
+<A HREF="AuthnAuthority.Callback.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>AuthnAuthority.Callback</I></A>
 <BR>
 <A HREF="AuthnIdentity.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>AuthnIdentity</I></A>
+<BR>
+<A HREF="AuthzAuthority.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>AuthzAuthority</I></A>
 <BR>
 <A HREF="DocIdEncoder.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>DocIdEncoder</I></A>
 <BR>
@@ -39,11 +41,9 @@ Interfaces</FONT>&nbsp;
 <BR>
 <A HREF="DocumentTransform.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>DocumentTransform</I></A>
 <BR>
-<A HREF="GetDocIdsErrorHandler.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>GetDocIdsErrorHandler</I></A>
+<A HREF="ExceptionHandler.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>ExceptionHandler</I></A>
 <BR>
-<A HREF="PollingIncrementalAdaptor.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>PollingIncrementalAdaptor</I></A>
-<BR>
-<A HREF="PushErrorHandler.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>PushErrorHandler</I></A>
+<A HREF="PollingIncrementalLister.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>PollingIncrementalLister</I></A>
 <BR>
 <A HREF="Request.html" title="interface in com.google.enterprise.adaptor" target="classFrame"><I>Request</I></A>
 <BR>
@@ -68,8 +68,6 @@ Classes</FONT>&nbsp;
 <BR>
 <A HREF="AbstractAdaptor.html" title="class in com.google.enterprise.adaptor" target="classFrame">AbstractAdaptor</A>
 <BR>
-<A HREF="AbstractDocumentTransform.html" title="class in com.google.enterprise.adaptor" target="classFrame">AbstractDocumentTransform</A>
-<BR>
 <A HREF="Acl.html" title="class in com.google.enterprise.adaptor" target="classFrame">Acl</A>
 <BR>
 <A HREF="Acl.Builder.html" title="class in com.google.enterprise.adaptor" target="classFrame">Acl.Builder</A>
@@ -84,15 +82,13 @@ Classes</FONT>&nbsp;
 <BR>
 <A HREF="Daemon.html" title="class in com.google.enterprise.adaptor" target="classFrame">Daemon</A>
 <BR>
-<A HREF="DefaultGetDocIdsErrorHandler.html" title="class in com.google.enterprise.adaptor" target="classFrame">DefaultGetDocIdsErrorHandler</A>
-<BR>
-<A HREF="DefaultPushErrorHandler.html" title="class in com.google.enterprise.adaptor" target="classFrame">DefaultPushErrorHandler</A>
-<BR>
 <A HREF="DocId.html" title="class in com.google.enterprise.adaptor" target="classFrame">DocId</A>
 <BR>
 <A HREF="DocIdPusher.Record.html" title="class in com.google.enterprise.adaptor" target="classFrame">DocIdPusher.Record</A>
 <BR>
 <A HREF="DocIdPusher.Record.Builder.html" title="class in com.google.enterprise.adaptor" target="classFrame">DocIdPusher.Record.Builder</A>
+<BR>
+<A HREF="ExceptionHandlers.html" title="class in com.google.enterprise.adaptor" target="classFrame">ExceptionHandlers</A>
 <BR>
 <A HREF="GroupPrincipal.html" title="class in com.google.enterprise.adaptor" target="classFrame">GroupPrincipal</A>
 <BR>
@@ -105,8 +101,6 @@ Classes</FONT>&nbsp;
 <A HREF="Metadata.html" title="class in com.google.enterprise.adaptor" target="classFrame">Metadata</A>
 <BR>
 <A HREF="Principal.html" title="class in com.google.enterprise.adaptor" target="classFrame">Principal</A>
-<BR>
-<A HREF="TransformPipeline.html" title="class in com.google.enterprise.adaptor" target="classFrame">TransformPipeline</A>
 <BR>
 <A HREF="UserPrincipal.html" title="class in com.google.enterprise.adaptor" target="classFrame">UserPrincipal</A></FONT></TD>
 </TR>
@@ -124,17 +118,6 @@ Enums</FONT>&nbsp;
 <A HREF="AuthzStatus.html" title="enum in com.google.enterprise.adaptor" target="classFrame">AuthzStatus</A>
 <BR>
 <A HREF="Status.Code.html" title="enum in com.google.enterprise.adaptor" target="classFrame">Status.Code</A></FONT></TD>
-</TR>
-</TABLE>
-
-
-<TABLE BORDER="0" WIDTH="100%" SUMMARY="">
-<TR>
-<TD NOWRAP><FONT size="+1" CLASS="FrameHeadingFont">
-Exceptions</FONT>&nbsp;
-<FONT CLASS="FrameItemFont">
-<BR>
-<A HREF="TransformException.html" title="class in com.google.enterprise.adaptor" target="classFrame">TransformException</A></FONT></TD>
 </TR>
 </TABLE>
 

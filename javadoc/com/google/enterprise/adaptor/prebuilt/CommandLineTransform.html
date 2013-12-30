@@ -90,15 +90,14 @@ com.google.enterprise.adaptor.prebuilt</FONT>
 Class CommandLineTransform</H2>
 <PRE>
 <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
-  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html" title="class in com.google.enterprise.adaptor">com.google.enterprise.adaptor.AbstractDocumentTransform</A>
-      <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.enterprise.adaptor.prebuilt.CommandLineTransform</B>
+  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.enterprise.adaptor.prebuilt.CommandLineTransform</B>
 </PRE>
 <DL>
 <DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../../com/google/enterprise/adaptor/DocumentTransform.html" title="interface in com.google.enterprise.adaptor">DocumentTransform</A></DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public class <B>CommandLineTransform</B><DT>extends <A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html" title="class in com.google.enterprise.adaptor">AbstractDocumentTransform</A></DL>
+<DT><PRE>public class <B>CommandLineTransform</B><DT>extends <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="../../../../../com/google/enterprise/adaptor/DocumentTransform.html" title="interface in com.google.enterprise.adaptor">DocumentTransform</A></DL>
 </PRE>
 
 <P>
@@ -137,20 +136,11 @@ A conduit that allows a simple way to create a document transform based on
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineTransform.html#configure(java.util.Map)">configure</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;config)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accepts keys <code>"cmd"</code>, <code>"workingDirectory"</code>, <code>"arg?"</code>, and
- any keys accepted by the super class.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>static&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineTransform.html" title="class in com.google.enterprise.adaptor.prebuilt">CommandLineTransform</A></CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineTransform.html#create(java.util.Map)">create</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;config)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accepts keys <code>"cmd"</code>, <code>"workingDirectory"</code>, and <code>"arg?"</code>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -188,22 +178,6 @@ A conduit that allows a simple way to create a document transform based on
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineTransform.html#setName(java.lang.String)">setName</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;name)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineTransform.html#setRequired(boolean)">setRequired</A></B>(boolean&nbsp;required)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineTransform.html#setTransformCommand(java.util.List)">setTransformCommand</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;transformCommand)</CODE>
 
 <BR>
@@ -220,22 +194,12 @@ A conduit that allows a simple way to create a document transform based on
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineTransform.html#transform(java.io.ByteArrayOutputStream, java.io.OutputStream, com.google.enterprise.adaptor.Metadata, java.util.Map)">transform</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/io/ByteArrayOutputStream.html?is-external=true" title="class or interface in java.io">ByteArrayOutputStream</A>&nbsp;contentIn,
-          <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</A>&nbsp;contentOut,
-          <A HREF="../../../../../com/google/enterprise/adaptor/Metadata.html" title="class in com.google.enterprise.adaptor">Metadata</A>&nbsp;metadata,
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineTransform.html#transform(com.google.enterprise.adaptor.Metadata, java.util.Map)">transform</A></B>(<A HREF="../../../../../com/google/enterprise/adaptor/Metadata.html" title="class in com.google.enterprise.adaptor">Metadata</A>&nbsp;metadata,
           <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;params)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Read data from <code>contentIn</code>, transform it, and write it to <code>contentOut</code>.</TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_com.google.enterprise.adaptor.AbstractDocumentTransform"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from class com.google.enterprise.adaptor.<A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html" title="class in com.google.enterprise.adaptor">AbstractDocumentTransform</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html#getName()">getName</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html#isRequired()">isRequired</A></CODE></TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Any changes to <code>metadata</code> and <code>params</code> will be
+ passed on to subsequent transforms.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -277,18 +241,17 @@ public <B>CommandLineTransform</B>()</PRE>
 </TR>
 </TABLE>
 
-<A NAME="configure(java.util.Map)"><!-- --></A><H3>
-configure</H3>
+<A NAME="create(java.util.Map)"><!-- --></A><H3>
+create</H3>
 <PRE>
-protected void <B>configure</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;config)</PRE>
+public static <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineTransform.html" title="class in com.google.enterprise.adaptor.prebuilt">CommandLineTransform</A> <B>create</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;config)</PRE>
 <DL>
-<DD>Accepts keys <code>"cmd"</code>, <code>"workingDirectory"</code>, <code>"arg?"</code>, and
- any keys accepted by the super class. The <code>"arg?"</code> configuration
- values should be numerically increasing starting from one: <code>"arg1"</code>,
- <code>"arg2"</code>, <code>"arg3</code>, ...
+<DD>Accepts keys <code>"cmd"</code>, <code>"workingDirectory"</code>, and <code>"arg?"</code>.
+ The <code>"arg?"</code> configuration values should be numerically increasing
+ starting from one: <code>"arg1"</code>, <code>"arg2"</code>, <code>"arg3</code>, ...
 <P>
 <DD><DL>
-<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html#configure(java.util.Map)">configure</A></CODE> in class <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html" title="class in com.google.enterprise.adaptor">AbstractDocumentTransform</A></CODE></DL>
+</DL>
 </DD>
 <DD><DL>
 </DL>
@@ -296,25 +259,21 @@ protected void <B>configure</B>(<A HREF="http://download.oracle.com/javase/6/doc
 </DL>
 <HR>
 
-<A NAME="transform(java.io.ByteArrayOutputStream, java.io.OutputStream, com.google.enterprise.adaptor.Metadata, java.util.Map)"><!-- --></A><H3>
+<A NAME="transform(com.google.enterprise.adaptor.Metadata, java.util.Map)"><!-- --></A><H3>
 transform</H3>
 <PRE>
-public void <B>transform</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/io/ByteArrayOutputStream.html?is-external=true" title="class or interface in java.io">ByteArrayOutputStream</A>&nbsp;contentIn,
-                      <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</A>&nbsp;contentOut,
-                      <A HREF="../../../../../com/google/enterprise/adaptor/Metadata.html" title="class in com.google.enterprise.adaptor">Metadata</A>&nbsp;metadata,
-                      <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;params)
-               throws <A HREF="../../../../../com/google/enterprise/adaptor/TransformException.html" title="class in com.google.enterprise.adaptor">TransformException</A>,
-                      <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
+public void <B>transform</B>(<A HREF="../../../../../com/google/enterprise/adaptor/Metadata.html" title="class in com.google.enterprise.adaptor">Metadata</A>&nbsp;metadata,
+                      <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;params)</PRE>
 <DL>
-<DD><B>Description copied from interface: <CODE><A HREF="../../../../../com/google/enterprise/adaptor/DocumentTransform.html#transform(java.io.ByteArrayOutputStream, java.io.OutputStream, com.google.enterprise.adaptor.Metadata, java.util.Map)">DocumentTransform</A></CODE></B></DD>
-<DD>Read data from <code>contentIn</code>, transform it, and write it to <code>contentOut</code>. Any changes to <code>metadata</code> and <code>params</code> will be
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../com/google/enterprise/adaptor/DocumentTransform.html#transform(com.google.enterprise.adaptor.Metadata, java.util.Map)">DocumentTransform</A></CODE></B></DD>
+<DD>Any changes to <code>metadata</code> and <code>params</code> will be
  passed on to subsequent transforms. This method must be thread-safe.
 <P>
 <DD><DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/TransformException.html" title="class in com.google.enterprise.adaptor">TransformException</A></CODE>
-<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/DocumentTransform.html#transform(com.google.enterprise.adaptor.Metadata, java.util.Map)">transform</A></CODE> in interface <CODE><A HREF="../../../../../com/google/enterprise/adaptor/DocumentTransform.html" title="interface in com.google.enterprise.adaptor">DocumentTransform</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
 </DD>
 </DL>
 <HR>
@@ -331,6 +290,9 @@ public void <B>setCommandAcceptsParameters</B>(boolean&nbsp;commandAcceptsParame
 <DD><DL>
 </DL>
 </DD>
+<DD><DL>
+</DL>
+</DD>
 </DL>
 <HR>
 
@@ -339,6 +301,9 @@ getCommandAcceptsParameters</H3>
 <PRE>
 public boolean <B>getCommandAcceptsParameters</B>()</PRE>
 <DL>
+<DD><DL>
+</DL>
+</DD>
 <DD><DL>
 </DL>
 </DD>
@@ -360,6 +325,9 @@ public void <B>setTransformCommand</B>(<A HREF="http://download.oracle.com/javas
 <DD><DL>
 </DL>
 </DD>
+<DD><DL>
+</DL>
+</DD>
 </DL>
 <HR>
 
@@ -368,6 +336,9 @@ getTransformCommand</H3>
 <PRE>
 public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getTransformCommand</B>()</PRE>
 <DL>
+<DD><DL>
+</DL>
+</DD>
 <DD><DL>
 </DL>
 </DD>
@@ -382,6 +353,9 @@ public void <B>setWorkingDirectory</B>(<A HREF="http://download.oracle.com/javas
 <DD>Sets the working directory. Must be valid.
 <P>
 <DD><DL>
+</DL>
+</DD>
+<DD><DL>
 
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if <code>dir</code> is not a directory</DL>
@@ -395,47 +369,11 @@ getWorkingDirectory</H3>
 public <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</A> <B>getWorkingDirectory</B>()</PRE>
 <DL>
 <DD><DL>
+</DL>
+</DD>
+<DD><DL>
 
 <DT><B>Returns:</B><DD>The working directory for the command line process.</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="setName(java.lang.String)"><!-- --></A><H3>
-setName</H3>
-<PRE>
-public void <B>setName</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;name)</PRE>
-<DL>
-<DD><DL>
-<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html#setName(java.lang.String)">setName</A></CODE> in class <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html" title="class in com.google.enterprise.adaptor">AbstractDocumentTransform</A></CODE></DL>
-</DD>
-<DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="setRequired(boolean)"><!-- --></A><H3>
-setRequired</H3>
-<PRE>
-public void <B>setRequired</B>(boolean&nbsp;required)</PRE>
-<DL>
-<DD><DL>
-<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html#setRequired(boolean)">setRequired</A></CODE> in class <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractDocumentTransform.html" title="class in com.google.enterprise.adaptor">AbstractDocumentTransform</A></CODE></DL>
-</DD>
-<DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="create(java.util.Map)"><!-- --></A><H3>
-create</H3>
-<PRE>
-public static <A HREF="../../../../../com/google/enterprise/adaptor/prebuilt/CommandLineTransform.html" title="class in com.google.enterprise.adaptor.prebuilt">CommandLineTransform</A> <B>create</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;config)</PRE>
-<DL>
-<DD><DL>
-</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
