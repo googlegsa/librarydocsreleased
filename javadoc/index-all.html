@@ -180,6 +180,9 @@ Static method in class com.google.enterprise.adaptor.prebuilt.<A HREF="./com/goo
 <DT><A HREF="./com/google/enterprise/adaptor/AdaptorContext.html#createHttpContext(java.lang.String, com.sun.net.httpserver.HttpHandler)"><B>createHttpContext(String, HttpHandler)</B></A> - 
 Method in interface com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/AdaptorContext.html" title="interface in com.google.enterprise.adaptor">AdaptorContext</A>
 <DD>Registers a handler with the library's <A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver"><CODE>HttpServer</CODE></A> in similar fashion to <A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true#createContext(java.lang.String, com.sun.net.httpserver.HttpHandler)" title="class or interface in com.sun.net.httpserver"><CODE>HttpServer.createContext(java.lang.String, com.sun.net.httpserver.HttpHandler)</CODE></A>.
+<DT><A HREF="./com/google/enterprise/adaptor/Service.html#createInstance(java.lang.String, java.io.File, java.io.File)"><B>createInstance(String, File, File)</B></A> - 
+Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/Service.html" title="class in com.google.enterprise.adaptor">Service</A>
+<DD>&nbsp;
 <DT><A HREF="./com/google/enterprise/adaptor/CustomFormatter.html" title="class in com.google.enterprise.adaptor"><B>CustomFormatter</B></A> - Class in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Custom log formatter for ease of development.<DT><A HREF="./com/google/enterprise/adaptor/CustomFormatter.html#CustomFormatter()"><B>CustomFormatter()</B></A> - 
 Constructor for class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/CustomFormatter.html" title="class in com.google.enterprise.adaptor">CustomFormatter</A>
 <DD>&nbsp;
@@ -205,6 +208,9 @@ Static variable in class com.google.enterprise.adaptor.<A HREF="./com/google/ent
 <DT><A HREF="./com/google/enterprise/adaptor/ExceptionHandlers.html#defaultHandler()"><B>defaultHandler()</B></A> - 
 Static method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/ExceptionHandlers.html" title="class in com.google.enterprise.adaptor">ExceptionHandlers</A>
 <DD>The default exception handler.
+<DT><A HREF="./com/google/enterprise/adaptor/Service.html#deleteInstance(java.lang.String, long, java.util.concurrent.TimeUnit)"><B>deleteInstance(String, long, TimeUnit)</B></A> - 
+Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/Service.html" title="class in com.google.enterprise.adaptor">Service</A>
+<DD>&nbsp;
 <DT><A HREF="./com/google/enterprise/adaptor/prebuilt/PrebuiltTransforms.html#deleteMetadata(java.util.Map)"><B>deleteMetadata(Map&lt;String, String&gt;)</B></A> - 
 Static method in class com.google.enterprise.adaptor.prebuilt.<A HREF="./com/google/enterprise/adaptor/prebuilt/PrebuiltTransforms.html" title="class in com.google.enterprise.adaptor.prebuilt">PrebuiltTransforms</A>
 <DD>Returns a transform that deletes metadata keys.
@@ -220,7 +226,7 @@ Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/a
 <DT><A HREF="./com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor"><B>DocId</B></A> - Class in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Refers to a unique document in repository.<DT><A HREF="./com/google/enterprise/adaptor/DocId.html#DocId(java.lang.String)"><B>DocId(String)</B></A> - 
 Constructor for class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor">DocId</A>
 <DD>Construct an identifier based on <code>id</code>.
-<DT><A HREF="./com/google/enterprise/adaptor/DocIdEncoder.html" title="interface in com.google.enterprise.adaptor"><B>DocIdEncoder</B></A> - Interface in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Allows generating a URI for a particular DocId.<DT><A HREF="./com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor"><B>DocIdPusher</B></A> - Interface in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Interface that allows at-will pushing of <code>DocId</code>s to the GSA.<DT><A HREF="./com/google/enterprise/adaptor/DocIdPusher.Record.html" title="class in com.google.enterprise.adaptor"><B>DocIdPusher.Record</B></A> - Class in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Immutable feed attributes for a document identified by its <code>DocId</code>.<DT><A HREF="./com/google/enterprise/adaptor/DocIdPusher.Record.Builder.html" title="class in com.google.enterprise.adaptor"><B>DocIdPusher.Record.Builder</B></A> - Class in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Builder to create instances of Record.<DT><A HREF="./com/google/enterprise/adaptor/DocIdPusher.Record.Builder.html#DocIdPusher.Record.Builder(com.google.enterprise.adaptor.DocId)"><B>DocIdPusher.Record.Builder(DocId)</B></A> - 
+<DT><A HREF="./com/google/enterprise/adaptor/DocIdEncoder.html" title="interface in com.google.enterprise.adaptor"><B>DocIdEncoder</B></A> - Interface in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Allows generating a URI for a particular DocId.<DT><A HREF="./com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor"><B>DocIdPusher</B></A> - Interface in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Interface that allows at-will pushing of <code>DocId</code>s to the GSA.<DT><A HREF="./com/google/enterprise/adaptor/DocIdPusher.Item.html" title="interface in com.google.enterprise.adaptor"><B>DocIdPusher.Item</B></A> - Interface in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Marker interface for an item that can exist in a feed.<DT><A HREF="./com/google/enterprise/adaptor/DocIdPusher.Record.html" title="class in com.google.enterprise.adaptor"><B>DocIdPusher.Record</B></A> - Class in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Immutable feed attributes for a document identified by its <code>DocId</code>.<DT><A HREF="./com/google/enterprise/adaptor/DocIdPusher.Record.Builder.html" title="class in com.google.enterprise.adaptor"><B>DocIdPusher.Record.Builder</B></A> - Class in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Builder to create instances of Record.<DT><A HREF="./com/google/enterprise/adaptor/DocIdPusher.Record.Builder.html#DocIdPusher.Record.Builder(com.google.enterprise.adaptor.DocId)"><B>DocIdPusher.Record.Builder(DocId)</B></A> - 
 Constructor for class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/DocIdPusher.Record.Builder.html" title="class in com.google.enterprise.adaptor">DocIdPusher.Record.Builder</A>
 <DD>Create mutable builder for building <A HREF="./com/google/enterprise/adaptor/DocIdPusher.Record.html" title="class in com.google.enterprise.adaptor"><CODE>DocIdPusher.Record</CODE></A> instances.
 <DT><A HREF="./com/google/enterprise/adaptor/DocIdPusher.Record.Builder.html#DocIdPusher.Record.Builder(com.google.enterprise.adaptor.DocIdPusher.Record)"><B>DocIdPusher.Record.Builder(DocIdPusher.Record)</B></A> - 
@@ -749,6 +755,9 @@ Static method in class com.google.enterprise.adaptor.prebuilt.<A HREF="./com/goo
 <DT><A HREF="./com/google/enterprise/adaptor/prebuilt/FileSystemAdaptor.html#main(java.lang.String[])"><B>main(String[])</B></A> - 
 Static method in class com.google.enterprise.adaptor.prebuilt.<A HREF="./com/google/enterprise/adaptor/prebuilt/FileSystemAdaptor.html" title="class in com.google.enterprise.adaptor.prebuilt">FileSystemAdaptor</A>
 <DD>Call default main for adaptors.
+<DT><A HREF="./com/google/enterprise/adaptor/Service.html#main(java.lang.String[])"><B>main(String[])</B></A> - 
+Static method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/Service.html" title="class in com.google.enterprise.adaptor">Service</A>
+<DD>&nbsp;
 <DT><A HREF="./com/google/enterprise/adaptor/Metadata.html" title="class in com.google.enterprise.adaptor"><B>Metadata</B></A> - Class in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Allows storing multiple metadata values to a single key.<DT><A HREF="./com/google/enterprise/adaptor/Metadata.html#Metadata()"><B>Metadata()</B></A> - 
 Constructor for class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/Metadata.html" title="class in com.google.enterprise.adaptor">Metadata</A>
 <DD>Create empty instance.
@@ -893,7 +902,9 @@ Method in class com.google.enterprise.adaptor.experimental.<A HREF="./com/google
 Static method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/HttpExchanges.html" title="class in com.google.enterprise.adaptor">HttpExchanges</A>
 <DD>Redirect client to <code>location</code>.
 <DT><A HREF="./com/google/enterprise/adaptor/SensitiveValueDecoder.html" title="interface in com.google.enterprise.adaptor"><B>SensitiveValueDecoder</B></A> - Interface in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Provides parsing of sensitive values that can be plain text, obfuscated, or
- encrypted.<DT><A HREF="./com/google/enterprise/adaptor/Daemon.html#serviceStart(java.lang.String[])"><B>serviceStart(String[])</B></A> - 
+ encrypted.<DT><A HREF="./com/google/enterprise/adaptor/Service.html" title="class in com.google.enterprise.adaptor"><B>Service</B></A> - Class in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Provides environment for running multiple adaptors on the same port and
+ having each instance be managed.<DT><A HREF="./com/google/enterprise/adaptor/Service.Instance.html" title="class in com.google.enterprise.adaptor"><B>Service.Instance</B></A> - Class in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Maybe use this as an interface to allow disabling/enabling and
+ starting/stopping of particular instances?<DT><A HREF="./com/google/enterprise/adaptor/Daemon.html#serviceStart(java.lang.String[])"><B>serviceStart(String[])</B></A> - 
 Static method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/Daemon.html" title="class in com.google.enterprise.adaptor">Daemon</A>
 <DD>&nbsp;
 <DT><A HREF="./com/google/enterprise/adaptor/Daemon.html#serviceStop(java.lang.String[])"><B>serviceStop(String[])</B></A> - 
@@ -1036,6 +1047,9 @@ Method in interface com.google.enterprise.adaptor.<A HREF="./com/google/enterpri
 <DT><A HREF="./com/google/enterprise/adaptor/prebuilt/CommandLineTransform.html#setTransformCommand(java.util.List)"><B>setTransformCommand(List&lt;String&gt;)</B></A> - 
 Method in class com.google.enterprise.adaptor.prebuilt.<A HREF="./com/google/enterprise/adaptor/prebuilt/CommandLineTransform.html" title="class in com.google.enterprise.adaptor.prebuilt">CommandLineTransform</A>
 <DD>Sets the command that is in charge of transforming the document content.
+<DT><A HREF="./com/google/enterprise/adaptor/GsaCommunicationHandler.html#setup(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer, java.lang.String)"><B>setup(HttpServer, HttpServer, String)</B></A> - 
+Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/GsaCommunicationHandler.html" title="class in com.google.enterprise.adaptor">GsaCommunicationHandler</A>
+<DD>Start services necessary for handling outgoing requests.
 <DT><A HREF="./com/google/enterprise/adaptor/CustomFormatter.html#setUseColor(boolean)"><B>setUseColor(boolean)</B></A> - 
 Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/CustomFormatter.html" title="class in com.google.enterprise.adaptor">CustomFormatter</A>
 <DD>&nbsp;
@@ -1058,12 +1072,12 @@ Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/a
 <DT><A HREF="./com/google/enterprise/adaptor/Daemon.html#start()"><B>start()</B></A> - 
 Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/Daemon.html" title="class in com.google.enterprise.adaptor">Daemon</A>
 <DD>&nbsp;
-<DT><A HREF="./com/google/enterprise/adaptor/GsaCommunicationHandler.html#start(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer)"><B>start(HttpServer, HttpServer)</B></A> - 
+<DT><A HREF="./com/google/enterprise/adaptor/GsaCommunicationHandler.html#start()"><B>start()</B></A> - 
 Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/GsaCommunicationHandler.html" title="class in com.google.enterprise.adaptor">GsaCommunicationHandler</A>
-<DD>Starts listening for communications from GSA.
-<DT><A HREF="./com/google/enterprise/adaptor/GsaCommunicationHandler.html#start(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer, java.lang.String)"><B>start(HttpServer, HttpServer, String)</B></A> - 
-Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/GsaCommunicationHandler.html" title="class in com.google.enterprise.adaptor">GsaCommunicationHandler</A>
-<DD>Starts listening for communications from GSA.
+<DD>Start servicing incoming requests.
+<DT><A HREF="./com/google/enterprise/adaptor/Service.html#start()"><B>start()</B></A> - 
+Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/Service.html" title="class in com.google.enterprise.adaptor">Service</A>
+<DD>&nbsp;
 <DT><A HREF="./com/google/enterprise/adaptor/Status.html" title="interface in com.google.enterprise.adaptor"><B>Status</B></A> - Interface in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Multi-state indicator providing the user with a notification of broken parts
  of the system.<DT><A HREF="./com/google/enterprise/adaptor/Status.Code.html" title="enum in com.google.enterprise.adaptor"><B>Status.Code</B></A> - Enum in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>Available statuses for displaying state indicators on the dashboard.<DT><A HREF="./com/google/enterprise/adaptor/StatusSource.html" title="interface in com.google.enterprise.adaptor"><B>StatusSource</B></A> - Interface in <A HREF="./com/google/enterprise/adaptor/package-summary.html">com.google.enterprise.adaptor</A><DD>A source of <A HREF="./com/google/enterprise/adaptor/Status.html" title="interface in com.google.enterprise.adaptor"><CODE>Status</CODE></A> messages.<DT><A HREF="./com/google/enterprise/adaptor/Application.html#stop(long, java.util.concurrent.TimeUnit)"><B>stop(long, TimeUnit)</B></A> - 
 Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/Application.html" title="class in com.google.enterprise.adaptor">Application</A>
@@ -1074,8 +1088,11 @@ Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/a
 <DD>&nbsp;
 <DT><A HREF="./com/google/enterprise/adaptor/GsaCommunicationHandler.html#stop(long, java.util.concurrent.TimeUnit)"><B>stop(long, TimeUnit)</B></A> - 
 Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/GsaCommunicationHandler.html" title="class in com.google.enterprise.adaptor">GsaCommunicationHandler</A>
-<DD>Stop the current services, allowing up to <code>maxDelay</code> seconds for
- things to shutdown.
+<DD>Stops servicing incoming requests, allowing up to <code>maxDelay</code> seconds
+ for things to shutdown.
+<DT><A HREF="./com/google/enterprise/adaptor/Service.html#stop(long, java.util.concurrent.TimeUnit)"><B>stop(long, TimeUnit)</B></A> - 
+Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/Service.html" title="class in com.google.enterprise.adaptor">Service</A>
+<DD>&nbsp;
 <DT><A HREF="./com/google/enterprise/adaptor/prebuilt/StreamingCommand.html" title="class in com.google.enterprise.adaptor.prebuilt"><B>StreamingCommand</B></A> - Class in <A HREF="./com/google/enterprise/adaptor/prebuilt/package-summary.html">com.google.enterprise.adaptor.prebuilt</A><DD>Exec helper that allows easy handling of stdin, stdout, and stderr.<DT><A HREF="./com/google/enterprise/adaptor/prebuilt/StreamingCommand.InputSource.html" title="interface in com.google.enterprise.adaptor.prebuilt"><B>StreamingCommand.InputSource</B></A> - Interface in <A HREF="./com/google/enterprise/adaptor/prebuilt/package-summary.html">com.google.enterprise.adaptor.prebuilt</A><DD>Content source that generates content at the rate it can be consumed.<DT><A HREF="./com/google/enterprise/adaptor/prebuilt/StreamingCommand.OutputSink.html" title="interface in com.google.enterprise.adaptor.prebuilt"><B>StreamingCommand.OutputSink</B></A> - Interface in <A HREF="./com/google/enterprise/adaptor/prebuilt/package-summary.html">com.google.enterprise.adaptor.prebuilt</A><DD>Content sink that consumes content as soon as it becomes available.<DT><A HREF="./com/google/enterprise/adaptor/prebuilt/StreamingCommand.html#streamInputSource(java.io.InputStream)"><B>streamInputSource(InputStream)</B></A> - 
 Static method in class com.google.enterprise.adaptor.prebuilt.<A HREF="./com/google/enterprise/adaptor/prebuilt/StreamingCommand.html" title="class in com.google.enterprise.adaptor.prebuilt">StreamingCommand</A>
 <DD><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io"><CODE>InputStream</CODE></A> to <A HREF="./com/google/enterprise/adaptor/prebuilt/StreamingCommand.InputSource.html" title="interface in com.google.enterprise.adaptor.prebuilt"><CODE>StreamingCommand.InputSource</CODE></A> adaptor.
@@ -1087,6 +1104,9 @@ Static method in class com.google.enterprise.adaptor.prebuilt.<A HREF="./com/goo
 <A NAME="_T_"><!-- --></A><H2>
 <B>T</B></H2>
 <DL>
+<DT><A HREF="./com/google/enterprise/adaptor/GsaCommunicationHandler.html#teardown()"><B>teardown()</B></A> - 
+Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/GsaCommunicationHandler.html" title="class in com.google.enterprise.adaptor">GsaCommunicationHandler</A>
+<DD>Stop services necessary for handling outgoing requests.
 <DT><A HREF="./com/google/enterprise/adaptor/Acl.html#toString()"><B>toString()</B></A> - 
 Method in class com.google.enterprise.adaptor.<A HREF="./com/google/enterprise/adaptor/Acl.html" title="class in com.google.enterprise.adaptor">Acl</A>
 <DD>Generates a string useful for debugging that contains users and groups

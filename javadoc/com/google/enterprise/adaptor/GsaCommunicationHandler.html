@@ -157,32 +157,39 @@ This class handles the communications with GSA.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#start(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer)">start</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;server,
-      <A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;dashboardServer)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Starts listening for communications from GSA.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#start(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer, java.lang.String)">start</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;server,
+<CODE>&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html" title="interface in com.google.enterprise.adaptor">AdaptorContext</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#setup(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer, java.lang.String)">setup</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;server,
       <A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;dashboardServer,
       <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;contextPrefix)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Starts listening for communications from GSA.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start services necessary for handling outgoing requests.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#start()">start</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start servicing incoming requests.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#stop(long, java.util.concurrent.TimeUnit)">stop</A></B>(long&nbsp;time,
      <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</A>&nbsp;unit)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stop the current services, allowing up to <code>maxDelay</code> seconds for
- things to shutdown.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stops servicing incoming requests, allowing up to <code>maxDelay</code> seconds
+ for things to shutdown.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#teardown()">teardown</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stop services necessary for handling outgoing requests.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -225,15 +232,17 @@ public <B>GsaCommunicationHandler</B>(<A HREF="../../../../com/google/enterprise
 </TR>
 </TABLE>
 
-<A NAME="start(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer)"><!-- --></A><H3>
-start</H3>
+<A NAME="setup(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer, java.lang.String)"><!-- --></A><H3>
+setup</H3>
 <PRE>
-public void <B>start</B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;server,
-                  <A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;dashboardServer)
-           throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
-                  <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></PRE>
+public <A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html" title="interface in com.google.enterprise.adaptor">AdaptorContext</A> <B>setup</B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;server,
+                            <A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;dashboardServer,
+                            <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;contextPrefix)
+                     throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
+                            <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></PRE>
 <DL>
-<DD>Starts listening for communications from GSA. <code>contextPrefix</code>
+<DD>Start services necessary for handling outgoing requests. <code>""</code> is used
+ for <code>contextPrefix</code> if the passed value is <code>null</code>.
 <P>
 <DD><DL>
 
@@ -244,23 +253,16 @@ public void <B>start</B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/a
 </DL>
 <HR>
 
-<A NAME="start(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer, java.lang.String)"><!-- --></A><H3>
+<A NAME="start()"><!-- --></A><H3>
 start</H3>
 <PRE>
-public void <B>start</B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;server,
-                  <A HREF="http://download.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/HttpServer.html?is-external=true" title="class or interface in com.sun.net.httpserver">HttpServer</A>&nbsp;dashboardServer,
-                  <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;contextPrefix)
-           throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
-                  <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></PRE>
+public void <B>start</B>()</PRE>
 <DL>
-<DD>Starts listening for communications from GSA. <code>""</code> is used for
- <code>contextPrefix</code> if the passed value is <code>null</code>.
+<DD>Start servicing incoming requests. This makes use of the
+ previously-provided HttpServers and configuration.
 <P>
 <DD><DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
-<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></CODE></DL>
+</DL>
 </DD>
 </DL>
 <HR>
@@ -268,11 +270,28 @@ public void <B>start</B>(<A HREF="http://download.oracle.com/javase/6/docs/jre/a
 <A NAME="stop(long, java.util.concurrent.TimeUnit)"><!-- --></A><H3>
 stop</H3>
 <PRE>
-public void <B>stop</B>(long&nbsp;time,
-                 <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</A>&nbsp;unit)</PRE>
+public boolean <B>stop</B>(long&nbsp;time,
+                    <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/concurrent/TimeUnit.html?is-external=true" title="class or interface in java.util.concurrent">TimeUnit</A>&nbsp;unit)</PRE>
 <DL>
-<DD>Stop the current services, allowing up to <code>maxDelay</code> seconds for
- things to shutdown.
+<DD>Stops servicing incoming requests, allowing up to <code>maxDelay</code> seconds
+ for things to shutdown. After called, no requests will be sent to the
+ Adaptor.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> if shutdown cleanly, <code>false</code> if requests may
+     still be processing</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="teardown()"><!-- --></A><H3>
+teardown</H3>
+<PRE>
+public void <B>teardown</B>()</PRE>
+<DL>
+<DD>Stop services necessary for handling outgoing requests. This call
+ invalidates the <A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html" title="interface in com.google.enterprise.adaptor"><CODE>AdaptorContext</CODE></A> returned from <A HREF="../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#setup(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer, java.lang.String)"><CODE>setup(com.sun.net.httpserver.HttpServer, com.sun.net.httpserver.HttpServer, java.lang.String)</CODE></A>.
 <P>
 <DD><DL>
 </DL>

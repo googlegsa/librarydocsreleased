@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-SensitiveValueDecoder
+DocIdPusher.Item
 </TITLE>
 
 
@@ -13,7 +13,7 @@ SensitiveValueDecoder
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="SensitiveValueDecoder";
+        parent.document.title="DocIdPusher.Item";
     }
 }
 </SCRIPT>
@@ -52,11 +52,11 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Response.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Service.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/DocIdPusher.Record.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?com/google/enterprise/adaptor/SensitiveValueDecoder.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="SensitiveValueDecoder.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../index.html?com/google/enterprise/adaptor/DocIdPusher.Item.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="DocIdPusher.Item.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {
@@ -73,9 +73,9 @@ function windowTitle()
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;METHOD</FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;METHOD</FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_top"></A>
@@ -87,15 +87,20 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHO
 <FONT SIZE="-1">
 com.google.enterprise.adaptor</FONT>
 <BR>
-Interface SensitiveValueDecoder</H2>
+Interface DocIdPusher.Item</H2>
+<DL>
+<DT><B>All Known Implementing Classes:</B> <DD><A HREF="../../../../com/google/enterprise/adaptor/DocIdPusher.Record.html" title="class in com.google.enterprise.adaptor">DocIdPusher.Record</A></DD>
+</DL>
+<DL>
+<DT><B>Enclosing interface:</B><DD><A HREF="../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor">DocIdPusher</A></DD>
+</DL>
 <HR>
 <DL>
-<DT><PRE>public interface <B>SensitiveValueDecoder</B></DL>
+<DT><PRE>public static interface <B>DocIdPusher.Item</B></DL>
 </PRE>
 
 <P>
-Provides parsing of sensitive values that can be plain text, obfuscated, or
- encrypted.
+Marker interface for an item that can exist in a feed.
 <P>
 
 <P>
@@ -103,50 +108,7 @@ Provides parsing of sensitive values that can be plain text, obfuscated, or
 
 <P>
 
-<!-- ========== METHOD SUMMARY =========== -->
-
-<A NAME="method_summary"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-<B>Method Summary</B></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/SensitiveValueDecoder.html#decodeValue(java.lang.String)">decodeValue</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;nonReadable)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Decode an encoded sensitive string into its original string.</TD>
-</TR>
-</TABLE>
-&nbsp;
 <P>
-
-<!-- ============ METHOD DETAIL ========== -->
-
-<A NAME="method_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Method Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="decodeValue(java.lang.String)"><!-- --></A><H3>
-decodeValue</H3>
-<PRE>
-<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>decodeValue</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;nonReadable)</PRE>
-<DL>
-<DD>Decode an encoded sensitive string into its original string.
-<P>
-<DD><DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</A></CODE> - if <code>nonReadable</code> is unable to be
-     decoded</DL>
-</DD>
-</DL>
 <!-- ========= END OF CLASS DATA ========= -->
 <HR>
 
@@ -177,11 +139,11 @@ decodeValue</H3>
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Response.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Service.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/DocIdPusher.Record.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?com/google/enterprise/adaptor/SensitiveValueDecoder.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="SensitiveValueDecoder.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../index.html?com/google/enterprise/adaptor/DocIdPusher.Item.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="DocIdPusher.Item.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {
@@ -198,9 +160,9 @@ decodeValue</H3>
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;METHOD</FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;METHOD</FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_bottom"></A>
