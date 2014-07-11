@@ -53,7 +53,7 @@ function windowTitle()
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AsyncDocIdPusher.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?com/google/enterprise/adaptor/Application.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="Application.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -223,7 +223,8 @@ start</H3>
 <PRE>
 public void <B>start</B>()
            throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
-                  <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></PRE>
+                  <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A>,
+                  <A HREF="../../../../com/google/enterprise/adaptor/StartupException.html" title="class in com.google.enterprise.adaptor">StartupException</A></PRE>
 <DL>
 <DD>Start necessary services for receiving requests and managing background
  tasks. Non-daemon threads are created, so call <A HREF="../../../../com/google/enterprise/adaptor/Application.html#stop(long, java.util.concurrent.TimeUnit)"><CODE>stop(long, java.util.concurrent.TimeUnit)</CODE></A> for graceful
@@ -234,7 +235,8 @@ public void <B>start</B>()
 
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
-<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></CODE></DL>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></CODE>
+<DD><CODE><A HREF="../../../../com/google/enterprise/adaptor/StartupException.html" title="class in com.google.enterprise.adaptor">StartupException</A></CODE></DL>
 </DD>
 </DL>
 <HR>
@@ -326,7 +328,7 @@ public static <A HREF="../../../../com/google/enterprise/adaptor/Application.htm
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AsyncDocIdPusher.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?com/google/enterprise/adaptor/Application.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="Application.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;

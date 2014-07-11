@@ -3,7 +3,7 @@
 <HTML>
 <HEAD>
 <TITLE>
-GroupDefinitionsWriter
+GroupDefinitionsFromCsv
 </TITLE>
 
 
@@ -13,7 +13,7 @@ GroupDefinitionsWriter
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="GroupDefinitionsWriter";
+        parent.document.title="GroupDefinitionsFromCsv";
     }
 }
 </SCRIPT>
@@ -52,11 +52,11 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsFromCsv.html" title="class in com.google.enterprise.adaptor.examples"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/MetadataTransformExample.html" title="class in com.google.enterprise.adaptor.examples"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/FileSystemAdaptor.html" title="class in com.google.enterprise.adaptor.examples"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html" title="class in com.google.enterprise.adaptor.examples"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../../index.html?com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="GroupDefinitionsWriter.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../../index.html?com/google/enterprise/adaptor/examples/GroupDefinitionsFromCsv.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="GroupDefinitionsFromCsv.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {
@@ -87,22 +87,22 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <FONT SIZE="-1">
 com.google.enterprise.adaptor.examples</FONT>
 <BR>
-Class GroupDefinitionsWriter</H2>
+Class GroupDefinitionsFromCsv</H2>
 <PRE>
 <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
   <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">com.google.enterprise.adaptor.AbstractAdaptor</A>
-      <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.enterprise.adaptor.examples.GroupDefinitionsWriter</B>
+      <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.enterprise.adaptor.examples.GroupDefinitionsFromCsv</B>
 </PRE>
 <DL>
 <DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public class <B>GroupDefinitionsWriter</B><DT>extends <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A></DL>
+<DT><PRE>public class <B>GroupDefinitionsFromCsv</B><DT>extends <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A></DL>
 </PRE>
 
 <P>
-Demonstrates sending group definitions to GSA.
+Reads memberships from CSV, forms groups, and sends to to GSA.
 <P>
 
 <P>
@@ -119,7 +119,7 @@ Demonstrates sending group definitions to GSA.
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html#GroupDefinitionsWriter()">GroupDefinitionsWriter</A></B>()</CODE>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsFromCsv.html#GroupDefinitionsFromCsv()">GroupDefinitionsFromCsv</A></B>()</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -137,7 +137,7 @@ Demonstrates sending group definitions to GSA.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html#getDocContent(com.google.enterprise.adaptor.Request, com.google.enterprise.adaptor.Response)">getDocContent</A></B>(<A HREF="../../../../../com/google/enterprise/adaptor/Request.html" title="interface in com.google.enterprise.adaptor">Request</A>&nbsp;req,
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsFromCsv.html#getDocContent(com.google.enterprise.adaptor.Request, com.google.enterprise.adaptor.Response)">getDocContent</A></B>(<A HREF="../../../../../com/google/enterprise/adaptor/Request.html" title="interface in com.google.enterprise.adaptor">Request</A>&nbsp;req,
               <A HREF="../../../../../com/google/enterprise/adaptor/Response.html" title="interface in com.google.enterprise.adaptor">Response</A>&nbsp;res)</CODE>
 
 <BR>
@@ -146,15 +146,32 @@ Demonstrates sending group definitions to GSA.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html#getDocIds(com.google.enterprise.adaptor.DocIdPusher)">getDocIds</A></B>(<A HREF="../../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor">DocIdPusher</A>&nbsp;pusher)</CODE>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsFromCsv.html#getDocIds(com.google.enterprise.adaptor.DocIdPusher)">getDocIds</A></B>(<A HREF="../../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor">DocIdPusher</A>&nbsp;pusher)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pushes all the <code>DocId</code>s that are suppose to be indexed by the GSA.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsFromCsv.html#init(com.google.enterprise.adaptor.AdaptorContext)">init</A></B>(<A HREF="../../../../../com/google/enterprise/adaptor/AdaptorContext.html" title="interface in com.google.enterprise.adaptor">AdaptorContext</A>&nbsp;context)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initialize adaptor with the current context.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsFromCsv.html#initConfig(com.google.enterprise.adaptor.Config)">initConfig</A></B>(<A HREF="../../../../../com/google/enterprise/adaptor/Config.html" title="class in com.google.enterprise.adaptor">Config</A>&nbsp;config)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides the opportunity for the Adaptor to create new configuration values
+ or override default values.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>static&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html#main(java.lang.String[])">main</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[]&nbsp;args)</CODE>
+<TD><CODE><B><A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsFromCsv.html#main(java.lang.String[])">main</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[]&nbsp;args)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -166,7 +183,7 @@ Demonstrates sending group definitions to GSA.
 <TH ALIGN="left"><B>Methods inherited from class com.google.enterprise.adaptor.<A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#destroy()">destroy</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)">init</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#initConfig(com.google.enterprise.adaptor.Config)">initConfig</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#main(com.google.enterprise.adaptor.Adaptor, java.lang.String[])">main</A></CODE></TD>
+<TD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#destroy()">destroy</A>, <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#main(com.google.enterprise.adaptor.Adaptor, java.lang.String[])">main</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -191,10 +208,10 @@ Demonstrates sending group definitions to GSA.
 </TR>
 </TABLE>
 
-<A NAME="GroupDefinitionsWriter()"><!-- --></A><H3>
-GroupDefinitionsWriter</H3>
+<A NAME="GroupDefinitionsFromCsv()"><!-- --></A><H3>
+GroupDefinitionsFromCsv</H3>
 <PRE>
-public <B>GroupDefinitionsWriter</B>()</PRE>
+public <B>GroupDefinitionsFromCsv</B>()</PRE>
 <DL>
 </DL>
 
@@ -208,11 +225,67 @@ public <B>GroupDefinitionsWriter</B>()</PRE>
 </TR>
 </TABLE>
 
+<A NAME="initConfig(com.google.enterprise.adaptor.Config)"><!-- --></A><H3>
+initConfig</H3>
+<PRE>
+public void <B>initConfig</B>(<A HREF="../../../../../com/google/enterprise/adaptor/Config.html" title="class in com.google.enterprise.adaptor">Config</A>&nbsp;config)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#initConfig(com.google.enterprise.adaptor.Config)">AbstractAdaptor</A></CODE></B></DD>
+<DD>Provides the opportunity for the Adaptor to create new configuration values
+ or override default values. Only <A HREF="../../../../../com/google/enterprise/adaptor/Config.html#addKey(java.lang.String, java.lang.String)"><CODE>Config.addKey(java.lang.String, java.lang.String)</CODE></A> should likely be
+ called. The user's configuration will override any values set in this way.
+ This method is called by <A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#main(com.google.enterprise.adaptor.Adaptor, java.lang.String[])"><CODE>AbstractAdaptor.main(com.google.enterprise.adaptor.Adaptor, java.lang.String[])</CODE></A> before <A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)"><CODE>Adaptor.init(com.google.enterprise.adaptor.AdaptorContext)</CODE></A>
+ is called.
+
+ <p>This implementation does nothing.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#initConfig(com.google.enterprise.adaptor.Config)">initConfig</A></CODE> in interface <CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></CODE><DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#initConfig(com.google.enterprise.adaptor.Config)">initConfig</A></CODE> in class <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="init(com.google.enterprise.adaptor.AdaptorContext)"><!-- --></A><H3>
+init</H3>
+<PRE>
+public void <B>init</B>(<A HREF="../../../../../com/google/enterprise/adaptor/AdaptorContext.html" title="interface in com.google.enterprise.adaptor">AdaptorContext</A>&nbsp;context)
+          throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)">AbstractAdaptor</A></CODE></B></DD>
+<DD>Initialize adaptor with the current context. This is the ideal time to
+ start any threads to do extra behind-the-scenes work. The <code>context</code>
+ points to other useful objects that can be used at any time. For example,
+ methods on <A HREF="../../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor"><CODE>DocIdPusher</CODE></A> provided via <A HREF="../../../../../com/google/enterprise/adaptor/AdaptorContext.html#getDocIdPusher()"><CODE>AdaptorContext.getDocIdPusher()</CODE></A> are allowed to be called whenever the
+ Adaptor wishes. This allows doing event-based incremental pushes at any
+ time.
+
+ <p>The method is called at the end of <A HREF="../../../../../com/google/enterprise/adaptor/GsaCommunicationHandler.html#start()"><CODE>GsaCommunicationHandler.start()</CODE></A>.
+
+ <p>If you experience a fatal error during initialization, feel free to
+ throw an <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang"><CODE>Exception</CODE></A> to cancel the startup process.
+
+ <p>This implementation does nothing.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)">init</A></CODE> in interface <CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html" title="interface in com.google.enterprise.adaptor">Adaptor</A></CODE><DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html#init(com.google.enterprise.adaptor.AdaptorContext)">init</A></CODE> in class <CODE><A HREF="../../../../../com/google/enterprise/adaptor/AbstractAdaptor.html" title="class in com.google.enterprise.adaptor">AbstractAdaptor</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
 <A NAME="getDocIds(com.google.enterprise.adaptor.DocIdPusher)"><!-- --></A><H3>
 getDocIds</H3>
 <PRE>
 public void <B>getDocIds</B>(<A HREF="../../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor">DocIdPusher</A>&nbsp;pusher)
-               throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></PRE>
+               throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A>,
+                      <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
 <DL>
 <DD><B>Description copied from interface: <CODE><A HREF="../../../../../com/google/enterprise/adaptor/Adaptor.html#getDocIds(com.google.enterprise.adaptor.DocIdPusher)">Adaptor</A></CODE></B></DD>
 <DD>Pushes all the <code>DocId</code>s that are suppose to be indexed by the GSA.
@@ -232,7 +305,8 @@ public void <B>getDocIds</B>(<A HREF="../../../../../com/google/enterprise/adapt
 <DD><DL>
 
 <DT><B>Throws:</B>
-<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></CODE></DL>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></CODE>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
 </DD>
 </DL>
 <HR>
@@ -301,11 +375,11 @@ public static void <B>main</B>(<A HREF="http://download.oracle.com/javase/6/docs
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsFromCsv.html" title="class in com.google.enterprise.adaptor.examples"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/MetadataTransformExample.html" title="class in com.google.enterprise.adaptor.examples"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/FileSystemAdaptor.html" title="class in com.google.enterprise.adaptor.examples"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html" title="class in com.google.enterprise.adaptor.examples"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../../index.html?com/google/enterprise/adaptor/examples/GroupDefinitionsWriter.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="GroupDefinitionsWriter.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+  <A HREF="../../../../../index.html?com/google/enterprise/adaptor/examples/GroupDefinitionsFromCsv.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="GroupDefinitionsFromCsv.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
 &nbsp;<SCRIPT type="text/javascript">
   <!--
   if(window==top) {

@@ -105,6 +105,11 @@ Adaptor interfaces and implementation.
 <TD>Methods for an Adaptor to communicate with the adaptor library.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="../../../../com/google/enterprise/adaptor/AsyncDocIdPusher.html" title="interface in com.google.enterprise.adaptor">AsyncDocIdPusher</A></B></TD>
+<TD>Interface that allows asynchronous at-will pushing of <code>DocId</code>s
+ to the GSA.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../com/google/enterprise/adaptor/AuthnAuthority.html" title="interface in com.google.enterprise.adaptor">AuthnAuthority</A></B></TD>
 <TD>Interface for adaptors capable of authenticating users.</TD>
 </TR>
@@ -128,10 +133,6 @@ Adaptor interfaces and implementation.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor">DocIdPusher</A></B></TD>
 <TD>Interface that allows at-will pushing of <code>DocId</code>s to the GSA.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD WIDTH="15%"><B><A HREF="../../../../com/google/enterprise/adaptor/DocIdPusher.Item.html" title="interface in com.google.enterprise.adaptor">DocIdPusher.Item</A></B></TD>
-<TD>Marker interface for an item that can exist in a feed.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../com/google/enterprise/adaptor/DocumentTransform.html" title="interface in com.google.enterprise.adaptor">DocumentTransform</A></B></TD>
@@ -288,6 +289,29 @@ Adaptor interfaces and implementation.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../com/google/enterprise/adaptor/Status.Code.html" title="enum in com.google.enterprise.adaptor">Status.Code</A></B></TD>
 <TD>Available statuses for displaying state indicators on the dashboard.</TD>
+</TR>
+</TABLE>
+&nbsp;
+
+<P>
+
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Exception Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="../../../../com/google/enterprise/adaptor/InvalidConfigurationException.html" title="class in com.google.enterprise.adaptor">InvalidConfigurationException</A></B></TD>
+<TD>Thrown for unrecoverable configuration errors.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="../../../../com/google/enterprise/adaptor/StartupException.html" title="class in com.google.enterprise.adaptor">StartupException</A></B></TD>
+<TD>Thrown for unrecoverable startup errors, such as fatal configuration
+ errors or running on the wrong platform.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="../../../../com/google/enterprise/adaptor/UnsupportedPlatformException.html" title="class in com.google.enterprise.adaptor">UnsupportedPlatformException</A></B></TD>
+<TD>Thrown if the adaptor cannot be run on this OS environment.</TD>
 </TR>
 </TABLE>
 &nbsp;
