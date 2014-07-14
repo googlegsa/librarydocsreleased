@@ -1,0 +1,347 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+Overview
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Overview";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Overview</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="com/google/enterprise/adaptor/ad/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <FONT CLASS="NavBarFont1">Class</FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="com/google/enterprise/adaptor/ad/package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="index.html?overview-summary.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="overview-summary.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<h3 id="adadaptor">Deployment of Active Directory Adaptor
+<P>
+<B>See:</B>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#overview_description"><B>Description</B></A>
+<P>
+
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Packages</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="20%"><B><A HREF="com/google/enterprise/adaptor/ad/package-summary.html">com.google.enterprise.adaptor.ad</A></B></TD>
+<TD>&nbsp;</TD>
+</TR>
+</TABLE>
+
+<P>
+&nbsp;<A NAME="overview_description"><!-- --></A>
+<P>
+<h3 id="adadaptor">Deployment of Active Directory Adaptor</h3>
+
+<p>A single instance of Active Directory adaptor can acquire
+and resolve groups from multiple Active Directory servers.
+
+<h4>Requirements</h4>
+<ul>
+  <li>GSA 7.2 or higher
+  <li>Java JRE 1.6u27 or higher installed on computer that runs adaptor
+  <li>Active Directory Adaptor JAR executable
+  <li>Credentials for Active Directory servers to be read
+</ul>
+
+<h4>Configure GSA for Adaptor</h4>
+<ol>
+  <li>Add the IP address of the computer that hosts the adaptor to the <b>List
+    of Trusted IP Addresses</b> on the GSA.
+    <p>In the GSA's Admin Console, go to <b>Content Sources &gt; Feeds</b>,
+    and scroll down to <b>List of Trusted IP Addresses</b>. Add the IP address
+    for the adaptor to the list.
+</ol>
+
+<h4>Configure Adaptor</h4>
+<ol>
+  <li>Create a file named <code>adaptor-config.properties</code> in the
+  directory that contains the adaptor binary. The configuration can
+  be for multiple AD servers. The variable <code>ad.servers</code>
+  contains a list of server identifiers.
+  <p>
+  Here is an example configuration (bold items are example values to be
+  replaced):
+<pre>
+gsa.hostname=<b>yourgsa.example.com</b>
+ad.defaultUser=<b>Admin</b>
+ad.defaultPassword=<b>PassW0RD</b>
+ad.servers=<b>firstServer,anotherAdServer</b>
+ad.servers.firstServer.host=<b>111.111.111.111</b>
+ad.servers.firstServer.method=standard
+ad.servers.firstServer.port=389
+ad.servers.firstServer.user=<b>EXAMPLE\\Administrator</b>
+ad.servers.firstServer.password=<b>yourpassword</b>
+ad.servers.anotherAdServer.host=<b>222.222.222.222</b>
+ad.servers.anotherAdServer.method=standard
+ad.servers.anotherAdServer.port=389
+</pre>
+  <p>
+  Notice: <code>ad.defaultUser</code> can be overriden by providing particular
+  <code>user</code> for a particular server.<br>
+  Notice: <code>ad.defaultPassword</code> can be overriden by providing particular
+  <code>password</code> for a particular server.<br>
+
+  <li> Create file named <code>logging.properties</code> in the same directory
+  that contains adaptor binary:
+  <pre>
+.level=INFO
+handlers=java.util.logging.FileHandler,java.util.logging.ConsoleHandler
+java.util.logging.FileHandler.formatter=com.google.enterprise.adaptor.CustomFormatter
+java.util.logging.FileHandler.pattern=logs/adaptor.%g.log
+java.util.logging.FileHandler.limit=10485760
+java.util.logging.FileHandler.count=20
+java.util.logging.ConsoleHandler.formatter=com.google.enterprise.adaptor.CustomFormatter
+</pre>
+
+  <li><p>Create a directory named <code>logs</code> in the same
+    directory that contains logging.properties.
+
+  <li><p>Run the adaptor using:
+  <pre>java -Djava.util.logging.config.file=logging.properties -jar adaptor-ad-YYYYMMDD-withlib.jar</pre>
+</ol>
+
+<h4>Running as a service</h4>
+  <p>Example service creation on Windows with prunsrv:
+  <pre>prunsrv install adaptor-ad --StartPath="%CD%" ^
+  --Classpath=adaptor-ad-YYYYMMDD-withlib.jar ^
+  --StartMode=jvm --StartClass=com.google.enterprise.adaptor.Daemon ^
+  --StartMethod=serviceStart --StartParams=com.google.enterprise.adaptor.ad.AdAdaptor
+  --StopMode=jvm --StopClass=com.google.enterprise.adaptor.Daemon ^
+  --StopMethod=serviceStop --StdOutput=stdout.log --StdError=stderr.log ^
+  ++JvmOptions=-Djava.util.logging.config.file=logging.properties</pre>
+
+  <p>Example execution on Linux with jsvc:
+  <pre>jsvc -pidfile adaptor.pid -cp adaptor-ad-YYYYMMDD-withlib.jar com.google.enterprise.adaptor.Daemon com.google.enterprise.adaptor.ad.AdAdaptor</pre>
+
+<h4>Optional <code>adaptor-config.properties</code> fields</h4>
+<dl>
+
+  <dt>
+  <code>server.dashboardPort</code>
+  </dt>
+  <dd>
+  Port on which to view web page showing information and diagnostics. Defaults to "5679".
+  </dd>
+
+  <dt>
+  <code>ad.localized.Everyone</code>
+  </dt>
+  <dd>
+  Name of Everyone group. Defaults to "Everyone".
+  </dd>
+
+  <dt>
+  <code>ad.localized.NTAuthority</code>
+  </dt>
+  <dd>
+  Name of NT Authority group. Defaults to "NT Authority".
+  </dd>
+
+  <dt>
+  <code>ad.localized.Interactive</code>
+  </dt>
+  <dd>
+  Name of Interactive group. Defaults to "Interactive".
+  </dd>
+
+  <dt>
+  <code>ad.localized.AuthenticatedUsers</code>
+  </dt>
+  <dd>
+  Name of Authenticated Users group. Defaults to "Authenticated Users".
+  </dd>
+
+  <dt>
+  <code>ad.localized.Builtin</code>
+  </dt>
+  <dd>
+  Prefix for builtin group names. Defaults to "BUILTIN".
+  </dd>
+
+  <dt>
+  <code>ad.feedBuiltinGroups</code>
+  </dt>
+  <dd>
+  Whether to feed in builtin groups. Defaults to false.
+  </dd>
+
+  <dt>
+  <code>adaptor.namespace</code>
+  </dt>
+  <dd>
+  Namespace to use on ACLs sent to GSA.  Defaults to "Default".
+  </dd>
+
+
+  <dt>
+  <code>server.port</code>
+  </dt>
+  <dd>
+  Port for any crawlable documents this adaptor serves.  
+  Each instance of an adaptor on same machine requires a unique port.
+  Defaults to 5678.
+  </dd>
+
+  <dt>
+  <code>adaptor.fullListingSchedule</code>
+  </dt>
+  <dd>
+  Schedule for pushing all group definitions.  Defaults to "0 3 * * *" which is 3AM.
+  </dd>
+
+  <dt>
+  <code>adaptor.incrementalPollPeriodSecs</code>
+  </dt>
+  <dd>
+  Schedule for getting recent updates.  Defaults to 900 seconds which is 15 minutes.
+  </dd>
+
+  <dt>
+  <code>adaptor.pushDocIdsOnStartup</code>
+  </dt>
+  <dd>
+  Whether to push all group definitions on startup, in addition to full listing
+  schedule.  Defaults to true.
+  </dd>
+
+  <dt>
+  <code>feed.maxUrls</code>
+  </dt>
+  <dd>
+  Number of groups to define per communication with GSA. Defaults to 5000.
+  </dd>
+
+  <dt>
+  <code>server.hostname</code>
+  </dt>
+  <dd>
+  Optionally the hostname of the server running adaptor, in case automatic
+  detection fails.  Defaults to name of localhost.
+  </dd>
+</dl>
+<P>
+
+<P>
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Overview</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="com/google/enterprise/adaptor/ad/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <FONT CLASS="NavBarFont1">Class</FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="com/google/enterprise/adaptor/ad/package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV&nbsp;
+&nbsp;NEXT</FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="index.html?overview-summary.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="overview-summary.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

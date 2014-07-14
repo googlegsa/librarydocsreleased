@@ -1,0 +1,604 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+Response
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Response";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Request.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/SensitiveValueDecoder.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../index.html?com/google/enterprise/adaptor/Response.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Response.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.google.enterprise.adaptor</FONT>
+<BR>
+Interface Response</H2>
+<HR>
+<DL>
+<DT><PRE>public interface <B>Response</B></DL>
+</PRE>
+
+<P>
+Interface provided to <A HREF="../../../../com/google/enterprise/adaptor/Adaptor.html#getDocContent(com.google.enterprise.adaptor.Request, com.google.enterprise.adaptor.Response)"><CODE>Adaptor.getDocContent(Request, Response)</CODE></A> for performing the actions needed
+ to satisfy a request.
+
+ <p>There are several ways that a request can be processed. In the simplest
+ case an Adaptor always sets different pieces of metadata, calls <A HREF="../../../../com/google/enterprise/adaptor/Response.html#getOutputStream()"><CODE>getOutputStream()</CODE></A>, and writes the document contents. If the document does not
+ exist, it should call <A HREF="../../../../com/google/enterprise/adaptor/Response.html#respondNotFound()"><CODE>respondNotFound()</CODE></A> instead.
+
+ <p>For improved efficiency during recrawl by the GSA, an Adaptor should check
+ <A HREF="../../../../com/google/enterprise/adaptor/Request.html#hasChangedSinceLastAccess(java.util.Date)"><CODE>Request.hasChangedSinceLastAccess(java.util.Date)</CODE></A> and call <A HREF="../../../../com/google/enterprise/adaptor/Response.html#respondNotModified()"><CODE>respondNotModified()</CODE></A> when it is <code>true</code>. This prevents the Adaptor from
+ ever needing to retrieve the document contents and metadata.
+<P>
+
+<P>
+<HR>
+
+<P>
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#addAnchor(java.net.URI, java.lang.String)">addAnchor</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net">URI</A>&nbsp;uri,
+          <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;text)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a hyperlink for the GSA to follow without modifying the document
+ contents.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#addMetadata(java.lang.String, java.lang.String)">addMetadata</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+            <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add metadata element that applies to the document.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://download.oracle.com/javase/6/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#getOutputStream()">getOutputStream</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get stream to write document contents to.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#putNamedResource(java.lang.String, com.google.enterprise.adaptor.Acl)">putNamedResource</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;fragment,
+                 <A HREF="../../../../com/google/enterprise/adaptor/Acl.html" title="class in com.google.enterprise.adaptor">Acl</A>&nbsp;acl)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provide alternative ACLs for this document, uniquely identified by
+ response document's <code>DocId</code> and <code>fragment</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#respondNotFound()">respondNotFound</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Respond to the GSA or other client that the request document does not
+ exist.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#respondNotModified()">respondNotModified</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Respond to the GSA or other client that it already has the latest version
+ of a file and its metadata.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#setAcl(com.google.enterprise.adaptor.Acl)">setAcl</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/Acl.html" title="class in com.google.enterprise.adaptor">Acl</A>&nbsp;acl)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provide the document's ACLs for early-binding security on the GSA.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#setContentType(java.lang.String)">setContentType</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;contentType)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Describe the content type of the document.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#setCrawlOnce(boolean)">setCrawlOnce</A></B>(boolean&nbsp;crawlOnce)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instruct the GSA to not recrawl the document after the initial
+ retrieval.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#setDisplayUrl(java.net.URI)">setDisplayUrl</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net">URI</A>&nbsp;displayUrl)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the URI to be displayed in search results.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#setLastModified(java.util.Date)">setLastModified</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</A>&nbsp;lastModified)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provide the last modification time of the document.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#setLock(boolean)">setLock</A></B>(boolean&nbsp;lock)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instruct the GSA to "lock" the document into its index.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#setNoArchive(boolean)">setNoArchive</A></B>(boolean&nbsp;noArchive)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whether the GSA should show the "Cached" link in search results for this
+ document.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#setNoFollow(boolean)">setNoFollow</A></B>(boolean&nbsp;noFollow)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whether the GSA should follow the links within the document to find other
+ documents.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#setNoIndex(boolean)">setNoIndex</A></B>(boolean&nbsp;noIndex)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whether the GSA should index the content for searching.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/Response.html#setSecure(boolean)">setSecure</A></B>(boolean&nbsp;secure)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mark the document as secure, for use with late-binding security.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="respondNotModified()"><!-- --></A><H3>
+respondNotModified</H3>
+<PRE>
+void <B>respondNotModified</B>()
+                        throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
+<DL>
+<DD>Respond to the GSA or other client that it already has the latest version
+ of a file and its metadata. If you have called other methods on this object
+ to provide various metadata, the effects of those methods will be ignored.
+
+ <p>If called, this must be the last call to this interface. Once you call
+ this method, for the rest of the processing, exceptions may no longer be
+ communicated to clients cleanly.
+<P>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="respondNotFound()"><!-- --></A><H3>
+respondNotFound</H3>
+<PRE>
+void <B>respondNotFound</B>()
+                     throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
+<DL>
+<DD>Respond to the GSA or other client that the request document does not
+ exist. If you have called other methods on this object, the effects of
+ those methods will be ignored.
+
+ <p>If called, this must be the last call to this interface. Once you call
+ this method, for the rest of the processing, exceptions may no longer be
+ communicated to the clients cleanly.
+<P>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getOutputStream()"><!-- --></A><H3>
+getOutputStream</H3>
+<PRE>
+<A HREF="http://download.oracle.com/javase/6/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</A> <B>getOutputStream</B>()
+                             throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
+<DL>
+<DD>Get stream to write document contents to. There is no need to flush or
+ close the <code>OutputStream</code> when done.
+
+ <p>If called, this must be the last call to this interface (although, for
+ convenience, you may call this method multiple times). Once you call this
+ method, for the rest of the processing, exceptions may no longer be
+ communicated to clients cleanly.
+<P>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setContentType(java.lang.String)"><!-- --></A><H3>
+setContentType</H3>
+<PRE>
+void <B>setContentType</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;contentType)</PRE>
+<DL>
+<DD>Describe the content type of the document.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setLastModified(java.util.Date)"><!-- --></A><H3>
+setLastModified</H3>
+<PRE>
+void <B>setLastModified</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</A>&nbsp;lastModified)</PRE>
+<DL>
+<DD>Provide the last modification time of the document.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="addMetadata(java.lang.String, java.lang.String)"><!-- --></A><H3>
+addMetadata</H3>
+<PRE>
+void <B>addMetadata</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
+                 <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;value)</PRE>
+<DL>
+<DD>Add metadata element that applies to the document. Providing multiple
+ values for the same key is supported; simply repeat the call once for each
+ value.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>key</CODE> - the key of metadata element<DD><CODE>value</CODE> - the value of metadata element
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</A></CODE> - if <code>key</code> or <code>value</code>
+     is <code>null</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setAcl(com.google.enterprise.adaptor.Acl)"><!-- --></A><H3>
+setAcl</H3>
+<PRE>
+void <B>setAcl</B>(<A HREF="../../../../com/google/enterprise/adaptor/Acl.html" title="class in com.google.enterprise.adaptor">Acl</A>&nbsp;acl)</PRE>
+<DL>
+<DD>Provide the document's ACLs for early-binding security on the GSA. By
+ default, the document's ACL will be <code>null</code>, which means the document
+ is public if the document isn't marked as secure via <A HREF="../../../../com/google/enterprise/adaptor/Response.html#setSecure(boolean)"><CODE>setSecure(boolean)</CODE></A>.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="putNamedResource(java.lang.String, com.google.enterprise.adaptor.Acl)"><!-- --></A><H3>
+putNamedResource</H3>
+<PRE>
+void <B>putNamedResource</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;fragment,
+                      <A HREF="../../../../com/google/enterprise/adaptor/Acl.html" title="class in com.google.enterprise.adaptor">Acl</A>&nbsp;acl)</PRE>
+<DL>
+<DD>Provide alternative ACLs for this document, uniquely identified by
+ response document's <code>DocId</code> and <code>fragment</code>.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setSecure(boolean)"><!-- --></A><H3>
+setSecure</H3>
+<PRE>
+void <B>setSecure</B>(boolean&nbsp;secure)</PRE>
+<DL>
+<DD>Mark the document as secure, for use with late-binding security. By
+ default, the secure setting will be <code>false</code>, which means the document
+ is public if there are no ACLs. ACLs should be used, if possible, instead
+ of setting this option to <code>true</code>. When <code>true</code>, the GSA needs to
+ be correctly configured to issue a SAML request to the Adaptor.
+ Setting ACLs to non-null will override setSecure and send secure indicator
+ to GSA.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="addAnchor(java.net.URI, java.lang.String)"><!-- --></A><H3>
+addAnchor</H3>
+<PRE>
+void <B>addAnchor</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net">URI</A>&nbsp;uri,
+               <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;text)</PRE>
+<DL>
+<DD>Add a hyperlink for the GSA to follow without modifying the document
+ contents. This is equivalent to the following HTML: <code>&lt;a href='$uri'&gt;$text&lt;/a&gt;</code>. If you want to link to a <A HREF="../../../../com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor"><CODE>DocId</CODE></A>, then you
+ may use the <A HREF="../../../../com/google/enterprise/adaptor/DocIdEncoder.html" title="interface in com.google.enterprise.adaptor"><CODE>DocIdEncoder</CODE></A> provided by <A HREF="../../../../com/google/enterprise/adaptor/AdaptorContext.html#getDocIdEncoder()"><CODE>AdaptorContext.getDocIdEncoder()</CODE></A> to produce an appropriate URI.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>uri</CODE> - the URI of the anchor<DD><CODE>text</CODE> - the text of the anchor, or <code>null</code>
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</A></CODE> - if <code>uri</code> is <code>null</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setNoIndex(boolean)"><!-- --></A><H3>
+setNoIndex</H3>
+<PRE>
+void <B>setNoIndex</B>(boolean&nbsp;noIndex)</PRE>
+<DL>
+<DD>Whether the GSA should index the content for searching. When <code>true</code>,
+ the document will not be visible in search results. This does not change
+ the GSA's behavior of following links within the document to find other
+ documents. By default, the GSA will index the document (a value of <code>false</code>).
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>noIndex</CODE> - <code>true</code> when the GSA shouldn't index this document</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setNoFollow(boolean)"><!-- --></A><H3>
+setNoFollow</H3>
+<PRE>
+void <B>setNoFollow</B>(boolean&nbsp;noFollow)</PRE>
+<DL>
+<DD>Whether the GSA should follow the links within the document to find other
+ documents. By default, the GSA will follow links (a value of <code>false</code>).
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>noFollow</CODE> - <code>true</code> when the GSA shouldn't follow links from this
+     document to find other documents</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setNoArchive(boolean)"><!-- --></A><H3>
+setNoArchive</H3>
+<PRE>
+void <B>setNoArchive</B>(boolean&nbsp;noArchive)</PRE>
+<DL>
+<DD>Whether the GSA should show the "Cached" link in search results for this
+ document. By default, the GSA will show the "Cached" link (a value of
+ <code>false</code>).
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>noArchive</CODE> - <code>true</code> when the GSA shouldn't show the "Cached"
+     link in search results</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setDisplayUrl(java.net.URI)"><!-- --></A><H3>
+setDisplayUrl</H3>
+<PRE>
+void <B>setDisplayUrl</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net">URI</A>&nbsp;displayUrl)</PRE>
+<DL>
+<DD>Set the URI to be displayed in search results. If <code>null</code>, then the
+ crawl URI representing the <code>DocId</code> is used. The default is <code>null</code>.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>displayUrl</CODE> - URI to be used for this document in search results</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setCrawlOnce(boolean)"><!-- --></A><H3>
+setCrawlOnce</H3>
+<PRE>
+void <B>setCrawlOnce</B>(boolean&nbsp;crawlOnce)</PRE>
+<DL>
+<DD>Instruct the GSA to not recrawl the document after the initial
+ retrieval. The default is <code>false</code>.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>crawlOnce</CODE> - if <code>true</code>, the document does not need to be
+     recrawled periodically</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setLock(boolean)"><!-- --></A><H3>
+setLock</H3>
+<PRE>
+void <B>setLock</B>(boolean&nbsp;lock)</PRE>
+<DL>
+<DD>Instruct the GSA to "lock" the document into its index. When the license
+ limit is reached on the GSA, it deletes unlocked documents before locked
+ documents while making room for new documents. The default is <code>false</code>.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>lock</CODE> - if <code>true</code>, keep this document in the index in preference
+     to unlocked documents</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Request.html" title="interface in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/SensitiveValueDecoder.html" title="interface in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../index.html?com/google/enterprise/adaptor/Response.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Response.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

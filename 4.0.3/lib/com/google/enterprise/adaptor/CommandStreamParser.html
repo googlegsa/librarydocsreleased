@@ -1,0 +1,574 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+CommandStreamParser
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="CommandStreamParser";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthzStatus.html" title="enum in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Config.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../index.html?com/google/enterprise/adaptor/CommandStreamParser.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="CommandStreamParser.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.google.enterprise.adaptor</FONT>
+<BR>
+Class CommandStreamParser</H2>
+<PRE>
+<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
+  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>com.google.enterprise.adaptor.CommandStreamParser</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <B>CommandStreamParser</B><DT>extends <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+</PRE>
+
+<P>
+Parses the adaptor data format into individual commands with associated data.
+
+ This format is used for communication between the adaptor library and various command line
+ adaptor components (lister, retriever, transformer, authorizer, etc.). It supports responses
+ coming back from the command line adaptor implementation. The format supports a mixture of
+ character and binary data. All character data must be encoded in UTF-8.<p>
+
+ Character data technically supports a 'modified UTF-8'. The modified UTF-8 encoding allows
+ newlines and the null character to be encoded as 2-bytes instead of one. Instead of byte 0x00,
+ the null character \0 can be encoded as 0xC0 0x80. Instead of byte 0x0a, the line feed character
+ \n can be encoded as 0xC0 0x8a.<p>
+
+ <h3>Header Format</h3>
+
+ Communications (via either file or stream) begin with the header:<p>
+
+ <code>GSA Adaptor Data Version 1 [&lt;delimiter&gt;]</code><p>
+
+ The version number must be proceeded by a single space and followed by a single space. The
+ version number may increase in the future should the format be enhanced.<p>
+
+ The string between the two square brackets will be used as the delimiter for the remainder of the
+ file being read or for the duration of the communication session.<p>
+
+ Care must be taken that the delimiter character string can never occur in a document ID, metadata
+ name, metadata value, user name, or any other data that will be represented using the format with
+ the exception of document contents, which can contain the delimiter string. The safest delimiter
+ is likely to be the null character (the character with a value of zero). This character is
+ unlikely to be present in existing names, paths, metadata, etc. Another possible choice is the
+ newline character, though in many systems it is possible for this character to be present in
+ document names and document paths, etc. If in doubt, the null character is recommended. Because
+ modified UTF-8 is supported, newlines or null characters in document IDs, metadata, and the like
+ can be encoded in their 2-byte form which which will not be confused with the delimiter. A
+ delimiter can be made up of more than one character so it is possible to have a delimiter that is
+ <CR><LF> or a highly unique string (such as a GUID) that has an exceptionally low probability of
+ occurring in the data.<p>
+
+ The following characters may not be used in the delimiter:<p> 'A'-'Z', 'a'-'z' and '0'-'9' the
+ alphanumeric characters<br> ':'  colon<br> '/'  slash<br> '-'  hyphen<br> '_'  underscore<br> ' '
+ space<br> '=' equals<br> '+' plus<br> '[' left square bracket<br> ']' right square bracket<p>
+
+ <h3>Body Format</h3> Elements in the file start with one of the following commands. Commands
+ where data precedes the next delimiter include an equal sign. Commands that are immediately
+ followed by a delimiter do not include an equal sign. The first command must specify a document
+ ID ("id=" or "id-list"). Command that don't specify a document ID are associated with the most
+ recent previously specified document ID.<p>
+
+ <h1>Common Commands:</h1>
+
+ "id=" -- specifies a document id<p>
+
+ "id-list" -- Starts a list of document ids each separated by
+ the specified delimiter, the list is terminated by two consecutive delimiters or EOS
+ (End-Of-Stream). ids in an id-list cannot have any of the associated commands listed below.<p>
+
+ "repository-unavailable=" -- the document repository is unavailable. The string following the "="
+ character includes additional information that will be logged with the error.
+
+
+ <h1>Lister Commands:</h1>
+
+ "result-link=" -- specifies an alternative link to be displayed in the search results.
+ This must be a properly formed URL. A "result link" is sometimes referred to as a "display URL".
+ If no results-link is specified then the URL used for crawling is also used in the
+ search results.<p>
+
+ "last-modified=" -- Specifies the last time the document or its metadata has changed.
+ The argument is a number representing the number of seconds since the standard base
+ time known as the epoch", namely January 1, 1970, 00:00:00 GMT. If last-modified is specified
+ and the document has never been crawled before or has been crawled prior to the last-modified
+ time then the ocument will be marked as "crawl-immediately" by the GSA.<p>
+
+ "crawl-immediately" -- Increases the crawling priority of the document such
+ that the GSA will retrieve it sooner than normally crawled documents.<p>
+
+ "crawl-once" -- specifies that the document will be crawled by the
+                 GSA one time but then never re-crawled.<p>
+
+ "lock" -- Causes the document to remain in the index unless explicitly removed.
+ Failure to retrieve the document during re-crawling will not result in
+ removal of the document. If every document in the GSA is
+ locked then locked document may be forced out when maximum capacity is
+ reached.<p>
+
+ "delete" -- this document should be deleted from the GSA index.<p>
+
+ <h1>Retriever Commands:</h1>
+
+ "up-to-date" -- specifies that the document is up-to-date with respect to its last crawled
+ time.<p>
+
+ "not-found" -- the document does not exists in the repository<p>
+
+ "mime-type=" -- specifies the document's mime-type. If unspecified then the GSA will
+ automatically assign a type to the document. <p>
+
+ "meta-name=" -- specifies a metadata key, to be followed by a metadata-value<p>
+
+ "meta-value=" -- specifies a metadata value associated with
+ immediately preceding metadata-name<p>
+
+ "content" -- signals the beginning of binary content which
+ continues to the end of the file or stream<p>
+
+ "last-modified=" -- specifies the last time the document or its metadata has changed.
+ The argument is a number representing the number of seconds since the standard base
+ time known as the epoch", namely January 1, 1970, 00:00:00 GMT.<p>
+
+ "secure=" -- specifies whether the document is non-public. The argument is either 'true' or
+ 'false'.<p>
+
+ "anchor-uri=" -- specifies an anchor URI, to be followed by anchor-text.<p>
+
+ "anchor-text=" -- specifies the text associated with an anchor-uri.<p>
+
+ "no-index=" -- specifies whether the document should be indexed by the GSA. The argument is
+ either 'true' or 'false'.<p>
+
+ "no-follow=" -- specifies whether the document's links should be followed by the GSA. The
+ argument is either 'true' or 'false'.<p>
+
+ "no-archive=" -- specifies whether GSA document will allow the user to see a cached version of
+ the document. The argument is either 'true' or 'false'.<p>
+
+ "display-url=" -- specifies an alternative link to be displayed in the search results.
+ This must be a properly formed URL.<p>
+
+ "crawl-once=" -- specifies that the document will be crawled by the
+ GSA one time but then never re-crawled. The argument should be 'true' or 'false'.<p>
+
+ "lock=" -- Causes the document to remain in the index unless explicitly removed.
+ If every document in the GSA is locked then locked document may be forced out when maximum
+ capacity is reached.<p>
+
+ "acl" -- when provided, an ACL is sent along with document. The ACL is made of 
+ values provided for other commands starting with "acl-" and "namespace"
+ command. If no acl command is provided then all other ACL commands are 
+ ignored. <p>
+
+ "namespace=" -- namespace used on all user and group principals until another
+ another namespace is provided.  Defaults to the default namespace.<p>
+
+ "acl-permit-user=" -- a user name, either with domain or without, that will
+ be permitted to view document being returned.<p>
+
+ "acl-deny-user=" -- a user name, either with domain or without, that will
+ be denied access to document being returned.<p>
+
+ "acl-permit-group=" -- a group name, either with domain or without, that 
+ will be permitted to view document being returned.<p>
+
+ "acl-deny-group=" -- a group name, either with domain or without, that
+ will be denied to view document being returned.<p>
+
+ "acl-inherit-from=" -- document id that this document inherits permissions
+ from. <p>
+
+ "acl-inherit-fragment=" -- optional fragment supplementing acl-inherit-from.
+ Together acl-inherit-from and acl-inherit-fragment are what is being
+ inherited from.<p>
+ 
+ "acl-inheritance-type=" -- the type of inheritance <code>com.google.enterprise.adaptor.Acl.InheritanceType</code>.  Valid values are:
+ and-both-permit, child-overrides, leaf-node, and parent-overrides<p>
+
+ "acl-case-sensitive=" -- the principals of this document are case sensitive.
+ <p>
+
+ "acl-case-insensitive=" -- the principals of this document are case
+ insensitive. <p>
+
+ <h1>Authorizer Commands:</h1>
+
+ "authz-status=" -- specifies whether a document is visible to a
+     specified user. The argument must be PERMIT, DENY or INDETERMINATE<p>
+
+  "user=" -- specifies the user for whom the authorization check will be made<p>
+
+  "password=" -- specifies the password for the user. (optional)<p>
+    
+  "group=" -- specifies a security group to which the user belongs.<p>
+
+ End-of-stream terminates the data transmission. Multiple consecutive delimiters are collapsed
+ into a single delimiter and terminates the current id-list should one exist.<p>
+
+ Unrecognized commands generate a warning but are otherwise ignored.
+
+ <h3>Examples</h3>
+
+ Example 1:<p>
+
+ <pre>
+ <code>GSA Adaptor Data Version 1 [&lt;delimiter&gt;]
+ id-list
+ /home/repository/docs/file1
+ /home/repository/docs/file2
+ /home/repository/docs/file3
+ /home/repository/docs/file4
+ /home/repository/docs/file5
+ </code></pre>
+
+ Example 2:<p>
+
+ <pre>
+ <code>GSA Adaptor Data Version 1 [&lt;delimiter&gt;]
+ id=/home/repository/docs/file1
+ id=/home/repository/docs/file2
+ crawl-immediately
+ last-modified=20110803 16:07:23
+
+ meta-name=Department
+ meta-content=Engineering
+
+ meta-name=Creator
+ meta-content=howardhawks
+
+ id=/home/repository/docs/file3
+ id=/home/repository/docs/file4
+ id=/home/repository/docs/file5
+ </code></pre>
+
+ Data passed to command line authorizer via stdin for authz check.
+ Entries will always occur in this order: user, password, group, id.
+ password and group information is optional. Any number of group and
+ id entries can exist. Each of the documents with a listed id should
+ be checked.
+ <pre>
+ <code>GSA Adaptor Data Version 1 [&lt;delimiter&gt;]
+ user=tim_smith
+ password=abc123
+ group=managers
+ group=research
+ id=/home/repository/docs/file1
+ id=/home/repository/docs/file2
+ </code></pre>
+
+ AuthZ response passed from command line authorizer via stdout.
+ Each doc id must include an authz-status entry.
+ <pre>
+ <code>GSA Adaptor Data Version 1 [&lt;delimiter&gt;]
+ id=/home/repository/docs/file1
+ authz-status=PERMIT
+ id=/home/repository/docs/file2
+ authz-status=DENY
+ </code></pre>
+<P>
+
+<P>
+<HR>
+
+<P>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/CommandStreamParser.html#CommandStreamParser(java.io.InputStream)">CommandStreamParser</A></B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;inputStream)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/CommandStreamParser.html#getVersionNumber()">getVersionNumber</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="../../../../com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor">DocId</A>,<A HREF="../../../../com/google/enterprise/adaptor/AuthzStatus.html" title="enum in com.google.enterprise.adaptor">AuthzStatus</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/CommandStreamParser.html#readFromAuthorizer()">readFromAuthorizer</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/DocIdPusher.Record.html" title="class in com.google.enterprise.adaptor">DocIdPusher.Record</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/CommandStreamParser.html#readFromLister(com.google.enterprise.adaptor.DocIdPusher, com.google.enterprise.adaptor.ExceptionHandler)">readFromLister</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor">DocIdPusher</A>&nbsp;pusher,
+               <A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor">ExceptionHandler</A>&nbsp;handler)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parse a listing response, sending results to <code>pusher</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../com/google/enterprise/adaptor/CommandStreamParser.html#readFromRetriever(com.google.enterprise.adaptor.DocId, com.google.enterprise.adaptor.Response)">readFromRetriever</A></B>(<A HREF="../../../../com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor">DocId</A>&nbsp;docId,
+                  <A HREF="../../../../com/google/enterprise/adaptor/Response.html" title="interface in com.google.enterprise.adaptor">Response</A>&nbsp;response)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="CommandStreamParser(java.io.InputStream)"><!-- --></A><H3>
+CommandStreamParser</H3>
+<PRE>
+public <B>CommandStreamParser</B>(<A HREF="http://download.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;inputStream)</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="getVersionNumber()"><!-- --></A><H3>
+getVersionNumber</H3>
+<PRE>
+public int <B>getVersionNumber</B>()
+                     throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="readFromAuthorizer()"><!-- --></A><H3>
+readFromAuthorizer</H3>
+<PRE>
+public <A HREF="http://download.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="../../../../com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor">DocId</A>,<A HREF="../../../../com/google/enterprise/adaptor/AuthzStatus.html" title="enum in com.google.enterprise.adaptor">AuthzStatus</A>&gt; <B>readFromAuthorizer</B>()
+                                          throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="readFromRetriever(com.google.enterprise.adaptor.DocId, com.google.enterprise.adaptor.Response)"><!-- --></A><H3>
+readFromRetriever</H3>
+<PRE>
+public void <B>readFromRetriever</B>(<A HREF="../../../../com/google/enterprise/adaptor/DocId.html" title="class in com.google.enterprise.adaptor">DocId</A>&nbsp;docId,
+                              <A HREF="../../../../com/google/enterprise/adaptor/Response.html" title="interface in com.google.enterprise.adaptor">Response</A>&nbsp;response)
+                       throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="readFromLister(com.google.enterprise.adaptor.DocIdPusher, com.google.enterprise.adaptor.ExceptionHandler)"><!-- --></A><H3>
+readFromLister</H3>
+<PRE>
+public <A HREF="../../../../com/google/enterprise/adaptor/DocIdPusher.Record.html" title="class in com.google.enterprise.adaptor">DocIdPusher.Record</A> <B>readFromLister</B>(<A HREF="../../../../com/google/enterprise/adaptor/DocIdPusher.html" title="interface in com.google.enterprise.adaptor">DocIdPusher</A>&nbsp;pusher,
+                                         <A HREF="../../../../com/google/enterprise/adaptor/ExceptionHandler.html" title="interface in com.google.enterprise.adaptor">ExceptionHandler</A>&nbsp;handler)
+                                  throws <A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
+                                         <A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></PRE>
+<DL>
+<DD>Parse a listing response, sending results to <code>pusher</code>. If <code>handler</code> is <code>null</code>, then <code>pusher</code>'s default handler will be used. In case of failure sending in
+ <code>pusher</code>, the rest of the input stream may not be read.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>null</code> on success, otherwise the first Record to fail
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
+<DD><CODE><A HREF="http://download.oracle.com/javase/6/docs/api/java/lang/InterruptedException.html?is-external=true" title="class or interface in java.lang">InterruptedException</A></CODE></DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/AuthzStatus.html" title="enum in com.google.enterprise.adaptor"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../com/google/enterprise/adaptor/Config.html" title="class in com.google.enterprise.adaptor"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../index.html?com/google/enterprise/adaptor/CommandStreamParser.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="CommandStreamParser.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

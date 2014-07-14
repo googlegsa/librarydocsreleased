@@ -1,0 +1,453 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<title>Overview</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Overview";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li class="navBarCell1Rev">Overview</li>
+<li><a href="com/google/enterprise/adaptor/fs/package-summary.html">Package</a></li>
+<li>Class</li>
+<li><a href="com/google/enterprise/adaptor/fs/package-tree.html">Tree</a></li>
+<li><a href="deprecated-list.html">Deprecated</a></li>
+<li><a href="index-all.html">Index</a></li>
+<li><a href="help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev</li>
+<li>Next</li>
+</ul>
+<ul class="navList">
+<li><a href="index.html?overview-summary.html" target="_top">Frames</a></li>
+<li><a href="overview-summary.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<div class="header">
+<div class="subTitle">
+<div class="block"><h3 id="fsadaptor">Deployment of File System Adaptor</div>
+</div>
+<p>See: <a href="#overview_description">Description</a></p>
+</div>
+<div class="contentContainer">
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Packages table, listing packages, and an explanation">
+<caption><span>Packages</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Package</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="com/google/enterprise/adaptor/fs/package-summary.html">com.google.enterprise.adaptor.fs</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="footer"><a name="overview_description">
+<!--   -->
+</a>
+<div class="subTitle">
+<div class="block"><h3 id="fsadaptor">Deployment of File System Adaptor</h3>
+
+<p>A single instance of File System adaptor can have
+GSA index a single UNC share.  DFS is supported.
+
+<h4>Requirements</h4>
+<ul>
+  <li>GSA 7.2 or higher
+  <li>Java JRE 1.7 update 6 or higher installed on computer that runs adaptor
+  <li>File System Adaptor JAR executable
+  <li>Requires running on Microsoft Windows
+  <li>A Windows account with sufficient permissions for the adaptor
+      (see the <b>Permissions needed by the Adaptor</b> section below)
+</ul>
+
+<h4>Permissions needed by the Adaptor</h4>
+
+  <p>The Windows account that the adaptor is running under must have
+  sufficient permissions to:
+  <ul>
+    <li>List the content of folders</li> 
+    <li>Read the content of documents</li> 
+    <li>Read attributes of files and folders</li>
+    <li>Read permissions (ACLs) for both files and folders</li>
+  </ul>
+
+  <p>Membership in one of these groups grants a Windows account the
+  sufficient permissions needed by the Adaptor:
+  <ul>
+    <li>Administrators</li>
+    <li>Power Users</li>
+    <li>Print Operators</li>
+    <li>Server Operators</li>
+  </ul>
+
+  <p>Note: it is not sufficient for the user to be member of one of
+  these groups at the domain level. The user must be a member of one of
+  these groups on the local machine that exports the Windows Share. More
+  information in the Microsoft documentation, on the <a
+  href="http://msdn.microsoft.com/en-us/library/bb525388(VS.85).aspx">
+  NetShareGetinfo function</a>.</p>
+
+<h4>Configure GSA for Adaptor</h4>
+<ol>
+  <li>Add the IP address of the computer that hosts the adaptor to the <b>List
+    of Trusted IP Addresses</b> on the GSA.
+    <p>In the GSA's Admin Console, go to <b>Content Sources &gt; Feeds</b>,
+    and scroll down to <b>List of Trusted IP Addresses</b>. Add the IP address
+    for the adaptor to the list.
+
+  <li>Add the URLs provided by the adaptor to the <b>Follow Patterns</b>
+    on the GSA.
+    <p>In the Admin console, go to <b>Content Sources &gt; Web Crawl 
+    &gt; Start and Block URLs</b>, and
+    scroll down to <b>Follow Patterns</b>.
+    Add an entry like <code>http://adaptor.example.com:5678/doc/
+    </code> where <code>adaptor.example.com</code> is the hostname of the
+    machine that hosts the adaptor. By default the adaptor runs on port 5678.
+</ol>
+
+<h4>Configure Adaptor</h4>
+<ol>
+  <li>Create a file named <code>adaptor-config.properties</code> in the
+  directory that contains the adaptor binary.
+  <p>
+  Here is an example configuration (bold items are example values to be
+  replaced):
+<pre>
+gsa.hostname=<b>yourgsa.hostname.com</b>
+filesystemadaptor.src=<b>\\\\host\\share</b>
+</pre>
+  <p> Note: Backslashes are entered as double backslashes. In order
+      to represent a single '\' you need to enter '\\'.
+  <p> Note: DFS links can be given as 
+      filesystemadaptor.src: <b>\\\\host\\dfsnamespace\\link</b>
+  <p> Note: UNICODE, as well as non-ASCII, characters can be used in
+      filesystemadaptor.src. Including these characters will require
+      the <code>adaptor-config.properties</code> file to be saved
+      using UTF-8 encoding.
+  <br>
+
+  <li> Create file named <code>logging.properties</code> in the same directory
+  that contains adaptor binary:
+  <pre>
+.level=INFO
+handlers=java.util.logging.FileHandler,java.util.logging.ConsoleHandler
+java.util.logging.FileHandler.formatter=com.google.enterprise.adaptor.CustomFormatter
+java.util.logging.FileHandler.pattern=logs/adaptor.%g.log
+java.util.logging.FileHandler.limit=10485760
+java.util.logging.FileHandler.count=20
+java.util.logging.ConsoleHandler.formatter=com.google.enterprise.adaptor.CustomFormatter
+</pre>
+
+  <li><p>Create a directory named <code>logs</code> inside same directory that contains 
+    the adaptor binary.
+
+  <li><p>Run the adaptor using a command line like:
+  <pre>java -Djava.util.logging.config.file=logging.properties -jar adaptor-fs-YYYYMMDD-withlib.jar</pre>
+</ol>
+
+<h4>Running as service on Windows</h4>
+  <p>Example service creation on Windows with prunsrv:
+  <pre>prunsrv install adaptor-fs --StartPath="%CD%" ^
+  --Classpath=adaptor-fs-YYYYMMDD-withlib.jar ^
+  --StartMode=jvm --StartClass=com.google.enterprise.adaptor.Daemon ^
+  --StartMethod=serviceStart --StartParams=com.google.enterprise.adaptor.fs.FsAdaptor ^
+  --StopMode=jvm --StopClass=com.google.enterprise.adaptor.Daemon ^
+  --StopMethod=serviceStop --StdOutput=stdout.log --StdError=stderr.log ^
+  ++JvmOptions=-Djava.util.logging.config.file=logging.properties</pre>
+
+  <p> Note: By default the File System adaptor service runs using the Windows Local System account.
+      This should be fine in most cases but this can cause issues if access to documents is
+      restricted through Acls.
+      In cases where the File System adaptor service is not able to crawl documents due
+      to Acl restrictions, you would need to specify a user for the File System adaptor
+      service through the Service Control Manager that has sufficient access to crawl the documents.
+
+<h4>Optional <code>adaptor-config.properties</code> fields</h4>
+<dl>
+  <dt>
+  <code>server.dashboardPort</code>
+  </dt>
+  <dd>
+  Port on which to view web page showing information
+  and diagnostics.  Defaults to "5679".
+  </dd>
+  <br>
+  <dt>
+  <code>filesystemadaptor.supportedAccounts</code>
+  </dt>
+  <dd>
+  Accounts that are in the supportedAccounts will be
+  included in Acls regardless if they are builtin or
+  not.
+  By default the value is:
+  <pre>
+  BUILTIN\\Administrators,\\Everyone,BUILTIN\\Users,
+  BUILTIN\\Guest,NT AUTHORITY\\INTERACTIVE,
+  NT AUTHORITY\\Authenticated Users
+  </pre>
+  </dd>
+  <dt>
+  <code>filesystemadaptor.builtinGroupPrefix</code>
+  </dt>
+  <dd>
+  Builtin accounts are excluded from the Acls
+  that are pushed to the GSA. An account that starts with
+  this prefix is considered a builtin account and will be
+  excluded from the Acls.
+  By default the value is:
+  <pre>
+  BUILTIN\\
+  </pre>
+  </dd>
+  <dt>
+  <code>filesystemadaptor.crawlHiddenFiles</code>
+  </dt>
+  <dd>
+  This boolean configuration property allows or disallows indexing
+  of hidden files and folders. The definition of hidden files and
+  folders is platform dependent. On Windows file sytems a file or
+  folder is considered hidden if the DOS <code>hidden</code>
+  attribute is set.
+  <p/>
+  By default, hidden files are not indexed and the contents of
+  hidden folders are not indexed. Setting
+  <code>filesystemadaptor.crawlHiddenFiles</code> to <code>true</code>
+  will allow hidden files and folders to be crawled by the Search
+  Appliance. By default the value is:
+  <pre>
+  false
+  </pre>
+  </dd>
+  <dt>
+  <code>filesystemadaptor.lastAccessedDate</code>
+  </dt>
+  <dd>
+  This configuration property can be used to disable crawling of files
+  whose time of last access is earlier than a specific date.  The cut-off
+  date is specified in <a href="http://www.w3.org/TR/NOTE-datetime">
+  ISO8601</a> date format, <code>YYYY-MM-DD</code>.
+  <p/>
+  Setting <code>filesystemadaptor.lastAccessedDate</code> to
+  <code>2010-01-01</code> would only crawl content that has been accessed
+  since the beginning of 2010.
+  <p/>
+  By default, filtering content based upon last accessed time is disabled.
+  <br>
+  Only one of <code>filesystemadaptor.lastAccessedDate</code> or
+  <code>filesystemadaptor.lastAccessedDays</code> may be specified.
+  </dd>
+  <dt>
+  <code>filesystemadaptor.lastAccessedDays</code>
+  </dt>
+  <dd>
+  This configuration property can be used to disable crawling of files
+  that have not been accessed within the specified number of days. Unlike the
+  absolute cut-off date used by <code>filesystemadaptor.lastAccessedDate</code>,
+  this property can be used to expire previously indexed content if it
+  has not been accessed in a while.
+  <p/>
+  The expiration window is specified as a positive integer number of days.
+  <br>
+  Setting <code>filesystemadaptor.lastAccessedDays</code> to
+  <code>365</code> would only crawl content that has been accessed
+  in the last year.
+  <p/>
+  By default, filtering content based upon last accessed time is disabled.
+  <br>
+  Only one of <code>filesystemadaptor.lastAccessedDate</code> or
+  <code>filesystemadaptor.lastAccessedDays</code> may be specified.
+  </dd>
+  <dt>
+  <code>filesystemadaptor.lastModifiedDate</code>
+  </dt>
+  <dd>
+  This configuration property can be used to disable crawling of files
+  whose time of last access is earlier than a specific date.  The cut-off
+  date is specified in <a href="http://www.w3.org/TR/NOTE-datetime">
+  ISO8601</a> date format, <code>YYYY-MM-DD</code>.
+  <p/>
+  Setting <code>filesystemadaptor.lastModifiedDate</code> to
+  <code>2010-01-01</code> would only crawl content that has been modified
+  since the beginning of 2010.
+  <p/>
+  By default, filtering content based upon last modified time is disabled.
+  <br>
+  Only one of <code>filesystemadaptor.lastModifiedDate</code> or
+  <code>filesystemadaptor.lastModifiedDays</code> may be specified.
+  </dd>
+  <dt>
+  <code>filesystemadaptor.lastModifiedDays</code>
+  </dt>
+  <dd>
+  This configuration property can be used to disable crawling of files
+  that have not been modified within the specified number of days. Unlike the
+  absolute cut-off date used by <code>filesystemadaptor.lastModifiedDate</code>,
+  this property can be used to expire previously indexed content if it
+  has not been modified in a while.
+  <p/>
+  The expiration window is specified as a positive integer number of days.
+  <br>
+  Setting <code>filesystemadaptor.lastModifiedDays</code> to
+  <code>365</code> would only crawl content that has been modified
+  in the last year.
+  <p/>
+  By default, filtering content based upon last modified time is disabled.
+  <br>
+  Only one of <code>filesystemadaptor.lastModifiedDate</code> or
+  <code>filesystemadaptor.lastModifiedDays</code> may be specified.
+  </dd>
+  <dt>
+  <code>adaptor.incrementalPollPeriodSecs</code>
+  </dt>
+  <dd>
+  Time between incremental crawls. Default value is 300 seconds.
+  </dd>
+  <br>
+  <dt>
+  <code>adaptor.namespace</code>
+  </dt>
+  <dd>
+  Namespace used for ACLs sent to GSA.  Defaults to "Default".
+  </dd>
+  <br>
+
+  <dt>
+  <code>server.port</code>
+  </dt>
+  <dd>
+  Port from which documents are served.  GSA crawls this port.
+  Each instance of an adaptor on same machine requires a unique port.
+  Defaults to 5678.
+  </dd>
+  <br>
+
+</dl>
+
+<br>
+<br>
+
+<h3> Advanced Topics </h3>
+
+<h4>Not changing 'last access' of the documents on the share</h4>
+<p>The adaptor attempts to leave the last access date for documents 
+unchanged while reading the content during a crawl. In some instances, 
+this may not happen and the last access date gets updated. When this 
+happens the adaptor then attempts to restore the last access date for the 
+document back to the original value before the crawl started. In order 
+for the last access date to be restored back to the original value, 
+the user account that the adaptor is running under needs to have 
+write basic attributes permission. If the account has read-only 
+permission and last access date happens to change during a crawl, 
+then the adaptor will not be able to restore the last access date 
+back to the original value before the crawl started.
+
+<br>
+<br>
+
+
+<h3> Developer Topics </h3>
+
+<h4>File System Adaptor Acl Overview</h4>
+
+<p>ACLs for documents and folders are read, preserved and pushed to the Google 
+Search Appliance by the File System Adaptor for UNC and DFS UNC paths.
+</p>
+
+<p>The following images show the ACL inheritance used by the File System Adaptor. 
+The green and pink arrows signify inheritance. While the dotted arrows show an 
+optional inheritance depending on whether the item inherits permission from 
+its parent or if it breaks inheritance and defines its own set of permissions.
+</p>
+
+<h4>non-DFS ACL inheritance</h4>
+<img src="non_dfs_acls.jpg" />
+
+<h4>DFS ACL inheritance</h4>
+<img src="dfs_acls.jpg" /></div>
+</div>
+</div>
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li class="navBarCell1Rev">Overview</li>
+<li><a href="com/google/enterprise/adaptor/fs/package-summary.html">Package</a></li>
+<li>Class</li>
+<li><a href="com/google/enterprise/adaptor/fs/package-tree.html">Tree</a></li>
+<li><a href="deprecated-list.html">Deprecated</a></li>
+<li><a href="index-all.html">Index</a></li>
+<li><a href="help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev</li>
+<li>Next</li>
+</ul>
+<ul class="navList">
+<li><a href="index.html?overview-summary.html" target="_top">Frames</a></li>
+<li><a href="overview-summary.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+</body>
+</html>
